@@ -32,3 +32,33 @@ Support documents:
 
 - [Authoring Guide](AUTHORING.md)
 - [Universal Notice Partial](_UNIVERSAL_NOTICE.md)
+
+## Build PDFs
+
+Local one-time setup:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+fnm use
+npm install
+```
+
+Build all signs:
+
+```bash
+source .venv/bin/activate
+fnm use
+python scripts/build_lab_signs.py --all
+```
+
+Build selected signs:
+
+```bash
+source .venv/bin/activate
+fnm use
+python scripts/build_lab_signs.py lab-signs/sink.md lab-signs/wiring.md
+```
+
+Generated PDFs are written to `output/lab-signs/`. Intermediate files and logs are written to `artifacts/lab-signs/`. Both directories are ignored by Git.

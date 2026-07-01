@@ -1,0 +1,58 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.55in,headheight=42pt,headsep=12pt,footskip=28pt]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{framed}
+
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>0.45\textheight 0.45\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue,
+  citecolor=black
+}
+
+\definecolor{fastblue}{HTML}{1F4E79}
+\definecolor{draftred}{HTML}{8A1F11}
+\definecolor{lightgray}{HTML}{F3F3F3}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[itemize]{leftmargin=*,topsep=3pt,itemsep=2pt}
+\setlist[enumerate]{leftmargin=*,topsep=3pt,itemsep=2pt}
+\renewcommand{\arraystretch}{1.15}
+
+\titleformat{\section}{\Large\bfseries\color{fastblue}}{}{0pt}{}
+\titleformat{\subsection}{\large\bfseries}{}{0pt}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{}{0pt}{}
+
+\newenvironment{signnotice}{\begin{framed}\small}{\end{framed}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[height=0.34in]{$logo_path$}}
+\fancyhead[R]{\footnotesize\raggedleft $title$\\v$version$ \textbar{} $status$}
+\fancyfoot[L]{\scriptsize $source_path$}
+\fancyfoot[R]{\scriptsize Page \thepage{} of \pageref{LastPage}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+$body$
+\end{document}
