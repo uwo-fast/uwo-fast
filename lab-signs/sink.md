@@ -2,7 +2,7 @@
 
 Status: draft
 DRAFT - NOT APPROVED FOR POSTING
-Review owner: FAST lab manager
+Review owner: PI / post-doc
 Last updated: 2026-07-01
 
 Scope: Shared FAST lab sink use, housekeeping, and drain-disposal reminders.
@@ -12,13 +12,13 @@ Scope: Shared FAST lab sink use, housekeeping, and drain-disposal reminders.
 - Keep the sink and surrounding counter clear for shared use.
 - Do not store parts, containers, tools, dishes, or projects in or around the sink.
 - If the sink is dirty, clean it before you leave and sign the cleaning log.
-- If you are repeatedly cleaning up someone else's mess, raise it with the lab manager, post-doc, or Dr. Pearce.
+- If you are repeatedly cleaning up someone else's mess, raise it with the PI or a post-doc.
 
 ## Never Use The Sink For Disposal
 
 - Do not pour chemicals, solvents, oils, greases, resins, acids, bases, or contaminated rinses down the drain.
 - Do not rinse chemical containers, contaminated tools, gloves, or parts in the sink unless an approved procedure says to do so.
-- Do not dump very hot liquid into the sink. Let it cool or ask where it belongs.
+- Do not pour very hot liquids down the sink. Allow them to cool first.
 - Do not guess. If you are unsure, stop and ask before anything goes down the drain.
 
 ## If Something Is Contaminated
@@ -47,5 +47,4 @@ Scope: Shared FAST lab sink use, housekeeping, and drain-disposal reminders.
 ## Reference Checks Needed
 
 - Western/UWO drain-disposal rules specific to lab sinks.
-- FAST local rule for very hot liquid disposal.
 - Approved process for rinsing/cleaning chemical containers, contaminated tools, and contaminated rinsate.

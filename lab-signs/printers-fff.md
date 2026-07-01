@@ -2,7 +2,7 @@
 
 Status: draft
 DRAFT - NOT APPROVED FOR POSTING
-Review owner: FAST lab manager
+Review owner: PI / post-doc
 Last updated: 2026-07-01
 
 Scope: Cleanup and shared-use reminders for FAST filament printers.
@@ -26,18 +26,19 @@ Scope: Cleanup and shared-use reminders for FAST filament printers.
 
 | Waste | Action |
 | --- | --- |
-| Clean, known filament scrap | Use the FAST polymer recycling route if accepted. |
-| Mixed, unknown, dirty, or contaminated plastic | Do not use polymer recycling; follow [Waste Disposal](waste-disposal.md) or ask. |
+| Clean PLA, PETG, or ABS scrap | Use the black material-labeled cans near the TEB6 shredders/extruders. |
+| Mixed polymer, dirty plastic, composites, nylon, TPU/TPE, or unknown material | Do not use polymer recycling; follow [Waste Disposal](waste-disposal.md) or ask. |
 | Sharp scraps or brittle failed prints | Handle carefully and clean the area before leaving. |
 
 ## Ask First
 
 - Ask before changing hardware, firmware, nozzle size, bed surface, slicer defaults, or material settings for shared printers.
-- Ask before using unusual, abrasive, flexible, high-temperature, composite, or fume-producing materials.
-- If you are unsure whether a printer is safe to use, leave it stopped and ask the responsible owner or lab manager.
+- PLA, PETG, ASA, and TPU/TPE are approved on shared printers when the printer is suitable for the material.
+- Run ABS/ASA only in enclosed printers with doors closed and the HEPA filter fan on.
+- Ask before using ABS, nylon, composites, carbon fiber, glow, soluble supports, high-temperature, or other unusual materials.
+- If you are unsure whether a printer is safe to use, leave it stopped and ask the PI or a post-doc.
+- If you find a printer issue, fix it immediately if you can do so safely and confidently. Otherwise, stop the printer if needed, message the group so people know not to use it, and contact the PI or a post-doc.
 
 ## Reference Checks Needed
 
-- FAST accepted polymer recycling materials and contamination limits.
-- FAST printer owner / issue-reporting process.
-- Which materials are approved on each shared printer.
+- Confirm which printers are approved for ASA and flexible materials.

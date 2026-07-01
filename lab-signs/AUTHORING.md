@@ -38,6 +38,8 @@ Every public sign should include:
 - Related signs or QR-linked resources when useful.
 - Review status and owner once metadata support is added.
 
+Every posted sign must also be represented in the FAST lab safety binder. When a sign is added, revised, replaced, or retired, update the binder copy/index at the same time.
+
 ## Reference Rules
 
 Use authoritative references for claims that depend on policy, procedure, regulation, safety data, or external instructions.
@@ -63,7 +65,7 @@ References are usually not required for:
 Preferred source order:
 
 1. Western University / UWO official pages, policies, procedures, and safety documents.
-2. FAST lab-specific procedure approved by the lab manager, PI, or responsible equipment owner.
+2. FAST lab-specific procedure approved by the PI, a post-doc, or responsible equipment owner.
 3. Ontario or Canadian government guidance where applicable.
 4. Recognized standards bodies or safety organizations.
 5. Manufacturer manuals or official equipment documentation.
@@ -91,17 +93,19 @@ Use these states while working:
 
 - `notes`: Rough captured ideas.
 - `draft`: Written as sign copy but not fully verified.
-- `review`: Awaiting lab manager, PI, equipment owner, or subject-matter review.
+- `review`: Awaiting PI, post-doc, equipment owner, or subject-matter review.
 - `approved`: Ready to print/post.
 - `retired`: No longer active.
 
 Review expectations:
 
-- General housekeeping signs can be reviewed by the lab manager or delegated owner.
-- Chemical, hazardous waste, fume hood, spill, and drain-disposal signs need authoritative procedure checks plus local approval.
-- Resin printer signs need review by the resin printer owner.
-- Power tool signs need review by the person responsible for tool access/training.
-- Wiring and high-power signs need review by a qualified person responsible for electrical safety in the lab.
+- The PI is the ultimate local authority for FAST lab signs.
+- Post-docs may be escalation contacts and may approve or coordinate review when delegated by the PI.
+- General housekeeping signs can be reviewed by the PI, a post-doc, or a delegated owner.
+- Chemical, hazardous waste, fume hood, spill, and drain-disposal signs need authoritative procedure checks plus PI/post-doc approval.
+- Resin printer signs should be reviewed by the resin printer owner after initial posting, then revised and reposted if needed.
+- Power tool signs need review by the PI, a post-doc, or the person responsible for tool access/training.
+- Wiring and high-power signs need review by Cameron B., Dr. Pearce, or another qualified electrical reviewer identified by them.
 
 ## Approval Blockers
 
@@ -114,6 +118,7 @@ Do not mark a sign `approved` while any of these are unresolved:
 - The review owner has not checked the final sign text.
 - A required subject-matter owner has not reviewed it.
 - The sign could reasonably be read as authorizing untrained users to perform hazardous work.
+- The sign has not been added to the FAST lab safety binder process.
 
 For safety-critical signs, unresolved questions should stay visible in the draft until they are answered.
 
@@ -157,7 +162,7 @@ Avoid:
 
 Good final sign language is firm and calm:
 
-> NEVER store bases in the acid cabinet. If you are unsure where a chemical belongs, do not store it: ask the lab manager or Dr. Pearce.
+> NEVER store bases in the acid cabinet. If you are unsure where a chemical belongs, do not store it: ask the PI or a post-doc.
 
 ## Choosing The Right Format
 
@@ -211,7 +216,7 @@ Use this as a starting structure until the PDF workflow defines required front m
 # Sign Title
 
 Status: draft
-Review owner: FAST lab manager
+Review owner: PI / post-doc
 Last updated: YYYY-MM-DD
 
 Scope: One short sentence describing where or when this sign applies.

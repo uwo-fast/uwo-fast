@@ -2,20 +2,21 @@
 
 Status: draft
 DRAFT - NOT APPROVED FOR POSTING
-Review owner: Alessia / FAST lab manager
+Review owner: PI / post-doc; Alessia R. follow-up review
 Last updated: 2026-07-01
 
 Scope: Shared-use and safety reminders for FAST resin printers. Use only if trained and authorized.
 
-This draft must be reviewed by Alessia before posting.
+<!-- Alessia R. should review this sign after initial posting. Release and post a revised version if she identifies needed changes. -->
 
 ## Before You Print
 
 - Use resin printers only after training on the printer, wash/cure workflow, PPE, and waste process.
-- Wear the required PPE before handling resin, resin-contaminated parts, build plates, vats, tools, wipes, or wash liquid.
+- Wear eye protection in TEB6. Use nitrile gloves, protective clothing, ventilation, and any other PPE required by the resin, solvent, or posted procedure before handling resin, resin-contaminated parts, build plates, vats, tools, wipes, or wash liquid.
 - Keep resin work inside the resin printer area.
 - Check that waste containers, wipes, tools, and cleanup supplies are available before starting.
 - Keep resin and wash solvents away from ignition sources unless the approved setup says otherwise.
+- The resin printer setup currently covers the Prusa SL1S and CW1S.
 
 ## While Working
 
@@ -29,15 +30,17 @@ This draft must be reviewed by Alessia before posting.
 
 | Item | Action |
 | --- | --- |
-| Uncured resin or resin-contaminated liquid | Use the approved resin waste process. Do not pour down the sink. |
-| Resin-contaminated wipes, gloves, supports, or failed prints | Use the approved resin waste process. Do not use regular trash or recycling unless the procedure explicitly allows it. |
-| Finished parts | Wash and cure according to the approved workflow before normal handling. |
-| Unknown or mixed waste | Stop and ask Alessia, the responsible owner, or the lab manager. |
+| Uncured resin or resin-contaminated liquid | Collect in the designated hazardous-waste container. Do not pour down the sink. |
+| IPA or other resin wash solvent | Collect in the designated hazardous-waste container. Keep away from ignition sources. |
+| Resin-contaminated wipes, gloves, supports, filters, bottles, or failed prints | Collect in the designated resin waste bag/container unless fully cured and the approved procedure says otherwise. |
+| Finished parts | Wash and cure according to the approved workflow before normal handling. Fully cured, uncontaminated resin parts may go to garbage if local procedure allows; do not recycle cured resin. |
+| Unknown or mixed waste | Stop and ask Alessia R., the PI, a post-doc, or the responsible owner. |
 
 ## Exposure Or Spill
 
 - For skin or eye exposure, follow emergency procedures immediately and report the incident.
-- For spills beyond minor trained cleanup, stop, keep others away, and get help.
+- Minor cleanup means a small drip or smear that a trained user can clean immediately without spreading contamination or using unusual PPE.
+- For larger spills, spills outside the resin area, strong odor, skin/eye exposure, solvent spill, broken vat, leaking bottle, or anything you are not confident cleaning, stop, keep others away, and get help.
 
 ## When Done
 
@@ -49,7 +52,7 @@ This draft must be reviewed by Alessia before posting.
 ## Related
 
 - See [Waste Disposal](waste-disposal.md) before discarding resin or contaminated material.
-- Resin printer owner review required before this sign is posted.
+- Alessia R. follow-up review requested after initial posting.
 
 ## Sources / Procedure Links
 
@@ -59,8 +62,7 @@ This draft must be reviewed by Alessia before posting.
 
 ## Reference Checks Needed
 
-- Alessia review of the full sign.
-- FAST resin printer, wash, cure, spill, and waste procedures.
-- Required local PPE: glove type, eye protection, coat/apron, sleeves, and ventilation.
+- Alessia R. review of the full sign.
+- FAST approved solvent list and handling procedure.
 - Resin and solvent SDS documents.
 - Western/UWO hazardous-waste and drain-disposal procedures for resin, solvents, wash liquid, wipes, gloves, supports, and failed prints.

@@ -1,0 +1,52 @@
+# Stationary Tools
+
+Status: draft
+DRAFT - NOT APPROVED FOR POSTING
+Review owner: PI / post-doc
+Last updated: 2026-07-01
+
+Scope: Training and shared-use reminders for stationary tools in TEB6.
+
+## Training Required
+
+- Stationary tools in TEB6 require documented training and sign-off before use.
+- This includes the drill press, miter saw, scroll saw, and any other fixed or bench-mounted powered tool.
+- If you have not been signed off, do not use the tool. Ask the PI or a post-doc who can train you.
+
+## Before Use
+
+- Wear required PPE.
+- Inspect the tool, guard, blade/bit, workholding, power cord, and work area.
+- Use the correct blade, bit, speed, and setup for the material.
+- Clamp, support, or fixture the work as required.
+- Keep dust, chips, noise, and offcuts contained.
+
+## During Use
+
+- Keep hands clear of the cutting path and pinch zones.
+- Do not force the tool.
+- Stop if the tool binds, vibrates, overheats, sparks, smells wrong, or sounds wrong.
+- Do not leave a running tool unattended.
+
+## When Done
+
+- Turn the tool off and wait for motion to stop.
+- Clean chips, dust, scraps, and offcuts.
+- Return shared accessories and PPE.
+- Report damage, dull blades/bits, missing guards, or unsafe behavior.
+
+## Materials
+
+- Do not cut, drill, sand, or grind materials that may produce hazardous dust or fumes, such as lead, asbestos, composites, or PVC, unless there is a formal containment, ventilation, and PPE plan.
+- Ask before working with unknown materials.
+
+## Related
+
+- See [Power Tools](power-tools.md) for hand-held power tools.
+- See [Manual Tools](manual-tools.md) for hand tools.
+
+## Reference Checks Needed
+
+- Confirm documented sign-off process for stationary tools.
+- Confirm complete stationary-tool inventory in TEB6.
+- Confirm local PPE and dust-control requirements for each tool.

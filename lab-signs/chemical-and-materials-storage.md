@@ -2,7 +2,7 @@
 
 Status: draft
 DRAFT - NOT APPROVED FOR POSTING
-Review owner: FAST lab manager
+Review owner: PI / post-doc
 Last updated: 2026-07-01
 
 Scope: Local storage reminders for chemicals, flammables, and shared materials in the FAST lab.
@@ -14,18 +14,18 @@ Scope: Local storage reminders for chemicals, flammables, and shared materials i
 - Keep chemicals in compatible, labeled, closed containers.
 - NEVER store bases in the acid cabinet.
 - Do not store oxidizers, peroxide formers, water-reactives, toxics, compressed gases, or other special-hazard materials by guessing from this table.
-- If you are unsure where something belongs, do not put it away: ask the lab manager, post-doc, or Dr. Pearce.
+- If you are unsure where something belongs, do not put it away: ask the PI or a post-doc.
 
 ## Common Local Storage Locations After Compatibility Check
 
-These local locations need final confirmation before this sign is approved.
+These are common local storage locations after a compatibility check.
 
 | Item / category | Location | Notes |
 | --- | --- | --- |
 | Acids | Right lower cabinet of the fume hood | Never store bases here. Confirm compatibility before storage. |
-| Bases | Left lower fume hood cabinet | Keep separate from acids. Confirm compatibility before storage. |
-| Lab-grade flammable solvents | Main flammable cabinet below the hood | Keep closed, labeled, and in approved containers. |
-| Spray paints, lubricants, and hardware-store flammables | Yellow flammable cabinet behind and left of the hood | Keep separate from lab-grade solvent storage. |
+| Bases | Left lower fume hood cabinet | This cabinet is also labeled flammable. Keep bases separated from acids and use secondary containment/segregation as required. |
+| Lab-grade flammable solvents | Left lower fume hood cabinet / main flammable cabinet below the hood | Keep closed, labeled, and in approved containers. |
+| Spray paints, lubricants, and hardware-store flammables | Yellow flammable cabinet on the floor to the left when facing the hood | Keep separate from lab-grade solvent storage. |
 | Oxidizer, peroxide former, water-reactive, toxic, compressed gas, or special-hazard material | Do not guess from this sign | Check SDS and ask. |
 | Unknown, unlabeled, leaking, damaged, expired, or off-inventory chemical | Do not store | Stop and ask. |
 
@@ -38,17 +38,18 @@ flowchart TD
     D -->|No| F{Base?}
     F -->|Yes| G[Left lower fume hood cabinet. Never with acids.]
     F -->|No| H{Lab-grade flammable solvent?}
-    H -->|Yes| I[Main flammable cabinet below hood.]
+    H -->|Yes| I[Left lower fume hood cabinet / main flammable cabinet below hood.]
     H -->|No| J{Spray paint, lubricant, or hardware-store flammable?}
-    J -->|Yes| K[Yellow flammable cabinet behind/left of hood.]
+    J -->|Yes| K[Yellow flammable cabinet on floor to left when facing hood.]
     J -->|No| L[Check SDS and ask before storing.]
 ```
 
-## General Materials
+## Chemical Inventory
 
-| Item | Location | Notes |
-| --- | --- | --- |
-| Glassware, strainers, funnels, and similar shared items | Red standing cabinet on the north wall of TEB7, bottom drawer | Confirm final drawer assignment before approval. |
+- FAST uses a chemical inventory spreadsheet to track chemicals and storage locations.
+- Anyone trained and approved by the PI or a post-doc may add a chemical to storage.
+- The person adding a chemical must make sure it is labeled, compatible with its storage location, and added to the inventory.
+- Future workflow note: add a QR code to the chemical inventory spreadsheet when QR support is built.
 
 ## Related
 
@@ -63,6 +64,4 @@ flowchart TD
 ## Reference Checks Needed
 
 - SDS and compatibility guidance for chemical categories stored in the lab.
-- Local confirmation of cabinet locations and labels.
-- Local confirmation of "lab-grade flammables" versus "hardware-store flammables" wording.
-- FAST chemical inventory process and who may add/remove chemicals from inventory.
+- Confirm where oxidizers, peroxide formers, water-reactives, toxics, compressed gases, and other special hazards should be stored in the current FAST lab setup.
