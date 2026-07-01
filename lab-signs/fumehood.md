@@ -1,11 +1,15 @@
+---
+title: "Fume Hood"
+slug: "fumehood"
+version: "0.1"
+status: "draft"
+review_owner: "PI / post-doc"
+include_universal_notice: true
+---
+
 # Fume Hood
 
-Status: draft
 DRAFT - NOT APPROVED FOR POSTING
-Review owner: PI / post-doc
-Last updated: 2026-07-01
-
-Scope: Use reminders for the FAST lab chemical fume hood. Use only if trained and authorized.
 
 ## Before Use
 

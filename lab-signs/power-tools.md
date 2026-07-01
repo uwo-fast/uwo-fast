@@ -1,11 +1,15 @@
+---
+title: "Power Tools"
+slug: "power-tools"
+version: "0.1"
+status: "draft"
+review_owner: "PI / post-doc"
+include_universal_notice: true
+---
+
 # Power Tools
 
-Status: draft
 DRAFT - NOT APPROVED FOR POSTING
-Review owner: PI / post-doc
-Last updated: 2026-07-01
-
-Scope: Shared-use reminders for portable hand-held power tools in the FAST lab. Use only if trained and authorized.
 
 ## Before You Start
 

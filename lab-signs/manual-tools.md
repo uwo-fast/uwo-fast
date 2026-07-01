@@ -1,11 +1,15 @@
+---
+title: "Manual Tools"
+slug: "manual-tools"
+version: "0.1"
+status: "draft"
+review_owner: "PI / post-doc"
+include_universal_notice: true
+---
+
 # Manual Tools
 
-Status: draft
 DRAFT - NOT APPROVED FOR POSTING
-Review owner: PI / post-doc
-Last updated: 2026-07-01
-
-Scope: Shared-use reminders for hand tools such as flush cutters, pliers, screwdrivers, wrenches, knives, and small cutters.
 
 ## Use The Right Tool
 

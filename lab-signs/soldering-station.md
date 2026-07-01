@@ -1,11 +1,15 @@
+---
+title: "Soldering Station"
+slug: "soldering-station"
+version: "0.1"
+status: "draft"
+review_owner: "PI / post-doc"
+include_universal_notice: true
+---
+
 # Soldering Station
 
-Status: draft
 DRAFT - NOT APPROVED FOR POSTING
-Review owner: PI / post-doc
-Last updated: 2026-07-01
-
-Scope: Shared-use, cleanup, and safety reminders for the FAST soldering station.
 
 ## Before You Start
 

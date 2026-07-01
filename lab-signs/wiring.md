@@ -1,11 +1,15 @@
+---
+title: "Wiring"
+slug: "wiring"
+version: "0.1"
+status: "draft"
+review_owner: "Cameron B. / Dr. Pearce / qualified electrical reviewer"
+include_universal_notice: true
+---
+
 # Wiring
 
-Status: draft
 DRAFT - NOT APPROVED FOR POSTING
-Review owner: Cameron B. / Dr. Pearce / qualified electrical reviewer
-Last updated: 2026-07-01
-
-Scope: Wiring and enclosure reminders for FAST lab prototypes and equipment. High-power, mains, or building-connected electrical work requires qualified review.
 
 ## Stop Before Wiring
 

@@ -1,11 +1,15 @@
+---
+title: "Waste Disposal"
+slug: "waste-disposal"
+version: "0.1"
+status: "draft"
+review_owner: "PI / post-doc"
+include_universal_notice: true
+---
+
 # Waste Disposal
 
-Status: draft
 DRAFT - NOT APPROVED FOR POSTING
-Review owner: PI / post-doc
-Last updated: 2026-07-01
-
-Scope: Routine FAST lab waste sorting. Hazardous, chemical, biological, resin, battery, e-waste, sharps, broken-glass, and unknown waste must follow approved procedures.
 
 ## Before You Throw It Out
 

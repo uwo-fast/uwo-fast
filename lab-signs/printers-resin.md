@@ -1,11 +1,15 @@
+---
+title: "Resin Printers"
+slug: "printers-resin"
+version: "0.1"
+status: "draft"
+review_owner: "PI / post-doc; Alessia R. follow-up review"
+include_universal_notice: true
+---
+
 # Resin Printers
 
-Status: draft
 DRAFT - NOT APPROVED FOR POSTING
-Review owner: PI / post-doc; Alessia R. follow-up review
-Last updated: 2026-07-01
-
-Scope: Shared-use and safety reminders for FAST resin printers. Use only if trained and authorized.
 
 <!-- Alessia R. should review this sign after initial posting. Release and post a revised version if she identifies needed changes. -->
 

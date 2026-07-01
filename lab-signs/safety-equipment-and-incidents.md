@@ -1,11 +1,15 @@
+---
+title: "Safety Equipment and Incidents"
+slug: "safety-equipment-and-incidents"
+version: "0.1"
+status: "draft"
+review_owner: "PI / post-doc"
+include_universal_notice: true
+---
+
 # Safety Equipment and Incidents
 
-Status: draft
 DRAFT - NOT APPROVED FOR POSTING
-Review owner: PI / post-doc
-Last updated: 2026-07-01
-
-Scope: FAST lab safety equipment locations and incident-response reminders.
 
 Emergency contact signage is already posted on the lab doors using Western-provided signage. Follow posted emergency contacts and Western emergency procedures.
 

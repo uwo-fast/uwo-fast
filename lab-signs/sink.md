@@ -1,11 +1,15 @@
+---
+title: "Sink"
+slug: "sink"
+version: "0.1"
+status: "draft"
+review_owner: "PI / post-doc"
+include_universal_notice: true
+---
+
 # Sink
 
-Status: draft
 DRAFT - NOT APPROVED FOR POSTING
-Review owner: PI / post-doc
-Last updated: 2026-07-01
-
-Scope: Shared FAST lab sink use, housekeeping, and drain-disposal reminders.
 
 ## Keep It Usable
 

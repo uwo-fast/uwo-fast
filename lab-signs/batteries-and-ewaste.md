@@ -1,11 +1,15 @@
+---
+title: "Batteries and E-Waste"
+slug: "batteries-and-ewaste"
+version: "0.1"
+status: "draft"
+review_owner: "PI / post-doc"
+include_universal_notice: true
+---
+
 # Batteries and E-Waste
 
-Status: draft
 DRAFT - NOT APPROVED FOR POSTING
-Review owner: PI / post-doc
-Last updated: 2026-07-01
-
-Scope: Disposal reminders for batteries, electronics, circuit boards, cables, and e-waste in the FAST lab.
 
 ## Local Collection
 

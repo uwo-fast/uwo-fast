@@ -1,11 +1,15 @@
+---
+title: "FFF Printers"
+slug: "printers-fff"
+version: "0.1"
+status: "draft"
+review_owner: "PI / post-doc"
+include_universal_notice: true
+---
+
 # FFF Printers
 
-Status: draft
 DRAFT - NOT APPROVED FOR POSTING
-Review owner: PI / post-doc
-Last updated: 2026-07-01
-
-Scope: Cleanup and shared-use reminders for FAST filament printers.
 
 ## After Every Print
 

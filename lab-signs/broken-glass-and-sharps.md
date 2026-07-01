@@ -1,11 +1,15 @@
+---
+title: "Broken Glass and Sharps"
+slug: "broken-glass-and-sharps"
+version: "0.1"
+status: "draft"
+review_owner: "PI / post-doc"
+include_universal_notice: true
+---
+
 # Broken Glass and Sharps
 
-Status: draft
 DRAFT - NOT APPROVED FOR POSTING
-Review owner: PI / post-doc
-Last updated: 2026-07-01
-
-Scope: Disposal reminders for broken glass, razor blades, needles, sharp metal, and other sharp objects in the FAST lab.
 
 ## Do Not Handle Directly
 

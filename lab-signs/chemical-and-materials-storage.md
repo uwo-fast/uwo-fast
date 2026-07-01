@@ -1,11 +1,15 @@
+---
+title: "Chemical and Materials Storage"
+slug: "chemical-and-materials-storage"
+version: "0.1"
+status: "draft"
+review_owner: "PI / post-doc"
+include_universal_notice: true
+---
+
 # Chemical and Materials Storage
 
-Status: draft
 DRAFT - NOT APPROVED FOR POSTING
-Review owner: PI / post-doc
-Last updated: 2026-07-01
-
-Scope: Local storage reminders for chemicals, flammables, and shared materials in the FAST lab.
 
 ## Do Not Guess
 
