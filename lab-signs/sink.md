@@ -1,8 +1,35 @@
 # Sink
 
-- keeping it clean and signing the cleaning log is everyone's responsibility; if it is dirty, clean it and sign the log; if ur consistently cleaning up a mess that isn't yours then raise it in a meeting with Dr Pearce or the current lab manager / post-doc
-- do not store items in or around the sink; if you need to store something, use the shelves or cabinets; the sink is shared by everyone and should be kept clear for use by all; if you need to store something temporarily, ask the lab manager or post-doc for permission
-  - NEVER pour chemicals down the sink, wash containers with chemicals in them, or wash chemicals off of your hands in the sink; if you need to dispose of chemicals, use the appropriate waste disposal containers and follow the lab's waste disposal procedures (see [waste disposal](waste-disposal.md) posted below) <!-- Ensure this sign is posted along side a copy of the waste-disposal.md -->
-  - NEVER pour hot water down the sink; if you need to dispose of hot water, let it cool down first or use a heat-resistant container 
-  - NEVER pour oils, greases, or other viscous substances down the sink; if you need to dispose of these substances, use the appropriate waste disposal containers and follow the lab's waste disposal procedures (see [waste disposal](waste-disposal.md) posted below) <!-- Ensure this sign is posted along side a copy of the waste-disposal.md -->
-  - NEVER pour acids or bases down the sink; if you need to dispose of these substances, use the appropriate waste disposal containers and follow the lab's waste disposal procedures (see [waste disposal](waste-disposal.md) posted below) <!-- Ensure this sign is posted along side a copy of the waste-disposal.md -->
+Status: draft
+Review owner: FAST lab manager
+Last updated: 2026-07-01
+
+Scope: Shared FAST lab sink use, housekeeping, and drain-disposal reminders.
+
+## Keep It Usable
+
+- Keep the sink and surrounding counter clear for shared use.
+- Do not store parts, containers, tools, dishes, or projects in or around the sink.
+- If the sink is dirty, clean it before you leave and sign the cleaning log.
+- If you are repeatedly cleaning up someone else's mess, raise it with the lab manager, post-doc, or Dr. Pearce.
+
+## Never Use The Sink For Disposal
+
+- Do not pour chemicals, solvents, oils, greases, resins, acids, bases, or contaminated rinses down the drain.
+- Do not rinse chemical containers, contaminated tools, gloves, or parts in the sink unless an approved procedure says to do so.
+- Do not dump very hot liquid into the sink. Let it cool or ask where it belongs.
+- Do not guess. If you are unsure, stop and ask before anything goes down the drain.
+
+## If Something Is Contaminated
+
+| Item | Sink? | Action |
+| --- | --- | --- |
+| Clean water and ordinary handwashing | Yes | Keep the area clean. |
+| Chemical container or contaminated tool | No | Follow the waste-disposal procedure or ask. |
+| Oil, grease, lubricant, resin, or solvent | No | Collect as directed by the waste-disposal procedure. |
+| Acid, base, or unknown liquid | No | Do not neutralize, dilute, or pour it out unless an approved procedure explicitly says so. |
+
+## Related
+
+- See [Waste Disposal](waste-disposal.md) before discarding anything from the sink area.
+- Reference check needed: Western/UWO drain-disposal and hazardous-waste procedures.
