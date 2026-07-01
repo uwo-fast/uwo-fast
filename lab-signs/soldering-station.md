@@ -1,6 +1,7 @@
 # Soldering Station
 
 Status: draft
+DRAFT - NOT APPROVED FOR POSTING
 Review owner: FAST lab manager
 Last updated: 2026-07-01
 
@@ -9,7 +10,8 @@ Scope: Shared-use, cleanup, and safety reminders for the FAST soldering station.
 ## Before You Start
 
 - Use the soldering station only if you know how to solder safely or are being supervised.
-- Turn on fume extraction or local ventilation if available.
+- Use the required fume extraction or local ventilation for the station. If you are unsure what is required, ask before soldering.
+- Wear eye protection if clipping leads, desoldering, or working with springy leads, wire, or parts under tension.
 - Keep drinks, food, loose paper, and unnecessary items away from the station.
 - Check that the iron, stand, cord, tip, sponge/brass wool, and work surface are in safe condition.
 
@@ -25,9 +27,9 @@ Scope: Shared-use, cleanup, and safety reminders for the FAST soldering station.
 
 - Turn the station off.
 - Return the iron to its stand.
-- Clean and leave the tip in the expected station condition.
+- Clean the tip and leave it tinned if that is the station practice.
 - Put tools, solder, flux, and small parts back where they belong.
-- Remove wire clippings, solder scraps, and waste from the bench.
+- Remove wire clippings, component leads, solder scraps, and waste from the bench using the approved waste stream.
 - Wash your hands after soldering, especially if leaded solder may have been used.
 
 ## Practice And Learning
@@ -40,6 +42,11 @@ Scope: Shared-use, cleanup, and safety reminders for the FAST soldering station.
 - Ask before changing station settings you do not understand.
 - Ask before soldering batteries, high-power wiring, unknown components, or anything contaminated with chemicals.
 - Report damaged tips, missing tools, poor ventilation, or unsafe setup.
+
+## Sources / Procedure Links
+
+- Practice guide: <https://cameronbrooks11.github.io/transistor-tester-m12864/guide.html>
+- Project repository: <https://github.com/CameronBrooks11/transistor-tester-m12864>
 
 ## Reference Checks Needed
 

@@ -1,6 +1,7 @@
 # FFF Printers
 
 Status: draft
+DRAFT - NOT APPROVED FOR POSTING
 Review owner: FAST lab manager
 Last updated: 2026-07-01
 
@@ -12,6 +13,7 @@ Scope: Cleanup and shared-use reminders for FAST filament printers.
 - Leave the bed, tool area, and printer surroundings ready for the next user.
 - Put tools back where they belong.
 - Sort clean print waste according to [Waste Disposal](waste-disposal.md).
+- Watch for hot nozzles, hot beds, sharp scrapers, brittle prints, and sharp filament ends.
 
 ## Failed Prints
 
@@ -31,9 +33,11 @@ Scope: Cleanup and shared-use reminders for FAST filament printers.
 ## Ask First
 
 - Ask before changing hardware, firmware, nozzle size, bed surface, slicer defaults, or material settings for shared printers.
+- Ask before using unusual, abrasive, flexible, high-temperature, composite, or fume-producing materials.
 - If you are unsure whether a printer is safe to use, leave it stopped and ask the responsible owner or lab manager.
 
 ## Reference Checks Needed
 
 - FAST accepted polymer recycling materials and contamination limits.
 - FAST printer owner / issue-reporting process.
+- Which materials are approved on each shared printer.

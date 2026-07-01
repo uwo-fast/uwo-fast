@@ -11,3 +11,4 @@ or adapted into a posted "Before You Work" sign later.
 - These signs are reminders, not replacements for training, SOPs, equipment manuals, or Western University procedures.
 - Do not guess about safety, chemical storage, waste disposal, wiring, tools, or equipment setup.
 - Correct process protects people, equipment, shared lab time, and lab resources.
+- When in doubt, ask the lab manager, responsible equipment owner, post-doc, or Dr. Pearce.

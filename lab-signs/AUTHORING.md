@@ -103,6 +103,36 @@ Review expectations:
 - Power tool signs need review by the person responsible for tool access/training.
 - Wiring and high-power signs need review by a qualified person responsible for electrical safety in the lab.
 
+## Approval Blockers
+
+Do not mark a sign `approved` while any of these are unresolved:
+
+- It contains `DRAFT - NOT APPROVED FOR POSTING`.
+- It has unresolved `Reference Checks Needed`.
+- It gives disposal, storage, emergency, PPE, electrical, or equipment-specific instructions without a source or local procedure.
+- It names an "approved procedure" that is not actually identified.
+- The review owner has not checked the final sign text.
+- A required subject-matter owner has not reviewed it.
+- The sign could reasonably be read as authorizing untrained users to perform hazardous work.
+
+For safety-critical signs, unresolved questions should stay visible in the draft until they are answered.
+
+## Temporary Reference Format
+
+Until the PDF workflow and YAML front matter exist, use a short manual reference section in drafts:
+
+```markdown
+## Sources / Procedure Links
+
+- Source title: <https://example.com/source>
+
+## Reference Checks Needed
+
+- Specific question or local confirmation still needed.
+```
+
+Before approval, `Reference Checks Needed` should either be resolved, moved to a working note, or kept visible only if the sign is intentionally still a draft.
+
 ## Writing Style
 
 Write for someone standing at the work area who needs the answer quickly.

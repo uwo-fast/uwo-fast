@@ -1,6 +1,7 @@
 # Power Tools
 
 Status: draft
+DRAFT - NOT APPROVED FOR POSTING
 Review owner: FAST lab manager
 Last updated: 2026-07-01
 
@@ -11,7 +12,7 @@ Scope: Shared-use reminders for portable power tools in the FAST lab. Use only i
 - Choose the right tool, bit, blade, disc, abrasive, speed, and setup for the material.
 - Inspect the tool, guard, cord, battery, switch, chuck, bit, blade, or disc before use.
 - Wear required eye, hearing, dust, face, and hand protection for the task.
-- Tie back long hair and keep loose clothing, jewelry, lanyards, and loose gloves away from rotating tools.
+- Tie back long hair and keep loose clothing, jewelry, lanyards, and gloves away from rotating tools unless a task-specific procedure requires otherwise.
 - Clamp or secure the workpiece before cutting, drilling, grinding, or sanding.
 - Check what is behind or under the work before cutting or drilling.
 
@@ -39,7 +40,7 @@ Scope: Shared-use reminders for portable power tools in the FAST lab. Use only i
 - Turn off and unplug the tool or remove the battery before changing bits, blades, discs, or abrasives.
 - Put tools, batteries, chargers, bits, blades, discs, clamps, and PPE back where they belong.
 - Clean dust, chips, scraps, and offcuts from the area.
-- Report damaged tools, missing guards, dull blades, cracked discs, frayed cords, battery damage, or unsafe behavior.
+- Remove damaged tools from service if you can do so safely, label them if local practice allows, and report damaged tools, missing guards, dull blades, cracked discs, frayed cords, battery damage, or unsafe behavior.
 
 ## Stop And Ask
 
@@ -55,3 +56,4 @@ Scope: Shared-use reminders for portable power tools in the FAST lab. Use only i
 - Tool manuals for specific grinders, saws, sanders, drills, and drivers.
 - Western/UWO job hazard analysis or shop-safety guidance for hand-held power tools.
 - CCOHS powered hand-tool guidance: <https://www.ccohs.ca/oshanswers/safety_haz/power_tools/>
+- CCOHS electric power-tool guidance: <https://www.ccohs.ca/oshanswers/safety_haz/power_tools/saf_elec.html>

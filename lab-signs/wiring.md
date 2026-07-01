@@ -1,6 +1,7 @@
 # Wiring
 
 Status: draft
+DRAFT - NOT APPROVED FOR POSTING
 Review owner: FAST lab manager / qualified electrical reviewer
 Last updated: 2026-07-01
 
@@ -12,6 +13,7 @@ Scope: Wiring and enclosure reminders for FAST lab prototypes and equipment. Hig
 - Do not modify building wiring, outlets, breakers, power bars, extension cords, or certified equipment.
 - Use certified or appropriately rated components for the voltage, current, temperature, environment, and enclosure.
 - If a design depends on current rating, fuse sizing, wire gauge, grounding, insulation, or code compliance, get review before building.
+- Treat mains voltage, large batteries, heaters, motors, high-current supplies, wet locations, unattended operation, or anything connected to building services as review-required.
 - If you are unsure, stop and ask before energizing anything.
 
 ## Plan The Enclosure
@@ -31,13 +33,14 @@ Scope: Wiring and enclosure reminders for FAST lab prototypes and equipment. Hig
 - Do not daisy-chain power bars or extension cords.
 - Do not use extension cords as permanent wiring.
 - Keep access to outlets, disconnects, panels, breakers, and emergency shutoffs clear.
+- Use GFCI or other required protection where the approved procedure requires it, especially near wet areas or conductive workspaces.
 
 ## Before Power-Up
 
 ```mermaid
 flowchart TD
     A[Ready to energize?] --> B{Mains, high power, heater, motor, or battery?}
-    B -->|Yes| C[Get qualified review before power-up.]
+    B -->|Yes| C[Get qualified review and first-power-up approval.]
     B -->|No| D{All conductors insulated, secured, labeled, and strain-relieved?}
     D -->|No| E[Fix wiring before power-up.]
     D -->|Yes| F{Fuse/protection, ratings, and polarity checked?}
@@ -58,7 +61,7 @@ $$
 P = IV
 $$
 
-Check voltage, current, power, connector rating, wire rating, fuse/protection, and heat together. Do not size wiring from one number alone.
+Check voltage, current, power, connector rating, wire rating, fuse/protection, startup current, duty cycle, enclosure heat, and fault conditions together. Do not size wiring from one number alone.
 
 ## Reference Checks Needed
 
@@ -66,4 +69,5 @@ Check voltage, current, power, connector rating, wire rating, fuse/protection, a
 - Western electrical installations and approvals advisory: <https://www.uwo.ca/hr/form_doc/health_safety/doc/hazard_alerts/electrical_safety_advisory.pdf>
 - Western Laboratory Health and Safety Manual electrical equipment guidance: <https://www.uwo.ca/hr/form_doc/health_safety/doc/manuals/lab_safety_manual.pdf>
 - FAST process for reviewing mains, high-power, battery, heater, motor, and permanent equipment wiring.
+- Who can approve first power-up for review-required wiring.
 - Applicable equipment manuals, component datasheets, certification requirements, and local code/ESA requirements.
