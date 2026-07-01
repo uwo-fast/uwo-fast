@@ -1,17 +1,54 @@
-# waste disposal
+# Waste Disposal
 
-- hazardous waste procedures (formal ones from university)
-- garbage vs paper recycling vs container recycling vs polymer recycling
-- generally we want to follow the 4 R's of waste management: reduce, reuse, recycle, discard and prioritize internal versions of each (i.e. reusing a part or our own internal polymer recycling is better than sending it to the municipal recycling stream)
-- maybe make a flow chart for this as well as a table/list in text
-  - reduce: when you throw something out always think "Did I really need this? How can I plan/design/behave differently next time to reduce waste?"
-  - reuse: consider if the item can be used again for the same or a different purpose
-    - give examples: materials that are simple/plain geometries (plates, blanks, blocks, containers, etc.) can be kept for future use (e.g., as shims, temporary prototyping, storage); materials that are complex or have been modified (unique cuts, holes, inset components, etc.) are less likely to be reused
-  - recycle: ensure the item is placed in the correct recycling bin (e.g., paper, cardboard, plastics, metals, electronics, etc.)
-    - paper recycle bins are small ones by each door in TEB6 and TEB7, and the large blue bins in the hallways or outside the building in the Loading Dock Area between ACEB, TEB and CMLP
-    - we have our own shredders and extruders so any clean polymer waste can be recycled in the lab (e.g., PLA, ABS, PETG, etc.) and remade into new filament or other products from the shred
-  - discard: dispose of the item properly if it cannot be reduced, reused, or recycled
-    - items that are contaminated with hazardous materials (e.g., chemicals, biologicals, etc.) must be disposed of according to the university's hazardous waste procedures
-    - items that are contaiminated in a way that makes them unsuitable for recycling (e.g., food waste, lubricants, heatset parts, inks or dyes, etc.) must be disposed of in the garbage
-- process for disposing of acid/bases (details of neutralizing / diluting as appripriate in accordance with university procedures, then disposing of in the appropriate waste container)
-- process for disposing of oils/greases (details of absorbing with paper towels or other absorbent material, then disposing of in the appropriate waste container; normal waste if non-toxic, hazardous waste if toxic)
+Status: draft
+Review owner: FAST lab manager
+Last updated: 2026-07-01
+
+Scope: Routine FAST lab waste sorting. Hazardous, chemical, biological, resin, and unknown waste must follow approved procedures.
+
+## Before You Throw It Out
+
+- Reduce waste when you can: plan jobs, prints, cuts, and purchases carefully.
+- Reuse clean, simple materials when they are likely to be useful again.
+- Recycle only clean materials that belong in an approved recycling stream.
+- Discard only when reuse and recycling are not appropriate.
+- If it is contaminated, hazardous, unlabeled, or unknown, stop and ask.
+
+```mermaid
+flowchart TD
+    A[Waste item] --> B{Contaminated, hazardous, unlabeled, or unknown?}
+    B -->|Yes| C[Do not use regular trash, recycling, sink, or polymer recycling. Ask and follow approved procedure.]
+    B -->|No| D{Reusable clean material?}
+    D -->|Yes| E[Keep for reuse in the appropriate lab storage area.]
+    D -->|No| F{Clean known polymer scrap?}
+    F -->|Yes| G[Use FAST polymer recycling route if accepted.]
+    F -->|No| H{Accepted paper, cardboard, or container recycling?}
+    H -->|Yes| I[Use the correct campus recycling bin.]
+    H -->|No| J[Use garbage only if it is clean, non-hazardous, and not recyclable.]
+```
+
+## Common Waste Streams
+
+| Item | Preferred action | Notes |
+| --- | --- | --- |
+| Clean plates, blanks, blocks, containers, or simple offcuts | Reuse | Keep only if someone can realistically use it again. |
+| Clean known PLA, PETG, ABS, or similar print waste | FAST polymer recycling | Accepted materials and contamination limits need local confirmation. |
+| Paper or cardboard | Paper/cardboard recycling | Small bins are by the TEB6/TEB7 doors; large blue bins are in hallways or the loading dock area. |
+| Clean accepted containers | Container recycling | Confirm the campus stream before using it. |
+| Food-contaminated or dirty non-hazardous waste | Garbage | Do not contaminate recycling streams. |
+| Chemical, resin, oil, grease, solvent, acid, base, biological, or unknown waste | Ask / approved waste procedure | Do not pour down the sink or place in regular trash/recycling. |
+
+## Do Not Guess
+
+- Do not neutralize, dilute, evaporate, rinse, or pour out chemical waste unless an approved procedure explicitly says to do so.
+- Do not mix waste streams to "make it easier" to discard.
+- Do not put contaminated material in paper, container, or polymer recycling.
+- When in doubt, ask the lab manager, responsible equipment owner, post-doc, or Dr. Pearce.
+
+## Reference Checks Needed
+
+- Western/UWO hazardous-waste and chemical-waste procedures.
+- Western/UWO drain-disposal rules.
+- Western/UWO or campus recycling guidance.
+- FAST accepted polymer recycling materials and contamination limits.
+- Local process for oils, greases, lubricants, resins, solvents, acids, and bases.
