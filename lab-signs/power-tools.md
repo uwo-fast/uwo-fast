@@ -16,7 +16,7 @@ DRAFT - NOT APPROVED FOR POSTING
 - Choose the right tool, bit, blade, disc, abrasive, speed, and setup for the material.
 - Inspect the tool, guard, cord, battery, switch, chuck, bit, blade, or disc before use.
 - Wear required eye, hearing, dust, face, and hand protection for the task.
-- Tie back long hair and keep loose clothing, jewelry, lanyards, and gloves away from rotating tools unless a task-specific procedure requires otherwise.
+- Tie back long hair and keep loose clothing, jewelry, and lanyards away from rotating or reciprocating tools.
 - Clamp or secure the workpiece before cutting, drilling, grinding, or sanding.
 - Check what is behind or under the work before cutting or drilling.
 - Eye protection is required for all power-tool use.
@@ -32,6 +32,13 @@ DRAFT - NOT APPROVED FOR POSTING
 | Angle grinder | Cutting or grinding compatible materials with the correct guard and disc | Changing discs, cutting unknown materials, removing guards, or using damaged discs. |
 | Circular saw | Straight cuts in compatible sheet or lumber-like materials | Unsupported stock, warped material, wrong blade, or work that can pinch and kick back. |
 | Sander | Surface finishing with the correct abrasive and dust control | Unknown coatings, hazardous dust, wet material, or material that may melt or ignite. |
+
+## Gloves
+
+- Wear close-fitting, task-appropriate gloves when using an angle grinder to protect against sparks, abrasion, and hot or sharp material.
+- Do not wear gloves where they could become caught in a rotating or reciprocating tool.
+- For handheld circular saws, follow the manufacturer's instructions and site-specific procedure rather than assuming gloves are required.
+- Gloves may be used to handle blades, burrs, or sharp stock after the tool is stopped, unplugged or battery-isolated, and unable to restart.
 
 ## Where To Work
 
@@ -74,6 +81,8 @@ DRAFT - NOT APPROVED FOR POSTING
 
 - CCOHS powered hand-tool guidance: <https://www.ccohs.ca/oshanswers/safety_haz/power_tools/>
 - CCOHS electric power-tool guidance: <https://www.ccohs.ca/oshanswers/safety_haz/power_tools/saf_elec.html>
+- CCOHS circular saw guidance: <https://www.ccohs.ca/oshanswers/safety_haz/power_tools/saw_circ.html>
+- OSHA angle grinder safety talk: <https://www.osha.gov/sites/default/files/2018-12/fy15_sh-27664-sh5_Toolbox_Angle_Grinder.pdf>
 
 ## Reference Checks Needed
 

@@ -20,6 +20,8 @@ DRAFT - NOT APPROVED FOR POSTING
 ## Before Use
 
 - Wear required PPE.
+- Do not wear gloves while operating drill presses, miter saws, scroll saws, table saws, or other machinery where gloves could become caught in a rotating or reciprocating tool.
+- Gloves may be used to handle blades, burrs, splintery stock, or sharp material after the machine is stopped, isolated, and unable to restart.
 - Inspect the tool, guard, blade/bit, workholding, power cord, and work area.
 - Use the correct blade, bit, speed, and setup for the material.
 - Clamp, support, or fixture the work as required.
@@ -54,3 +56,5 @@ DRAFT - NOT APPROVED FOR POSTING
 - Confirm documented sign-off process for stationary tools.
 - Confirm complete stationary-tool inventory in TEB6.
 - Confirm local PPE and dust-control requirements for each tool.
+- CCOHS drill press guidance: <https://www.ccohs.ca/oshanswers/safety_haz/metalworking/drillpresses.html>
+- CCOHS woodworking machine guidance: <https://www.ccohs.ca/oshanswers/safety_haz/woodwork/gen_safe.html>
