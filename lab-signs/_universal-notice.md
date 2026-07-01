@@ -1,0 +1,6 @@
+# Universal Notices
+
+<!--  This is not a lab sign but a lib of notices that should be included at the start of each lab sign  -->
+
+- something about ALWAYS ASK before doing something if you are unsure about it, never do something you are unsure or uncomfortable with, even if you have been asked by a superior or coworker. This is the most important rule of the lab and the cornerstone of technical safety 101.
+- These lab signs are not a replacement for training, and you should not be doing anything in the lab that you have not been trained to do. On top of it being a safety hazard, it is also a source of time and resource waste for the lab and your coworkers if you are doing something you are not trained to do. There is generally a correct way to do things in the lab, and on top of keeping you safe and the lab safe, it is also a matter of efficiency and resource management to do things the correct way. <!--maybe make this more concise and clear, collapse into above points then redistrib over 3-5 points here) -->

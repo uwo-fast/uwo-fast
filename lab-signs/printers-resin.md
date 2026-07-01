@@ -1,1 +1,3 @@
 # Resin Printers
+
+- write some basic rules for resin printers here, do first initial draft good as can then email Alessia to review and add since she is in charge of the resin printers and has more experience with them than I do; for now tho write this document clean and authoritative with a comment that version 1.0 is a draft and will be reviewed by Alessia and updated as needed and the sign replaced

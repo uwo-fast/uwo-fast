@@ -1,1 +1,8 @@
 # Sink
+
+- keeping it clean and signing the cleaning log is everyone's responsibility; if it is dirty, clean it and sign the log; if ur consistently cleaning up a mess that isn't yours then raise it in a meeting with Dr Pearce or the current lab manager / post-doc
+- do not store items in or around the sink; if you need to store something, use the shelves or cabinets; the sink is shared by everyone and should be kept clear for use by all; if you need to store something temporarily, ask the lab manager or post-doc for permission
+  - NEVER pour chemicals down the sink, wash containers with chemicals in them, or wash chemicals off of your hands in the sink; if you need to dispose of chemicals, use the appropriate waste disposal containers and follow the lab's waste disposal procedures (see [waste disposal](waste-disposal.md) posted below) <!-- Ensure this sign is posted along side a copy of the waste-disposal.md -->
+  - NEVER pour hot water down the sink; if you need to dispose of hot water, let it cool down first or use a heat-resistant container 
+  - NEVER pour oils, greases, or other viscous substances down the sink; if you need to dispose of these substances, use the appropriate waste disposal containers and follow the lab's waste disposal procedures (see [waste disposal](waste-disposal.md) posted below) <!-- Ensure this sign is posted along side a copy of the waste-disposal.md -->
+  - NEVER pour acids or bases down the sink; if you need to dispose of these substances, use the appropriate waste disposal containers and follow the lab's waste disposal procedures (see [waste disposal](waste-disposal.md) posted below) <!-- Ensure this sign is posted along side a copy of the waste-disposal.md -->
