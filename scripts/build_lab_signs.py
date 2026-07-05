@@ -117,7 +117,7 @@ def sign_files(selected: list[str], all_signs: bool) -> list[Path]:
     elif all_signs:
         paths = sorted(
             p for p in SIGNS_DIR.glob("*.md")
-            if not p.name.startswith("_") and p.name not in {"README.md", "AUTHORING.md"}
+            if not p.name.startswith("_") and p.name not in {"README.md", "AUTHORING.md", "TODO.md"}
         )
     else:
         raise BuildError("Specify --all or one or more sign Markdown files.")
