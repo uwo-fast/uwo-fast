@@ -9,8 +9,6 @@ include_universal_notice: true
 
 # Broken Glass and Sharps
 
-DRAFT - NOT APPROVED FOR POSTING
-
 ## Do Not Handle Directly
 
 - Do not pick up broken glass or sharp objects with bare hands.

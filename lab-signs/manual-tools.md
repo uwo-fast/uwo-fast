@@ -9,8 +9,6 @@ include_universal_notice: true
 
 # Manual Tools
 
-DRAFT - NOT APPROVED FOR POSTING
-
 ## Use The Right Tool
 
 - Match the tool to the material, size, and force required.

@@ -9,8 +9,6 @@ include_universal_notice: true
 
 # Fume Hood
 
-DRAFT - NOT APPROVED FOR POSTING
-
 ## Before Use
 
 - Use the fume hood for work with volatile chemicals, hazardous vapors, or fumes when the approved procedure requires it.

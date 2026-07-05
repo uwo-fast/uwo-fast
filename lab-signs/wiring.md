@@ -9,8 +9,6 @@ include_universal_notice: true
 
 # Wiring
 
-DRAFT - NOT APPROVED FOR POSTING
-
 ## Stop Before Wiring
 
 - Do not wire mains, high-power, heaters, motors, batteries, or permanent equipment unless you are trained and authorized.
@@ -61,25 +59,11 @@ flowchart TD
 
 ## Quick Checks
 
-For DC loads:
-
-$$
-P = IV
-$$
+- For DC loads: $P = IV$
+- For resistive loads: $V = IR$
+- For a first-pass voltage-drop check: $\Delta V = IR$
 
 Check voltage, current, power, connector rating, wire rating, fuse/protection, startup current, duty cycle, enclosure heat, and fault conditions together. Do not size wiring from one number alone.
-
-For resistive loads:
-
-$$
-V = IR
-$$
-
-For a first-pass voltage-drop check:
-
-$$
-\Delta V = IR
-$$
 
 ## Reference Checks Needed
 

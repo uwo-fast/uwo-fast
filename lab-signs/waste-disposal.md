@@ -9,8 +9,6 @@ include_universal_notice: true
 
 # Waste Disposal
 
-DRAFT - NOT APPROVED FOR POSTING
-
 ## Before You Throw It Out
 
 - Reduce waste when you can: plan jobs, prints, cuts, and purchases carefully.

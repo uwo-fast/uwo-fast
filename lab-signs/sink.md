@@ -9,8 +9,6 @@ include_universal_notice: true
 
 # Sink
 
-DRAFT - NOT APPROVED FOR POSTING
-
 ## Keep It Usable
 
 - Keep the sink and surrounding counter clear for shared use.

@@ -1,14 +1,11 @@
 # Before You Work
 
 <!--
-Shared notice partial for FAST lab signs.
-This is not currently a standalone sign, but it can be included in generated signs
-or adapted into a posted "Before You Work" sign later.
+Shared notice partial for FAST lab signs. It is injected as a compact boxed
+callout at the top of every generated sign. Keep it to a few always-on,
+safety-critical reminders; the build renders the heading above as a bold label.
 -->
 
-- If you are unsure, uncomfortable, or not trained, stop and ask before you continue.
-- Do not do work you are not trained or authorized to do.
-- These signs are reminders, not replacements for training, SOPs, equipment manuals, or Western University procedures.
-- Do not guess about safety, chemical storage, waste disposal, wiring, tools, or equipment setup.
-- Correct process protects people, equipment, shared lab time, and lab resources.
-- When in doubt, ask the PI, a post-doc, or the responsible equipment owner.
+- **Not trained, not authorized, or unsure? Stop and ask** the PI, a post-doc, or the responsible equipment owner.
+- **Do not guess** about safety, chemical storage, waste disposal, wiring, tools, or equipment setup.
+- These signs are **reminders, not a replacement** for training, SOPs, equipment manuals, or UWO procedures.

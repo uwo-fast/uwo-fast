@@ -9,8 +9,6 @@ include_universal_notice: true
 
 # Stationary Tools
 
-DRAFT - NOT APPROVED FOR POSTING
-
 ## Training Required
 
 - Stationary tools in TEB6 require documented training and sign-off before use.

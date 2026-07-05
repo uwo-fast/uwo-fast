@@ -9,8 +9,6 @@ include_universal_notice: true
 
 # Power Tools
 
-DRAFT - NOT APPROVED FOR POSTING
-
 ## Before You Start
 
 - Choose the right tool, bit, blade, disc, abrasive, speed, and setup for the material.

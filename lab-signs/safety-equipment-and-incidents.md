@@ -9,8 +9,6 @@ include_universal_notice: true
 
 # Safety Equipment and Incidents
 
-DRAFT - NOT APPROVED FOR POSTING
-
 Emergency contact signage is already posted on the lab doors using Western-provided signage. Follow posted emergency contacts and Western emergency procedures.
 
 ## Know The Locations

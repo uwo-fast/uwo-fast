@@ -9,8 +9,6 @@ include_universal_notice: true
 
 # Resin Printers
 
-DRAFT - NOT APPROVED FOR POSTING
-
 <!-- Alessia R. should review this sign after initial posting. Release and post a revised version if she identifies needed changes. -->
 
 ## Before You Print

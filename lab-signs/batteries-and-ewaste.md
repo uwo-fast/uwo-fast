@@ -9,8 +9,6 @@ include_universal_notice: true
 
 # Batteries and E-Waste
 
-DRAFT - NOT APPROVED FOR POSTING
-
 ## Local Collection
 
 | Item | Local action |

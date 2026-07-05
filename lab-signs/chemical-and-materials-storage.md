@@ -9,8 +9,6 @@ include_universal_notice: true
 
 # Chemical and Materials Storage
 
-DRAFT - NOT APPROVED FOR POSTING
-
 ## Do Not Guess
 
 - Store chemicals only if you are trained and authorized to handle them.

@@ -9,8 +9,6 @@ include_universal_notice: true
 
 # Soldering Station
 
-DRAFT - NOT APPROVED FOR POSTING
-
 ## Before You Start
 
 - Use the soldering station only if you know how to solder safely or are being supervised.

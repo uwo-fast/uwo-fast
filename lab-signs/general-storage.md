@@ -9,8 +9,6 @@ include_universal_notice: true
 
 # General Storage
 
-DRAFT - NOT APPROVED FOR POSTING
-
 ## General Rules
 
 - Do not store materials in sinks, fume hoods, walkways, electrical panels, emergency equipment areas, or active work surfaces.

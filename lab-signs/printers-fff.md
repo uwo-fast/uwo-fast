@@ -9,8 +9,6 @@ include_universal_notice: true
 
 # FFF Printers
 
-DRAFT - NOT APPROVED FOR POSTING
-
 ## After Every Print
 
 - Remove your part, supports, purges, brims, skirts, rafts, and loose filament from the printer.

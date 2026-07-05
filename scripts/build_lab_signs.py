@@ -22,6 +22,7 @@ SIGNS_DIR = ROOT / "lab-signs"
 UNIVERSAL_NOTICE = SIGNS_DIR / "_UNIVERSAL_NOTICE.md"
 OUTPUT_DIR = ROOT / "output" / "lab-signs"
 ARTIFACTS_DIR = ROOT / "artifacts" / "lab-signs"
+PNG_DIR = ARTIFACTS_DIR / "png"
 TEMPLATE = ROOT / "templates" / "lab-sign.tex"
 LOGO = ROOT / "branding" / "logos" / "FASTlogobw.png"
 MERMAID_CONFIG = ROOT / "scripts" / "mermaid-puppeteer-config.json"
@@ -158,12 +159,21 @@ def render_mermaid(markdown: str, sign_artifacts: Path) -> str:
         source = sign_artifacts / f"diagram-{idx}.mmd"
         output = sign_artifacts / f"diagram-{idx}.png"
         source.write_text(match.group(1).strip() + "\n")
-        mermaid_cmd = [*cmd, "-i", str(source), "-o", str(output), "-b", "transparent"]
+        mermaid_cmd = [
+            *cmd, "-i", str(source), "-o", str(output),
+            "-b", "white", "-t", "neutral", "-s", "2",
+        ]
         if MERMAID_CONFIG.exists():
             mermaid_cmd.extend(["-p", str(MERMAID_CONFIG)])
         run(mermaid_cmd)
         rel = output.relative_to(ROOT).as_posix()
-        return f"![Diagram]({rel})"
+        # Empty alt text suppresses the "Figure N: ..." caption; the raw-latex
+        # fences centre the diagram while letting pandoc resolve the image path.
+        return (
+            "```{=latex}\n\\begin{center}\n```\n\n"
+            f"![]({rel})\n\n"
+            "```{=latex}\n\\end{center}\n```"
+        )
 
     return MERMAID_RE.sub(replace, markdown)
 
@@ -183,7 +193,14 @@ def source_urls(path: Path, ctx: dict[str, str]) -> tuple[str, str]:
 def universal_notice_markdown() -> str:
     text = UNIVERSAL_NOTICE.read_text().strip()
     text = re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL).strip()
-    return "\n".join(f"> {line}" if line else ">" for line in text.splitlines()) + "\n"
+    # Demote the leading level-1 heading to a bold label so the notice reads as
+    # a compact callout instead of a second page title.
+    text = re.sub(r"^#\s+(.+)$", r"**\1**", text, count=1, flags=re.MULTILINE)
+    return (
+        "```{=latex}\n\\begin{signnotice}\n```\n\n"
+        + text
+        + "\n\n```{=latex}\n\\end{signnotice}\n```\n"
+    )
 
 
 def append_metadata(
@@ -194,7 +211,7 @@ def append_metadata(
 ) -> str:
     generated = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
     branch_url, pinned_url = source_urls(path, ctx)
-    run_url = ctx["run_url"] or "Local build"
+    build_ref = f"[build]({ctx['run_url']})" if ctx["run_url"] else "local build"
     lines = [
         "## Sign Metadata",
         "",
@@ -204,11 +221,10 @@ def append_metadata(
         f"| Status | {metadata['status']} |",
         f"| Review owner | {metadata['review_owner']} |",
         f"| Last updated | {last_updated_for(path)} |",
-        f"| Generated | {generated} |",
-        f"| Source file | `{relative(path)}` |",
-        f"| Current source | [branch link]({branch_url}) |",
-        f"| Permanent source | [commit {ctx['short_sha']}]({pinned_url}) |",
-        f"| Build | {run_url} |",
+        "",
+        f"Source: `{relative(path)}` "
+        f"([current]({branch_url}), [permanent commit {ctx['short_sha']}]({pinned_url})). "
+        f"Generated {generated}; {build_ref}.",
     ]
     return markdown.rstrip() + "\n\n" + "\n".join(lines) + "\n"
 
@@ -216,11 +232,13 @@ def append_metadata(
 def prepare_markdown(path: Path, ctx: dict[str, str]) -> tuple[dict[str, Any], str]:
     metadata, body = parse_frontmatter(path)
     if metadata.get("include_universal_notice", True):
-        marker = "DRAFT - NOT APPROVED FOR POSTING"
-        if marker in body:
-            body = body.replace(marker, marker + "\n\n" + universal_notice_markdown(), 1)
+        notice = universal_notice_markdown()
+        # Keep the sign title first; place the standing notice just beneath it.
+        heading = re.match(r"#\s+.+\n", body)
+        if heading:
+            body = body[: heading.end()] + "\n" + notice + "\n" + body[heading.end():]
         else:
-            body = universal_notice_markdown() + "\n\n" + body
+            body = notice + "\n\n" + body
     body = append_metadata(body, metadata, path, ctx)
     return metadata, body
 
@@ -248,6 +266,25 @@ def render_pdf(markdown_path: Path, output_path: Path, metadata: dict[str, Any],
         "-o", str(output_path),
     ]
     run(cmd)
+
+
+def png_command() -> list[str] | None:
+    for tool in ("pdftoppm", "pdftocairo"):
+        found = shutil.which(tool)
+        if found:
+            return [found]
+    return None
+
+
+def render_pngs(pdf_paths: list[Path]) -> bool:
+    cmd = png_command()
+    if cmd is None:
+        print("warning: --png requested but pdftoppm/pdftocairo not found", file=sys.stderr)
+        return False
+    PNG_DIR.mkdir(parents=True, exist_ok=True)
+    for pdf in pdf_paths:
+        run([*cmd, "-png", "-r", "150", str(pdf), str(PNG_DIR / pdf.stem)])
+    return True
 
 
 def check_reference_policy(metadata: dict[str, Any], body: str, path: Path) -> None:
@@ -318,10 +355,17 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("signs", nargs="*", help="Specific sign Markdown files to build.")
     parser.add_argument("--all", action="store_true", help="Build all public lab signs.")
+    parser.add_argument(
+        "--png",
+        action="store_true",
+        help="Also render PNG previews of each PDF into artifacts (for visual QA).",
+    )
     args = parser.parse_args()
     try:
         paths = sign_files(args.signs, args.all)
         manifest = build(paths)
+        if args.png and render_pngs(sorted(OUTPUT_DIR.glob("*.pdf"))):
+            print(f"Rendered PNG previews in {relative(PNG_DIR)}")
     except BuildError as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
