@@ -45,9 +45,11 @@
 
 \pagestyle{fancy}
 \fancyhf{}
+\renewcommand{\footrulewidth}{0.4pt}
 \fancyhead[L]{\includegraphics[height=0.34in]{$logo_path$}}
 \fancyhead[R]{\footnotesize\raggedleft $title$\\v$version$ \textbar{} $status$}
 \fancyfoot[L]{\scriptsize $source_path$}
+\fancyfoot[C]{\scriptsize Review: $review_owner$ \textbar{} Updated: $last_updated$}
 \fancyfoot[R]{\scriptsize Page \thepage{} of \pageref{LastPage}}
 
 \providecommand{\tightlist}{%

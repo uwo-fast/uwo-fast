@@ -203,33 +203,7 @@ def universal_notice_markdown() -> str:
     )
 
 
-def append_metadata(
-    markdown: str,
-    metadata: dict[str, Any],
-    path: Path,
-    ctx: dict[str, str],
-) -> str:
-    generated = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
-    branch_url, pinned_url = source_urls(path, ctx)
-    build_ref = f"[build]({ctx['run_url']})" if ctx["run_url"] else "local build"
-    lines = [
-        "## Sign Metadata",
-        "",
-        "| Field | Value |",
-        "| --- | --- |",
-        f"| Version | {metadata['version']} |",
-        f"| Status | {metadata['status']} |",
-        f"| Review owner | {metadata['review_owner']} |",
-        f"| Last updated | {last_updated_for(path)} |",
-        "",
-        f"Source: `{relative(path)}` "
-        f"([current]({branch_url}), [permanent commit {ctx['short_sha']}]({pinned_url})). "
-        f"Generated {generated}; {build_ref}.",
-    ]
-    return markdown.rstrip() + "\n\n" + "\n".join(lines) + "\n"
-
-
-def prepare_markdown(path: Path, ctx: dict[str, str]) -> tuple[dict[str, Any], str]:
+def prepare_markdown(path: Path) -> tuple[dict[str, Any], str]:
     metadata, body = parse_frontmatter(path)
     if metadata.get("include_universal_notice", True):
         notice = universal_notice_markdown()
@@ -239,15 +213,18 @@ def prepare_markdown(path: Path, ctx: dict[str, str]) -> tuple[dict[str, Any], s
             body = body[: heading.end()] + "\n" + notice + "\n" + body[heading.end():]
         else:
             body = notice + "\n\n" + body
-    body = append_metadata(body, metadata, path, ctx)
     return metadata, body
 
 
 def pandoc_metadata_args(metadata: dict[str, Any], source_path: Path) -> list[str]:
+    # Provenance (commit links, generated timestamp) lives in manifest.json; the
+    # sign face only carries the human-useful identifiers, rendered in the footer.
     return [
         "--metadata", f"title={metadata['title']}",
         "--metadata", f"version={metadata['version']}",
         "--metadata", f"status={metadata['status']}",
+        "--metadata", f"review_owner={metadata.get('review_owner', '')}",
+        "--metadata", f"last_updated={last_updated_for(source_path)}",
         "--metadata", f"source_path={relative(source_path)}",
         "--metadata", f"logo_path={relative(LOGO)}",
     ]
@@ -314,7 +291,7 @@ def build(paths: list[Path]) -> dict[str, Any]:
     combined_parts: list[str] = []
 
     for path in paths:
-        metadata, markdown = prepare_markdown(path, ctx)
+        metadata, markdown = prepare_markdown(path)
         check_reference_policy(metadata, markdown, path)
         sign_artifacts = ARTIFACTS_DIR / str(metadata["slug"])
         markdown = render_mermaid(markdown, sign_artifacts)
