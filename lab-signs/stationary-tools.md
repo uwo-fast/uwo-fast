@@ -18,7 +18,7 @@ include_universal_notice: true
 ## Before Use
 
 - Wear required PPE.
-- Do not wear gloves while operating drill presses, miter saws, scroll saws, table saws, or other machinery where gloves could become caught in a rotating or reciprocating tool.
+- Do not wear gloves on drill presses, miter/scroll/table saws, or any machine where they could be caught in a rotating or reciprocating tool.
 - Gloves may be used to handle blades, burrs, splintery stock, or sharp material after the machine is stopped, isolated, and unable to restart.
 - Inspect the tool, guard, blade/bit, workholding, power cord, and work area.
 - Use the correct blade, bit, speed, and setup for the material.
@@ -41,7 +41,7 @@ include_universal_notice: true
 
 ## Materials
 
-- Do not cut, drill, sand, or grind materials that may produce hazardous dust or fumes, such as lead, asbestos, composites, or PVC, unless there is a formal containment, ventilation, and PPE plan.
+- Do not cut, drill, sand, or grind materials that may produce hazardous dust or fumes (lead, asbestos, composites, PVC) without a formal containment, ventilation, and PPE plan.
 - Ask before working with unknown materials.
 
 ## Related
@@ -54,5 +54,5 @@ include_universal_notice: true
 - Confirm documented sign-off process for stationary tools.
 - Confirm complete stationary-tool inventory in TEB6.
 - Confirm local PPE and dust-control requirements for each tool.
-- CCOHS drill press guidance: <https://www.ccohs.ca/oshanswers/safety_haz/metalworking/drillpresses.html>
-- CCOHS woodworking machine guidance: <https://www.ccohs.ca/oshanswers/safety_haz/woodwork/gen_safe.html>
+- CCOHS drill presses: <https://www.ccohs.ca/oshanswers/safety_haz/metalworking/drillpresses.html>
+- CCOHS woodworking machines: <https://www.ccohs.ca/oshanswers/safety_haz/woodwork/gen_safe.html>

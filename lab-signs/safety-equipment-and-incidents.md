@@ -9,7 +9,7 @@ include_universal_notice: true
 
 # Safety Equipment and Incidents
 
-Emergency contact signage is already posted on the lab doors using Western-provided signage. Follow posted emergency contacts and Western emergency procedures.
+Emergency contacts are posted on the lab doors (Western signage). Follow them and Western emergency procedures.
 
 ## Know The Locations
 
@@ -18,7 +18,7 @@ Emergency contact signage is already posted on the lab doors using Western-provi
 | Eyewash | Beside the sink. |
 | Spill kit | Hallway outside the lab. |
 | Safety shower | Hallway outside the lab. |
-| First aid kit | West-wall TEB7 cabinet labeled with the large red safety-kit symbol. |
+| First aid kit | West-wall TEB7 cabinet with the large red safety-kit symbol. |
 | Lab safety binder | West-wall TEB7 safety cabinet with the first aid kit. |
 | Fire extinguisher | Immediately beside the TEB6 door to the hallway. |
 | Emergency contacts | Posted on lab doors facing the hallway. |
@@ -28,26 +28,25 @@ Emergency contact signage is already posted on the lab doors using Western-provi
 - Separate yourself from the hazard first.
 - Warn nearby people and get help.
 - For skin or eye exposure, use emergency equipment immediately and report the incident.
-- For spills, reactions, fire, injury, or uncontrolled equipment behavior, stop work and follow emergency procedures.
-- Do not attempt cleanup or restart unless you are trained, it is safe, and the procedure allows it.
+- For spills, reactions, fire, injury, or uncontrolled equipment, stop work and follow emergency procedures.
+- Do not clean up or restart unless trained, it is safe, and the procedure allows it.
 
 ## Fume Hood Emergency Reminder
 
-- If an adverse and uncontrollable reaction occurs in the fume hood, close the sash if safe to do so.
-- Set the hood to maximum exhaust if safe and available.
+- If an uncontrollable reaction occurs in the fume hood, close the sash and set maximum exhaust if safe.
 - Evacuate the lab and get help.
-- Remove contaminated clothing or PPE only if it is safe to do so; place it near the fume hood or as directed by emergency procedure.
+- Remove contaminated clothing/PPE only if safe; leave it near the fume hood or as directed by emergency procedure.
 
 ## Emergency Shutoff
 
 - The lab does not have a general emergency shutoff.
 - Building-level shutoff is handled by building management.
-- Equipment-specific emergency stop or shutoff procedures must be built into the equipment and its procedure.
+- Equipment-specific e-stop or shutoff must be built into the equipment and its procedure.
 
 ## Sources / Procedure Links
 
-- Western Laboratory Health and Safety Manual: <https://www.uwo.ca/hr/form_doc/health_safety/doc/manuals/lab_safety_manual.pdf>
-- Western Master Emergency Response Plan: <https://www.uwo.ca/campussafety/pdf/resources/EmergencyResponsePlan.pdf>
+- Western Lab Safety Manual: <https://www.uwo.ca/hr/form_doc/health_safety/doc/manuals/lab_safety_manual.pdf>
+- Western Emergency Response Plan: <https://www.uwo.ca/campussafety/pdf/resources/EmergencyResponsePlan.pdf>
 
 ## Reference Checks Needed
 

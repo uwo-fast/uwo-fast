@@ -32,14 +32,17 @@
 \definecolor{lightgray}{HTML}{F3F3F3}
 
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{5pt}
-\setlist[itemize]{leftmargin=*,topsep=3pt,itemsep=2pt}
-\setlist[enumerate]{leftmargin=*,topsep=3pt,itemsep=2pt}
-\renewcommand{\arraystretch}{1.15}
+\setlength{\parskip}{3.5pt}
+\setlist[itemize]{leftmargin=*,topsep=1.5pt,itemsep=1.5pt}
+\setlist[enumerate]{leftmargin=*,topsep=1.5pt,itemsep=1.5pt}
+\renewcommand{\arraystretch}{1.12}
 
 \titleformat{\section}{\Large\bfseries\color{fastblue}}{}{0pt}{}
 \titleformat{\subsection}{\large\bfseries}{}{0pt}{}
 \titleformat{\subsubsection}{\normalsize\bfseries}{}{0pt}{}
+\titlespacing*{\section}{0pt}{7pt}{2pt}
+\titlespacing*{\subsection}{0pt}{5pt}{2pt}
+\titlespacing*{\subsubsection}{0pt}{5pt}{2pt}
 
 \newenvironment{signnotice}{\begin{framed}\small}{\end{framed}}
 

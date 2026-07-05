@@ -15,7 +15,7 @@ include_universal_notice: true
 - Read the label and SDS before storing a chemical. This sign is not a compatibility chart.
 - Keep chemicals in compatible, labeled, closed containers.
 - NEVER store bases in the acid cabinet.
-- Do not store oxidizers, peroxide formers, water-reactives, toxics, compressed gases, or other special-hazard materials by guessing from this table.
+- Do not store oxidizers, peroxide formers, water-reactives, toxics, or compressed gases by guessing from this table.
 - If you are unsure where something belongs, do not put it away: ask the PI or a post-doc.
 
 ## Common Local Storage Locations After Compatibility Check
@@ -50,7 +50,7 @@ flowchart TD
 
 - FAST uses a chemical inventory spreadsheet to track chemicals and storage locations.
 - Anyone trained and approved by the PI or a post-doc may add a chemical to storage.
-- The person adding a chemical must make sure it is labeled, compatible with its storage location, and added to the inventory.
+- Whoever adds a chemical must ensure it is labeled, compatible with its location, and recorded in the inventory.
 - Future workflow note: add a QR code to the chemical inventory spreadsheet when QR support is built.
 
 ## Related
@@ -66,4 +66,4 @@ flowchart TD
 ## Reference Checks Needed
 
 - SDS and compatibility guidance for chemical categories stored in the lab.
-- Confirm where oxidizers, peroxide formers, water-reactives, toxics, compressed gases, and other special hazards should be stored in the current FAST lab setup.
+- Confirm where oxidizers, peroxide formers, water-reactives, toxics, and compressed gases should be stored.
