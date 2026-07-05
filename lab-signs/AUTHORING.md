@@ -36,7 +36,7 @@ Every public sign should include:
 - What to do when unsure.
 - Local FAST lab details when they matter, such as cabinet, bin, station, or owner.
 - Related signs or QR-linked resources when useful.
-- Review status and owner once metadata support is added.
+- Review status and owner, set in the YAML front matter (see [Front Matter and Build](#front-matter-and-build)).
 
 Every posted sign must also be represented in the FAST lab safety binder. When a sign is added, revised, replaced, or retired, update the binder copy/index at the same time.
 
@@ -109,10 +109,10 @@ Review expectations:
 
 ## Approval Blockers
 
-Do not mark a sign `approved` while any of these are unresolved:
+Do not mark a sign `approved` (`status: approved` in the front matter) while any of these are unresolved:
 
-- It contains `DRAFT - NOT APPROVED FOR POSTING`.
-- It has unresolved `Reference Checks Needed`.
+- It still has `status: draft`, `review`, or `notes`.
+- It has unresolved `Reference Checks Needed`. The build refuses to render an `approved` sign that still contains this section.
 - It gives disposal, storage, emergency, PPE, electrical, or equipment-specific instructions without a source or local procedure.
 - It names an "approved procedure" that is not actually identified.
 - The review owner has not checked the final sign text.
@@ -122,9 +122,9 @@ Do not mark a sign `approved` while any of these are unresolved:
 
 For safety-critical signs, unresolved questions should stay visible in the draft until they are answered.
 
-## Temporary Reference Format
+## Reference Section Format
 
-Until the PDF workflow and YAML front matter exist, use a short manual reference section in drafts:
+Keep references in two sections near the end of the sign:
 
 ```markdown
 ## Sources / Procedure Links
@@ -136,7 +136,7 @@ Until the PDF workflow and YAML front matter exist, use a short manual reference
 - Specific question or local confirmation still needed.
 ```
 
-Before approval, `Reference Checks Needed` should either be resolved, moved to a working note, or kept visible only if the sign is intentionally still a draft.
+`Reference Checks Needed` is for questions that still need answering. The build prints a warning for any sign that still contains it, and hard-fails if such a sign is marked `status: approved`. Before approval, resolve each item, move it to a working note, or keep it only while the sign is intentionally still a draft.
 
 ## Writing Style
 
@@ -248,17 +248,33 @@ Scope: One short sentence describing where or when this sign applies.
 - Authoritative procedure or QR target.
 ```
 
-## Future Technical Requirements
+## Front Matter and Build
 
-After the PDF build workflow exists, this guide should be updated with the exact technical requirements for:
+Signs are built to PDF by `scripts/build_lab_signs.py` (see `lab-signs/README.md` for setup and commands). Each sign starts with YAML front matter:
 
-- YAML front matter.
-- Required metadata fields.
-- Mermaid diagrams.
-- LaTeX equations.
-- Reference formatting.
-- FAST logo placement.
-- Generated source/provenance metadata.
-- PDF rendering checks.
+```yaml
+---
+title: "Sink"                 # display title, shown in the page header
+slug: "sink"                  # output filename (sink.pdf); match the source filename stem
+version: "0.1"
+status: "draft"               # notes | draft | review | approved | retired
+review_owner: "PI / post-doc"
+include_universal_notice: true  # optional, defaults to true
+---
+```
 
-Until then, prioritize clear sign text, verified claims, and review ownership.
+`title`, `slug`, `version`, `status`, and `review_owner` are required; the build fails if any are missing.
+
+What the build adds automatically, so you do not write it into each sign:
+
+- **Universal notice** — the boxed "Before You Work" callout from `_UNIVERSAL_NOTICE.md` is inserted just below the sign title, unless `include_universal_notice: false`. Edit it in one place; it updates on every sign.
+- **Sign Metadata** — a small table (version, status, review owner, last updated) plus a source/provenance line is appended to the end of each sign.
+- **Header/footer** — FAST logo, title, `version | status`, source path, and page numbers.
+
+Content features you can use in a sign body:
+
+- **Mermaid diagrams** — a ```` ```mermaid ```` fenced block is rendered to a centred PNG. Prefer simple flowcharts; dense diagrams print small.
+- **Math** — `$P = IV$` inline, or `$$ ... $$` for display equations.
+- **Tables and bullets** — standard Markdown; use tables for classification and bullets for short actions.
+
+Do not hand-add a `DRAFT` banner or a metadata table; the header status and the appended metadata cover both.
