@@ -7,6 +7,6 @@
     "build:lab-signs": "python3 scripts/build_lab_signs.py --all"
   },
   "devDependencies": {
-    "@mermaid-js/mermaid-cli": "^11.16.0"
+    "@mermaid-js/mermaid-cli": "^11.17.0"
   }
 }
