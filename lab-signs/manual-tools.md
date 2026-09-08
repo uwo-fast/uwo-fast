@@ -37,14 +37,14 @@ include_universal_notice: true
 - Leave a clear note on the tool if it could injure the next user.
 - Tell the PI or a post-doc so the tool can be repaired, replaced, or removed.
 
-## Sources / Procedure Links
-
-- Western knife and sharp object safety: <https://www.uwo.ca/hr/safety/topics/knife_safety.html>
-
 ## Related
 
 - See [Power Tools](power-tools.md) for hand-held powered tools.
 - See [Stationary Tools](stationary-tools.md) for fixed powered tools in TEB6.
+
+## Sources / Procedure Links
+
+- Western knife and sharp object safety: <https://www.uwo.ca/hr/safety/topics/knife_safety.html>
 
 ## Reference Checks Needed
 

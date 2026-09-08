@@ -20,8 +20,6 @@ include_universal_notice: true
 
 ## Common Local Storage Locations After Compatibility Check
 
-These are common local storage locations after a compatibility check.
-
 | Item / category | Location | Notes |
 | --- | --- | --- |
 | Acids | Right lower cabinet of the fume hood | Never store bases here. Confirm compatibility before storage. |

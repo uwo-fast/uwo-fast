@@ -56,12 +56,17 @@ flowchart TD
 ## Do Not Guess
 
 - Do not neutralize, dilute, evaporate, rinse, or pour out chemical waste unless an approved procedure explicitly says to do so.
-- Do not mix waste streams to "make it easier" to discard.
+- Do not mix waste streams to make discarding easier.
 - Do not put contaminated material in paper, container, or polymer recycling.
 - Western hazardous waste guidance says unknowns must be identified or characterized before acceptance.
 - The person who generated the waste must segregate and label it correctly before asking the PI/post-doc to submit the Western hazardous-waste pickup request.
 - Hazardous waste awaiting pickup must be in a proper, labeled, compatible container below the sink, in the flammables cabinet, or in a fume hood cabinet as appropriate for the waste.
 - When in doubt, ask the PI, a post-doc, or the responsible equipment owner.
+
+## Related
+
+- See [Batteries and E-Waste](batteries-and-ewaste.md).
+- See [Broken Glass and Sharps](broken-glass-and-sharps.md).
 
 ## Sources / Procedure Links
 
@@ -70,11 +75,6 @@ flowchart TD
 - Western sorting guidance: <https://sustainability.uwo.ca/Campus/waste_reduction/sorting_at_western.html>
 - Western recycling and waste services: <https://uwo.ca/fm/what/maintenance/recycling.html>
 - Western knife/sharps safety: <https://www.uwo.ca/hr/safety/topics/knife_safety.html>
-
-## Related
-
-- See [Batteries and E-Waste](batteries-and-ewaste.md).
-- See [Broken Glass and Sharps](broken-glass-and-sharps.md).
 
 ## Reference Checks Needed
 

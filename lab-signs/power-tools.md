@@ -35,7 +35,7 @@ include_universal_notice: true
 
 - Wear close-fitting, task-appropriate gloves when using an angle grinder to protect against sparks, abrasion, and hot or sharp material.
 - Do not wear gloves where they could become caught in a rotating or reciprocating tool.
-- For handheld circular saws, follow the manufacturer's instructions and site-specific procedure rather than assuming gloves are required.
+- For handheld circular saws, follow the manufacturer instructions and site-specific procedure rather than assuming gloves are required.
 - Gloves may be used to handle blades, burrs, or sharp stock after the tool is stopped, unplugged or battery-isolated, and unable to restart.
 
 ## Where To Work

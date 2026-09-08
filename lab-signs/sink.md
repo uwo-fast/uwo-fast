@@ -14,12 +14,12 @@ include_universal_notice: true
 - Keep the sink and surrounding counter clear for shared use.
 - Do not store parts, containers, tools, dishes, or projects in or around the sink.
 - If the sink is dirty, clean it before you leave and sign the cleaning log.
-- If you are repeatedly cleaning up someone else's mess, raise it with the PI or a post-doc.
+- If you are repeatedly cleaning up after other people, raise it with the PI or a post-doc.
 
 ## Never Use The Sink For Disposal
 
 - Do not pour chemicals, solvents, oils, greases, resins, acids, bases, or contaminated rinses down the drain.
-- Do not rinse chemical containers, contaminated tools, gloves, or parts in the sink unless an approved procedure says to do so.
+- Do not rinse chemical containers, contaminated tools, gloves, or parts in the sink unless an approved procedure allows it.
 - Do not pour very hot liquids down the sink. Allow them to cool first.
 - Do not guess. If you are unsure, stop and ask before anything goes down the drain.
 
