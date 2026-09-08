@@ -235,6 +235,9 @@ def render_pdf(markdown_path: Path, output_path: Path, metadata: dict[str, Any],
     cmd = [
         "pandoc",
         str(markdown_path),
+        # -smart is deliberate: with smart quotes on, pandoc emits Unicode curly
+        # quotes, which the template's font cannot render and which then vanish
+        # entirely. Keep it off until the template gains a Unicode font.
         "--from", "markdown+tex_math_dollars-smart",
         "--pdf-engine=lualatex",
         "--template", str(TEMPLATE),
@@ -258,10 +261,27 @@ def render_pngs(pdf_paths: list[Path]) -> bool:
     if cmd is None:
         print("warning: --png requested but pdftoppm/pdftocairo not found", file=sys.stderr)
         return False
+    # pdftoppm writes one file per page, so a sign that loses a page would keep
+    # its stale trailing image here and misrepresent the current PDF.
+    shutil.rmtree(PNG_DIR, ignore_errors=True)
     PNG_DIR.mkdir(parents=True, exist_ok=True)
     for pdf in pdf_paths:
         run([*cmd, "-png", "-r", "150", str(pdf), str(PNG_DIR / pdf.stem)])
     return True
+
+
+def check_renderable(body: str, path: Path) -> None:
+    # The LaTeX template has no Unicode font set up, so lualatex drops any
+    # non-ASCII character with only a warning: "260 \u00b0C" renders as "260 C"
+    # and "\u00b15 V" as "5 V". Fail loudly instead of shipping a corrupted sign.
+    bad = sorted({ch for ch in body if ord(ch) > 127})
+    if not bad:
+        return
+    detail = ", ".join(f"{ch!r} (U+{ord(ch):04X})" for ch in bad)
+    raise BuildError(
+        f"{relative(path)}: non-ASCII characters will not render and would be "
+        f"silently dropped from the PDF: {detail}"
+    )
 
 
 def check_reference_policy(metadata: dict[str, Any], body: str, path: Path) -> None:
@@ -292,6 +312,7 @@ def build(paths: list[Path]) -> dict[str, Any]:
 
     for path in paths:
         metadata, markdown = prepare_markdown(path)
+        check_renderable(markdown, path)
         check_reference_policy(metadata, markdown, path)
         sign_artifacts = ARTIFACTS_DIR / str(metadata["slug"])
         markdown = render_mermaid(markdown, sign_artifacts)
