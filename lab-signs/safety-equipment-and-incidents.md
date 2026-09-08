@@ -9,7 +9,7 @@ include_universal_notice: true
 
 # Safety Equipment and Incidents
 
-Emergency contacts are posted on the lab doors (Western signage). Follow them and Western emergency procedures.
+Emergency contacts are posted on the lab doors. Follow them and Western emergency procedures.
 
 ## Know The Locations
 
@@ -18,7 +18,7 @@ Emergency contacts are posted on the lab doors (Western signage). Follow them an
 | Eyewash | Beside the sink. |
 | Spill kit | Hallway outside the lab. |
 | Safety shower | Hallway outside the lab. |
-| First aid kit | West-wall TEB7 cabinet with the large red safety-kit symbol. |
+| First aid kit | West-wall TEB7 cabinet, large red safety-kit symbol. |
 | Lab safety binder | West-wall TEB7 safety cabinet with the first aid kit. |
 | Fire extinguisher | Immediately beside the TEB6 door to the hallway. |
 | Emergency contacts | Posted on lab doors facing the hallway. |
@@ -35,7 +35,7 @@ Emergency contacts are posted on the lab doors (Western signage). Follow them an
 
 - If an uncontrollable reaction occurs in the fume hood, close the sash and set maximum exhaust if safe.
 - Evacuate the lab and get help.
-- Remove contaminated clothing/PPE only if safe; leave it near the fume hood or as directed by emergency procedure.
+- Remove contaminated clothing/PPE only if safe; leave it near the hood or as directed by emergency procedure.
 
 ## Emergency Shutoff
 
@@ -45,8 +45,8 @@ Emergency contacts are posted on the lab doors (Western signage). Follow them an
 
 ## Sources / Procedure Links
 
-- Western Lab Safety Manual: <https://www.uwo.ca/hr/form_doc/health_safety/doc/manuals/lab_safety_manual.pdf>
-- Western Emergency Response Plan: <https://www.uwo.ca/campussafety/pdf/resources/EmergencyResponsePlan.pdf>
+- Lab Safety Manual: <https://www.uwo.ca/hr/form_doc/health_safety/doc/manuals/lab_safety_manual.pdf>
+- Emergency Response Plan: <https://www.uwo.ca/campussafety/pdf/resources/EmergencyResponsePlan.pdf>
 
 ## Reference Checks Needed
 
