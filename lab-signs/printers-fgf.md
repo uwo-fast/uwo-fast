@@ -11,8 +11,9 @@ include_universal_notice: true
 
 ## Trained Users Only
 
-- This is a GreenBoy3D pellet extruder on a converted Prusa MK3S. It takes granulate
-  feedstock instead of filament and is a specialty machine, not a shared printer.
+- This is a GreenBoy3D pellet extruder on a converted Prusa MK3S in TEB7. It takes
+  granulate feedstock instead of filament and is a specialty machine, not a shared
+  printer.
 - STOP. Do not use an FGF printer without express permission and training from a post-doc
   or Dr. Pearce.
 - Training covers the extruder, the feedstock rules, purging, and the waste route. Being
@@ -53,6 +54,8 @@ from those prints, printed again, is cycle 2.
 
 ## Before You Print
 
+- Wear eye protection when loading or unloading the machine, and any time the enclosure
+  doors are open.
 - Check the hopper is clear and holds the feedstock you expect. Do not mix polymers in a
   hopper.
 - Confirm the previous user purged the barrel, or purge it yourself before starting.
@@ -70,6 +73,9 @@ from those prints, printed again, is cycle 2.
   Clear blockages only when the machine is off and you have been trained to do it.
 - Purge material comes out hot and in quantity. NEVER let it land on your hand or the
   floor. Aim it into a tray; the bed works but makes more cleanup.
+- NEVER leave a print running unattended, and no overnight runs. The bulk hopper holds
+  enough to outlast you; that is not permission to walk away. If you have to leave, stop
+  the print.
 - Stop the print if the extruder grinds, stalls, runs empty, smokes, or smells wrong.
 - Do not restart the same failing job without finding the cause. A repeated jam damages
   the auger and barrel.

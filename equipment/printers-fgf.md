@@ -32,7 +32,9 @@ It is the sixth MK3S chassis in the lab and the fourth fitted with an enclosure 
 filtration. It is not one of the five printers the [FFF Printers](../lab-signs/printers-fff.md)
 sign covers; those remain five machines, three of them enclosed.
 
-Approved polymers: **PLA and PETG**.
+Approved polymers: **PLA and PETG**. Located in TEB7. Eye protection is required when
+loading or unloading the machine and whenever the enclosure doors are open. Unattended
+and overnight runs are not permitted.
 
 ## FAST project repositories
 
@@ -121,6 +123,7 @@ Collected here because they are what the wall sign is built from.
 ## To Be Recorded From This Installation
 
 - [ ] Printer asset ID
+- [ ] PolyLite PLA and PETG technical data sheets, for the drying figures
 - [ ] Configured hotend and bed temperature per polymer
 - [ ] Installed nozzle diameter
 - [ ] Measured virgin pellet bulk density, if virgin becomes the main feedstock
