@@ -22,7 +22,7 @@ include_universal_notice: true
 | --- | --- |
 | Clean broken glass | Labelled glass container under the sink. NEVER the regular garbage. |
 | Razor blades, needles, scalpel blades, or similar sharps | A sharps container. NEVER the glass container: Western requires sharps to be kept separate from broken glass. |
-| Chemical-contaminated glass or sharps | Western-approved sharps container with a completed "Hazardous Material for Disposal" label. Ask first. |
+| Chemical-contaminated glass or sharps | Western-approved sharps container with a completed Hazardous Material for Disposal label. Ask first. |
 | Unknown contamination | Stop and ask the PI or a post-doc. |
 
 ## When Full Or Ready For Removal
