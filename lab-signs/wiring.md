@@ -39,6 +39,12 @@ include_universal_notice: true
 - Keep access to outlets, disconnects, panels, breakers, and emergency shutoffs clear.
 - Use GFCI or other required protection where the procedure requires it, especially near wet or conductive areas.
 
+## Quick Checks
+
+For DC loads: $P = IV$ $\quad | \quad$ For resistive loads: $V = IR$ $\quad | \quad$ For a first-pass voltage-drop check: $\Delta V = IR$
+
+Check voltage, current, power, connector rating, wire rating, fuse/protection, startup current, duty cycle, enclosure heat, and fault conditions together. Do not size wiring from one number alone.
+
 ## Before Power-Up
 
 ```mermaid
@@ -56,14 +62,6 @@ flowchart TD
 - Check that fuses, breakers, connectors, wires, and supplies are rated for the expected load.
 - Ask Cameron B. or Dr. Pearce for the appropriate electrical reviewer before first power-up of review-required wiring.
 - Stay with the equipment during first power-up and be ready to disconnect power.
-
-## Quick Checks
-
-- For DC loads: $P = IV$
-- For resistive loads: $V = IR$
-- For a first-pass voltage-drop check: $\Delta V = IR$
-
-Check voltage, current, power, connector rating, wire rating, fuse/protection, startup current, duty cycle, enclosure heat, and fault conditions together. Do not size wiring from one number alone.
 
 ## Reference Checks Needed
 
