@@ -117,6 +117,12 @@ The Western-published half is done; signs now cite real documents. What is left 
 ### C3. QR links — not blocking v1
 
 - [ ] Track as a v1.x enhancement once QR support is built.
+- [ ] **Cross-sign links wait on this.** Eleven signs carry 17 Markdown links in their
+      Related sections. On paper those render as blue text that does nothing, which is
+      what `equipment/README.md` already says: a Markdown link on a wall does nothing,
+      and a sign that needs to reach a longer document wants a QR code. Decision on
+      2026-09-09 was to leave them until QR support lands rather than convert them to
+      plain text now. `printers-fgf` is the exception and already uses plain text.
 
 ## Deferred, not blocking
 
