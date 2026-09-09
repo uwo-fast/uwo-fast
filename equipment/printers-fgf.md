@@ -144,7 +144,14 @@ Collected here because they are what the wall sign is built from.
   <https://github.com/uwo-fast/gb3dpe-pellet-system/issues/2>; do not cite that README as
   current until it is closed.
 - Drying temperatures on the sign (PLA 45 °C for 4-6 h, PETG 60 °C for 6 h) are general
-  practice, with the PETG figure from Polymaker for PolyLite PETG. Alessia R. to review.
+  practice and are **not** attributable to Polymaker. Its PolyDryer blog post says
+  "a lower temp (around 65-70 °C) is fine for common filaments like PLA and PETG",
+  which is above the glass transition of standard PLA and contradicts the same page's
+  description of its own hardware running 40-55 °C. It is marketing copy, not a data
+  sheet. The figures posted are deliberately more conservative because FAST dries loose
+  shred rather than spooled filament, and shred above its softening point sinters into
+  a solid lump. Get the PolyLite PLA and PETG technical data sheets for a real source;
+  Alessia R. to review either way.
 - Reprocessing limits on the sign are published figures, not FAST measurements.
 - Vendor specifications above were taken from the project repository's compiled reference
   rather than read from the vendor page directly. Confirm before relying on them.
