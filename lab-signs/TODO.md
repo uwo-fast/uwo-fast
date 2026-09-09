@@ -120,29 +120,32 @@ The Western-published half is done; signs now cite real documents. What is left 
 - [ ] Confirm the FAST lab safety binder index exists and define the step for adding or
       updating a sign there. Every sign's approval depends on it.
 
-### C3. QR links — not blocking v1
+### C3. QR links — done
 
-Design settled 2026-09-09. Each sign gets **one** QR pointing at its own page on the
-FAST site, and that page is the hub: clickable sources, links to related signs, and the
-equipment record where one exists. One code per sign means new targets can be added
-later without reprinting, which is the point of having a page in the middle at all.
+Each sign carries one QR pointing at its own page on the FAST site, which is the hub:
+clickable sources, working links to related signs, and the equipment record where one
+exists. One code per sign means a new target can be added by editing the page rather than
+reprinting a sign.
 
-The URL contract is `https://uwo-fast.github.io/signs/<slug>/`, using the `slug` already
-in each sign's front matter. It deliberately encodes neither the repo name nor a
-directory path, so this repo can be restructured without killing codes already on the
-wall.
+The URL contract is `https://uwo-fast.github.io/signs/<slug>/`, from the `slug` in each
+sign's front matter. It encodes neither the repo name nor a directory path, so this repo
+can be restructured without killing codes already on a wall. The site build refuses to
+publish a sign whose filename has drifted from its slug.
 
-- [ ] Site work: <https://github.com/uwo-fast/uwo-fast.github.io/issues/3>. **Nothing can
-      be printed with a QR until those URLs are live** — a dead code on a posted sign
-      cannot be recalled.
-- [ ] Then, in this repo: generate a QR per sign from the manifest and place it on the
-      sign, with the URL printed underneath so it still works when a camera will not
-      scan. Use error correction M or Q, not the L that `lab-qr-codes/` currently uses;
-      these signs are meant to be pen-corrected and will get scuffed.
-- [ ] **Cross-sign links resolve as a side effect.** Eleven signs carry 17 Markdown links
-      that do nothing on paper. On the site they become real links between sign pages,
-      so this closes itself once the above lands. Decision was to leave them rather than
-      convert to plain text; `printers-fgf` is the exception and already uses plain text.
+Verified end to end: all 16 codes decode out of the rendered PDFs and every decoded URL
+returns 200 on the live site.
+
+One consequence to keep in mind. The QR sits beside the standing notice, which narrows
+that box and costs roughly three lines on every sign. `stationary-tools` went back to two
+pages because of it, with one source link on page two.
+
+- [ ] Decide whether to shorten `_UNIVERSAL_NOTICE.md`. Its three bullets each wrap to two
+      lines in the narrower box; making them fit one line each would return that space to
+      every sign and put `stationary-tools` back on one page. It is the standing safety
+      notice, so it is not a change to make casually.
+- [ ] Cross-sign Markdown links still render as blue text that does nothing on paper. The
+      QR now gives a route to the online version where they work, so this is cosmetic
+      rather than broken. `printers-fgf` uses plain text instead.
 
 ## Deferred, not blocking
 

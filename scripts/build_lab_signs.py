@@ -14,6 +14,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
+import qrcode
 import yaml
 
 
@@ -26,6 +27,11 @@ PNG_DIR = ARTIFACTS_DIR / "png"
 TEMPLATE = ROOT / "templates" / "lab-sign.tex"
 LOGO = ROOT / "branding" / "logos" / "FASTlogobw.png"
 MERMAID_CONFIG = ROOT / "scripts" / "mermaid-puppeteer-config.json"
+QR_DIR = ARTIFACTS_DIR / "qr"
+
+# The published home of each sign. This is a contract: the QR codes printed onto
+# posted signs cannot be recalled, so the path must not change. See AUTHORING.md.
+SITE_SIGNS_BASE = "https://uwo-fast.github.io/signs"
 
 REQUIRED_FRONTMATTER = {
     "title",
@@ -178,6 +184,30 @@ def render_mermaid(markdown: str, sign_artifacts: Path) -> str:
     return MERMAID_RE.sub(replace, markdown)
 
 
+def sign_url(slug: str) -> str:
+    return f"{SITE_SIGNS_BASE}/{slug}/"
+
+
+def render_qr(slug: str) -> Path:
+    """Write the QR for one sign and return its path.
+
+    Error correction Q (25% recovery) rather than the library default. These are
+    posted on a lab wall, get scuffed, and are meant to be pen-corrected between
+    reprints, so damage tolerance is worth the extra modules.
+    """
+    QR_DIR.mkdir(parents=True, exist_ok=True)
+    code = qrcode.QRCode(
+        error_correction=qrcode.constants.ERROR_CORRECT_Q,
+        box_size=16,
+        border=4,
+    )
+    code.add_data(sign_url(slug))
+    code.make(fit=True)
+    output = QR_DIR / f"{slug}.png"
+    code.make_image(fill_color="black", back_color="white").save(output)
+    return output
+
+
 def relative(path: Path) -> str:
     return path.relative_to(ROOT).as_posix()
 
@@ -190,36 +220,68 @@ def source_urls(path: Path, ctx: dict[str, str]) -> tuple[str, str]:
     return branch_url, pinned_url
 
 
-def universal_notice_markdown() -> str:
+def qr_block_latex(slug: str) -> str:
+    """The QR and its URL, as a right-hand column."""
+    return (
+        "\\begin{minipage}[t]{0.21\\textwidth}\\vspace{0pt}\\raggedleft\n"
+        f"\\includegraphics[width=24mm,height=24mm]{{{relative(render_qr(slug))}}}\\\\[2pt]\n"
+        "{\\scriptsize Online version}\n"
+        "\\end{minipage}"
+    )
+
+
+def notice_and_qr_markdown(slug: str, with_notice: bool) -> str:
+    """The standing notice and the sign's QR, side by side beneath the title.
+
+    The QR lives here rather than in the running header because a code needs
+    roughly 24mm to scan reliably off a wall, and a header that tall would
+    overflow the top margin on every page. Beside the notice it costs no extra
+    vertical space at all.
+    """
+    if not with_notice:
+        return (
+            "```{=latex}\n\\noindent\\hfill"
+            + qr_block_latex(slug)
+            + "\n```\n"
+        )
+
     text = UNIVERSAL_NOTICE.read_text().strip()
     text = re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL).strip()
     # Demote the leading level-1 heading to a bold label so the notice reads as
     # a compact callout instead of a second page title.
     text = re.sub(r"^#\s+(.+)$", r"**\1**", text, count=1, flags=re.MULTILINE)
     return (
-        "```{=latex}\n\\begin{signnotice}\n```\n\n"
+        "```{=latex}\n"
+        "\\noindent\\begin{minipage}[t]{0.76\\textwidth}\\vspace{0pt}\n"
+        "\\begin{signnotice}\n```\n\n"
         + text
-        + "\n\n```{=latex}\n\\end{signnotice}\n```\n"
+        + "\n\n```{=latex}\n\\end{signnotice}\n"
+        "\\end{minipage}\\hfill\n"
+        + qr_block_latex(slug)
+        + "\n```\n"
     )
 
 
 def prepare_markdown(path: Path) -> tuple[dict[str, Any], str]:
     metadata, body = parse_frontmatter(path)
-    if metadata.get("include_universal_notice", True):
-        notice = universal_notice_markdown()
-        # Keep the sign title first; place the standing notice just beneath it.
-        heading = re.match(r"#\s+.+\n", body)
-        if heading:
-            body = body[: heading.end()] + "\n" + notice + "\n" + body[heading.end():]
-        else:
-            body = notice + "\n\n" + body
+    block = notice_and_qr_markdown(
+        metadata["slug"], metadata.get("include_universal_notice", True)
+    )
+    # Keep the sign title first; the notice and QR sit just beneath it.
+    heading = re.match(r"#\s+.+\n", body)
+    if heading:
+        body = body[: heading.end()] + "\n" + block + "\n" + body[heading.end():]
+    else:
+        body = block + "\n\n" + body
     return metadata, body
 
 
 def pandoc_metadata_args(metadata: dict[str, Any], source_path: Path) -> list[str]:
     # Provenance (commit links, generated timestamp) lives in manifest.json; the
     # sign face only carries the human-useful identifiers, rendered in the footer.
-    return [
+    # The QR and its URL are placed in the body, beside the standing notice, so
+    # they are not passed to the template.
+    args = [
         "--metadata", f"title={metadata['title']}",
         "--metadata", f"version={metadata['version']}",
         "--metadata", f"status={metadata['status']}",
@@ -228,6 +290,10 @@ def pandoc_metadata_args(metadata: dict[str, Any], source_path: Path) -> list[st
         "--metadata", f"source_path={relative(source_path)}",
         "--metadata", f"logo_path={relative(LOGO)}",
     ]
+    slug = metadata.get("slug")
+    if slug:
+        args += ["--metadata", f"sign_url={sign_url(slug).removeprefix('https://')}"]
+    return args
 
 
 def render_pdf(markdown_path: Path, output_path: Path, metadata: dict[str, Any], source_path: Path) -> None:
@@ -335,6 +401,7 @@ def build(paths: list[Path]) -> dict[str, Any]:
             "branch_url": branch_url,
             "pinned_url": pinned_url,
             "last_updated": last_updated_for(path),
+            "url": sign_url(metadata["slug"]),
         })
         combined_parts.append(markdown)
 

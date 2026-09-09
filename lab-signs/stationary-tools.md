@@ -54,4 +54,4 @@ include_universal_notice: true
 
 - CCOHS drill presses: <https://www.ccohs.ca/oshanswers/safety_haz/metalworking/drillpresses.html>
 - CCOHS woodworking machines: <https://www.ccohs.ca/oshanswers/safety_haz/woodwork/gen_safe.html>
-- Western Engineering student shop safe operation procedures: <https://www.eng.uwo.ca/departments-units/student-shop/health-safety.html>
+- Western Engineering shop procedures: <https://www.eng.uwo.ca/departments-units/student-shop/health-safety.html>

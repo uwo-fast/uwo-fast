@@ -1,1 +1,2 @@
 PyYAML>=6.0.3
+qrcode[pil]>=8.0
