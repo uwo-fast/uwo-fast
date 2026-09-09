@@ -6,7 +6,7 @@ here; see the git history for what has already been closed.
 Last reviewed: 2026-09-09. See [AUTHORING.md](AUTHORING.md) for the review process,
 reference rules, and approval blockers this list is built from.
 
-All 15 signs are `status: review` at v0.1. AUTHORING defines `review` as awaiting PI,
+All 16 signs are `status: review` at v0.1. AUTHORING defines `review` as awaiting PI,
 post-doc, equipment owner, or subject-matter review, which is where they are. That state
 builds; only `approved` hard-fails while a `Reference Checks Needed` section remains.
 
@@ -22,9 +22,6 @@ blocks printing only if a person following the sign could be hurt or misdirected
       broken-glass container ([Lab Safety Manual](https://www.uwo.ca/hr/form_doc/health_safety/doc/manuals/lab_safety_manual.pdf)
       8.7). The lab has one combined under-sink bin. The sign is correct; the lab is not.
       The only item where posting as-is leaves a real hazard.
-- [ ] **Decide `printers-fgf`.** Untracked, still `draft`, and the build globs
-      `lab-signs/*.md`, so it is already in the combined PDF. Finish it or move it out
-      before the packet goes to Dr. Pearce.
 
 ## For Dr. Pearce, with the packet
 
@@ -59,6 +56,7 @@ on anyone outside the group.
 | power-tools | Equipment | Tool-access owner | 1 | 2 | **yes** |
 | stationary-tools | Equipment | Training/sign-off owner | 2 | 2 | **yes** |
 | printers-fff | Equipment | Printer owner | 1 | 1 | **yes** |
+| printers-fgf | Equipment | Alessia R. / printer owner | **0** | 2 | clear |
 | soldering-station | Equipment | Station owner | 2 | 1 | **yes** |
 | manual-tools | Equipment | — (light) | 1 | 1 | **yes** |
 | general-storage | Housekeeping | — (light) | 1 | 1 | **yes** |
@@ -95,6 +93,10 @@ Ten of the twenty need only a decision, a number, or a document already in hand.
 - [ ] **wiring** ×2 — examples of approved wiring/enclosures, and the applicable equipment
       manuals, datasheets, certification and local code/ESA requirements.
 - [ ] **stationary-tools** — local PPE and dust-control requirements per tool.
+- [ ] **printers-fgf** — the drying figures on the sign (PLA 45 C for 4-6 h, PETG 60 C
+      for 6 h) are labelled general practice and carry no citation. Polymaker blocks
+      automated access so its PolyLite PETG figure could not be verified. Either cite a
+      readable source or make it a named FAST procedure once Alessia R. has weighed in.
 
 ## Cross-Cutting Blockers
 

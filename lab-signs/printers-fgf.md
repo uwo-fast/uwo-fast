@@ -103,3 +103,5 @@ from those prints, printed again, is cycle 2.
 - FAST pellet system and operating docs: <https://github.com/uwo-fast/gb3dpe-pellet-system>
 - EPA, particle and VOC emissions from a 3D printer filament extruder:
   <https://cfpub.epa.gov/si/si_public_record_Report.cfm?Lab=CPHEA&dirEntryId=348894>
+- Reprocessing limits, Hidalgo-Carvajal et al., Polymers 2023:
+  <https://pmc.ncbi.nlm.nih.gov/articles/PMC10490016/>
