@@ -34,6 +34,6 @@ include_universal_notice: true
 
 ## Sources / Procedure Links
 
-- Western sorting guidance: <https://sustainability.uwo.ca/Campus/waste_reduction/sorting_at_western.html>
+- Western sorting guidance: <https://sustainability.uwo.ca/campus/waste-reduction/what-goes-where.html>
 - Western recycling and waste services: <https://uwo.ca/fm/what/maintenance/recycling.html>
 - Western Hazardous Materials and Waste Management Handbook: <https://www.uwo.ca/hr/form_doc/health_safety/doc/manuals/hazardous_handbook.pdf>

@@ -200,15 +200,29 @@ Use QR links for detail:
 - Manufacturer manuals.
 - Full reference lists.
 
-Each sign gets **one** QR, pointing at its own page on the FAST site at
-`https://uwo-fast.github.io/signs/<slug>/`, built from the `slug` in its front matter.
-That page is the hub: clickable sources, links to related signs, and the equipment record
-where one exists. One code per sign means a new target can be added later by editing the
-page, without reprinting anything.
+**Every link on a sign is printed as a QR code, not as text.** A URL on paper cannot be
+used: nobody types ninety characters into a phone, and a Markdown link to another sign is
+just blue ink. The build strips both and renders one code per link instead.
 
-**Treat that URL as a contract.** A printed QR cannot be recalled, so the path encodes
-neither the repo name nor a directory: this repo can be restructured without breaking
-codes already on a wall. See `TODO.md` C3.
+Write sources the normal way and the build does the rest:
+
+```markdown
+## Sources / Procedure Links
+
+- Source title: <https://example.com/source>
+```
+
+The `## Related` bullets are folded into the same strip, pointing at
+`https://uwo-fast.github.io/signs/<slug>/` for the sign they name. Keeping them in one
+strip is deliberate: a second block would cost height on every sign, and this way related
+signs cost nothing.
+
+The label before the colon becomes the caption under the code, so keep it short. It is
+what someone reads to decide which code to scan.
+
+**Treat the sign URL as a contract.** A printed code cannot be recalled, so
+`/signs/<slug>/` encodes neither the repo name nor a directory: this repo can be
+restructured without breaking codes already on a wall.
 
 ## Warning Language
 

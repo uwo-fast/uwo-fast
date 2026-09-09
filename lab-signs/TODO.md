@@ -122,30 +122,18 @@ The Western-published half is done; signs now cite real documents. What is left 
 
 ### C3. QR links — done
 
-Each sign carries one QR pointing at its own page on the FAST site, which is the hub:
-clickable sources, working links to related signs, and the equipment record where one
-exists. One code per sign means a new target can be added by editing the page rather than
-reprinting a sign.
+Every link on a sign prints as a QR code rather than as text. A URL on paper cannot be
+used and a Markdown link to another sign is just blue ink, so the build strips both and
+renders one code per link, captioned with its label. Related signs are folded into the
+same strip, which is why they now cost no height of their own.
 
-The URL contract is `https://uwo-fast.github.io/signs/<slug>/`, from the `slug` in each
-sign's front matter. It encodes neither the repo name nor a directory path, so this repo
-can be restructured without killing codes already on a wall. The site build refuses to
+The sign URL contract is `https://uwo-fast.github.io/signs/<slug>/`, from the `slug` in
+front matter. It encodes neither the repo name nor a directory path, so this repo can be
+restructured without killing codes already on a wall, and the site build refuses to
 publish a sign whose filename has drifted from its slug.
 
-Verified end to end: all 16 codes decode out of the rendered PDFs and every decoded URL
-returns 200 on the live site.
-
-One consequence to keep in mind. The QR sits beside the standing notice, which narrows
-that box and costs roughly three lines on every sign. `stationary-tools` went back to two
-pages because of it, with one source link on page two.
-
-- [ ] Decide whether to shorten `_UNIVERSAL_NOTICE.md`. Its three bullets each wrap to two
-      lines in the narrower box; making them fit one line each would return that space to
-      every sign and put `stationary-tools` back on one page. It is the standing safety
-      notice, so it is not a change to make casually.
-- [ ] Cross-sign Markdown links still render as blue text that does nothing on paper. The
-      QR now gives a route to the online version where they work, so this is cosmetic
-      rather than broken. `printers-fgf` uses plain text instead.
+Verified: all 57 codes decode to exactly the link written in their sign, and no sign
+gained a page.
 
 ## Deferred, not blocking
 

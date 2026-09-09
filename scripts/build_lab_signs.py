@@ -188,24 +188,58 @@ def sign_url(slug: str) -> str:
     return f"{SITE_SIGNS_BASE}/{slug}/"
 
 
-def render_qr(slug: str) -> Path:
-    """Write the QR for one sign and return its path.
+# A source bullet may wrap, with the URL on its own continuation line.
+SOURCE_RE = re.compile(
+    r"^- (?P<label>[^:\n]+?):\s*\n?\s*<(?P<url>https?://[^>]+)>\s*$", re.MULTILINE
+)
+RELATED_RE = re.compile(r"\[(?P<label>[^\]]+)\]\((?P<slug>[a-z0-9-]+)\.md\)")
 
-    Error correction Q (25% recovery) rather than the library default. These are
-    posted on a lab wall, get scuffed, and are meant to be pen-corrected between
-    reprints, so damage tolerance is worth the extra modules.
+
+def render_qr(name: str, data: str) -> Path:
+    """Write one QR and return its path.
+
+    Error correction M. These are posted on a lab wall and get scuffed, but the
+    links they carry are long, and every level above M costs modules that make
+    the printed code smaller per module rather than more robust.
     """
     QR_DIR.mkdir(parents=True, exist_ok=True)
     code = qrcode.QRCode(
-        error_correction=qrcode.constants.ERROR_CORRECT_Q,
+        error_correction=qrcode.constants.ERROR_CORRECT_M,
         box_size=16,
         border=4,
     )
-    code.add_data(sign_url(slug))
+    code.add_data(data)
     code.make(fit=True)
-    output = QR_DIR / f"{slug}.png"
+    output = QR_DIR / f"{name}.png"
     code.make_image(fill_color="black", back_color="white").save(output)
     return output
+
+
+def source_qr_block(slug: str, sources: list[tuple[str, str]]) -> str:
+    """Render the sources as a row of QR codes, each captioned with its label.
+
+    A printed URL is unusable: nobody types ninety characters into a phone, so
+    the URL text is replaced by the code that reaches it. They sit in one row
+    with the caption underneath rather than one code per line, because that way
+    the block is a fixed height whatever the number of sources.
+    """
+    cells = []
+    for index, (label, url) in enumerate(sources, start=1):
+        path = relative(render_qr(f"{slug}-{index}", url))
+        cells.append(
+            "\\begin{minipage}[t]{22mm}\\centering"
+            f"\\includegraphics[width=20mm,height=20mm]{{{path}}}\\\\[1pt]"
+            f"{{\\tiny {escape_latex(label)}\\par}}"
+            "\\end{minipage}"
+        )
+    strip = "\\hspace{2mm}".join(cells)
+    return "```{=latex}\n" f"\\noindent {strip}\n" "```\n"
+
+
+def escape_latex(text: str) -> str:
+    for char in ("\\", "&", "%", "$", "#", "_", "{", "}"):
+        text = text.replace(char, "\\" + char)
+    return text
 
 
 def relative(path: Path) -> str:
@@ -220,59 +254,82 @@ def source_urls(path: Path, ctx: dict[str, str]) -> tuple[str, str]:
     return branch_url, pinned_url
 
 
-def qr_block_latex(slug: str) -> str:
-    """The QR and its URL, as a right-hand column."""
-    return (
-        "\\begin{minipage}[t]{0.21\\textwidth}\\vspace{0pt}\\raggedleft\n"
-        f"\\includegraphics[width=24mm,height=24mm]{{{relative(render_qr(slug))}}}\\\\[2pt]\n"
-        "{\\scriptsize Online version}\n"
-        "\\end{minipage}"
-    )
-
-
-def notice_and_qr_markdown(slug: str, with_notice: bool) -> str:
-    """The standing notice and the sign's QR, side by side beneath the title.
-
-    The QR lives here rather than in the running header because a code needs
-    roughly 24mm to scan reliably off a wall, and a header that tall would
-    overflow the top margin on every page. Beside the notice it costs no extra
-    vertical space at all.
-    """
-    if not with_notice:
-        return (
-            "```{=latex}\n\\noindent\\hfill"
-            + qr_block_latex(slug)
-            + "\n```\n"
-        )
-
+def universal_notice_markdown() -> str:
     text = UNIVERSAL_NOTICE.read_text().strip()
     text = re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL).strip()
     # Demote the leading level-1 heading to a bold label so the notice reads as
     # a compact callout instead of a second page title.
     text = re.sub(r"^#\s+(.+)$", r"**\1**", text, count=1, flags=re.MULTILINE)
     return (
-        "```{=latex}\n"
-        "\\noindent\\begin{minipage}[t]{0.76\\textwidth}\\vspace{0pt}\n"
-        "\\begin{signnotice}\n```\n\n"
+        "```{=latex}\n\\begin{signnotice}\n```\n\n"
         + text
-        + "\n\n```{=latex}\n\\end{signnotice}\n"
-        "\\end{minipage}\\hfill\n"
-        + qr_block_latex(slug)
-        + "\n```\n"
+        + "\n\n```{=latex}\n\\end{signnotice}\n```\n"
     )
+
+
+def cut_section(body: str, heading: str) -> tuple[str, str]:
+    """Remove a section and return the remaining body plus that section's text."""
+    start = body.find(heading)
+    if start == -1:
+        return body, ""
+    rest = body[start + len(heading):]
+    end = rest.find("\n## ")
+    section = rest if end == -1 else rest[:end]
+    tail = "" if end == -1 else rest[end + 1:]
+    return body[:start] + tail, section
+
+
+def replace_links_with_qr(slug: str, body: str) -> str:
+    """Swap every printed link on the sign for a scannable code.
+
+    Sources and related signs end up in one strip. A printed URL cannot be used
+    and a Markdown link to another sign does nothing on paper, so both become
+    codes; putting them in a single strip means the related signs cost no height
+    of their own.
+    """
+    body, related_section = cut_section(body, "## Related")
+    sources_heading = "## Sources / Procedure Links"
+    start = body.find(sources_heading)
+
+    related = [
+        (m.group("label").strip(), sign_url(m.group("slug")))
+        for m in RELATED_RE.finditer(related_section)
+    ]
+
+    if start == -1:
+        if not related:
+            return body
+        return body.rstrip() + "\n\n" + sources_heading + "\n\n" + source_qr_block(slug, related) + "\n"
+
+    rest = body[start + len(sources_heading):]
+    end = rest.find("\n## ")
+    section = rest if end == -1 else rest[:end]
+    sources = [(m.group("label").strip(), m.group("url")) for m in SOURCE_RE.finditer(section)]
+    links = related + sources
+    if not links:
+        return body
+
+    # Anything that is not a "Label: <url>" bullet is kept, so a note among the
+    # sources is not silently dropped. Matched spans are cut out rather than
+    # filtered line by line, because a bullet may wrap onto a second line.
+    remainder = SOURCE_RE.sub("", section)
+    kept = [line for line in remainder.strip().splitlines() if line.strip()]
+    replacement = "\n\n" + ("\n".join(kept) + "\n\n" if kept else "") + source_qr_block(slug, links) + "\n"
+    tail = "" if end == -1 else rest[end:]
+    return body[:start] + sources_heading + replacement + tail
 
 
 def prepare_markdown(path: Path) -> tuple[dict[str, Any], str]:
     metadata, body = parse_frontmatter(path)
-    block = notice_and_qr_markdown(
-        metadata["slug"], metadata.get("include_universal_notice", True)
-    )
-    # Keep the sign title first; the notice and QR sit just beneath it.
-    heading = re.match(r"#\s+.+\n", body)
-    if heading:
-        body = body[: heading.end()] + "\n" + block + "\n" + body[heading.end():]
-    else:
-        body = block + "\n\n" + body
+    body = replace_links_with_qr(metadata["slug"], body)
+    if metadata.get("include_universal_notice", True):
+        notice = universal_notice_markdown()
+        # Keep the sign title first; place the standing notice just beneath it.
+        heading = re.match(r"#\s+.+\n", body)
+        if heading:
+            body = body[: heading.end()] + "\n" + notice + "\n" + body[heading.end():]
+        else:
+            body = notice + "\n\n" + body
     return metadata, body
 
 
@@ -370,6 +427,9 @@ def build(paths: list[Path]) -> dict[str, Any]:
     ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
     prepared_dir = ARTIFACTS_DIR / "prepared"
     prepared_dir.mkdir(parents=True, exist_ok=True)
+    # Codes are named by sign and index, so a sign that loses a source would
+    # otherwise leave a stale file behind.
+    shutil.rmtree(QR_DIR, ignore_errors=True)
 
     manifest: dict[str, Any] = {
         "generated": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat(),
