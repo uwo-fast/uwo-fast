@@ -122,13 +122,27 @@ The Western-published half is done; signs now cite real documents. What is left 
 
 ### C3. QR links — not blocking v1
 
-- [ ] Track as a v1.x enhancement once QR support is built.
-- [ ] **Cross-sign links wait on this.** Eleven signs carry 17 Markdown links in their
-      Related sections. On paper those render as blue text that does nothing, which is
-      what `equipment/README.md` already says: a Markdown link on a wall does nothing,
-      and a sign that needs to reach a longer document wants a QR code. Decision on
-      2026-09-09 was to leave them until QR support lands rather than convert them to
-      plain text now. `printers-fgf` is the exception and already uses plain text.
+Design settled 2026-09-09. Each sign gets **one** QR pointing at its own page on the
+FAST site, and that page is the hub: clickable sources, links to related signs, and the
+equipment record where one exists. One code per sign means new targets can be added
+later without reprinting, which is the point of having a page in the middle at all.
+
+The URL contract is `https://uwo-fast.github.io/signs/<slug>/`, using the `slug` already
+in each sign's front matter. It deliberately encodes neither the repo name nor a
+directory path, so this repo can be restructured without killing codes already on the
+wall.
+
+- [ ] Site work: <https://github.com/uwo-fast/uwo-fast.github.io/issues/3>. **Nothing can
+      be printed with a QR until those URLs are live** — a dead code on a posted sign
+      cannot be recalled.
+- [ ] Then, in this repo: generate a QR per sign from the manifest and place it on the
+      sign, with the URL printed underneath so it still works when a camera will not
+      scan. Use error correction M or Q, not the L that `lab-qr-codes/` currently uses;
+      these signs are meant to be pen-corrected and will get scuffed.
+- [ ] **Cross-sign links resolve as a side effect.** Eleven signs carry 17 Markdown links
+      that do nothing on paper. On the site they become real links between sign pages,
+      so this closes itself once the above lands. Decision was to leave them rather than
+      convert to plain text; `printers-fgf` is the exception and already uses plain text.
 
 ## Deferred, not blocking
 

@@ -200,6 +200,16 @@ Use QR links for detail:
 - Manufacturer manuals.
 - Full reference lists.
 
+Each sign gets **one** QR, pointing at its own page on the FAST site at
+`https://uwo-fast.github.io/signs/<slug>/`, built from the `slug` in its front matter.
+That page is the hub: clickable sources, links to related signs, and the equipment record
+where one exists. One code per sign means a new target can be added later by editing the
+page, without reprinting anything.
+
+**Treat that URL as a contract.** A printed QR cannot be recalled, so the path encodes
+neither the repo name nor a directory: this repo can be restructured without breaking
+codes already on a wall. See `TODO.md` C3.
+
 ## Warning Language
 
 Reserve strong warning language for genuinely high-risk actions.
