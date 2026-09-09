@@ -2,12 +2,12 @@
 title: "FFF Printers"
 slug: "printers-fff"
 version: "0.1"
-status: "draft"
+status: "review"
 review_owner: "PI / post-doc"
 include_universal_notice: true
 ---
 
-# FFF Printers
+# Fused-Filament Fabrication (FFF) Printers
 
 ## After Every Print
 
@@ -36,11 +36,11 @@ include_universal_notice: true
 
 - Ask before changing hardware, firmware, nozzle size, bed surface, slicer defaults, or material settings for shared printers.
 - PLA, PETG, ASA, and TPU/TPE are approved on shared printers when the printer is suitable for the material.
-- Run ABS/ASA only in enclosed printers with doors closed and the HEPA filter fan on.
+- Run ABS/ASA only in one of the three enclosed Prusa MK3 printers, with the door closed and the HEPA filter fan on. Two of the five are not enclosed and must not be used for ABS/ASA.
 - Ask before using ABS, nylon, composites, carbon fiber, glow, soluble supports, high-temperature, or other unusual materials.
 - If you are unsure whether a printer is safe to use, leave it stopped and ask the PI or a post-doc.
 - If you find a printer issue, fix it immediately if you can do so safely and confidently. Otherwise, stop the printer if needed, message the group so people know not to use it, and contact the PI or a post-doc.
 
 ## Reference Checks Needed
 
-- Confirm which printers are approved for ASA and flexible materials.
+- Confirm which printers are approved for flexible materials (TPU/TPE).

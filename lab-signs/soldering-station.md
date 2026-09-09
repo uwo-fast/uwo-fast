@@ -2,7 +2,7 @@
 title: "Soldering Station"
 slug: "soldering-station"
 version: "0.1"
-status: "draft"
+status: "review"
 review_owner: "PI / post-doc"
 include_universal_notice: true
 ---
@@ -40,13 +40,12 @@ include_universal_notice: true
 - Ask before soldering batteries, high-power wiring, unknown components, or chemically contaminated items.
 - Report damaged tips, missing tools, poor ventilation, or unsafe setup.
 
-## Sources / Procedure Links
+## Related
 
-- Practice guide: <https://cameronbrooks11.github.io/transistor-tester-m12864/guide.html>
-- Project repository: <https://github.com/CameronBrooks11/transistor-tester-m12864>
-- YIHUA 862BD+ hot air rework / soldering station product/manual source needed.
+- Practice build guide: <https://cameronbrooks11.github.io/transistor-tester-m12864/guide.html>
+- Practice build repository: <https://github.com/CameronBrooks11/transistor-tester-m12864>
 
 ## Reference Checks Needed
 
 - FAST soldering station setup and shutdown expectations.
-- Manufacturer guidance for the YIHUA 862BD+ SMD ESD Safe 2-in-1 soldering iron / hot air rework station.
+- Add the YIHUA 862BD+ paper manual to an equipment record. No manufacturer-hosted copy is available online.

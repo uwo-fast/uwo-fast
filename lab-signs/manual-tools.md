@@ -2,7 +2,7 @@
 title: "Manual Tools"
 slug: "manual-tools"
 version: "0.1"
-status: "draft"
+status: "review"
 review_owner: "PI / post-doc"
 include_universal_notice: true
 ---

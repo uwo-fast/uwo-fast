@@ -2,7 +2,7 @@
 title: "General Storage"
 slug: "general-storage"
 version: "0.1"
-status: "draft"
+status: "review"
 review_owner: "PI / post-doc"
 include_universal_notice: true
 ---
@@ -40,5 +40,4 @@ include_universal_notice: true
 
 ## Reference Checks Needed
 
-- Confirm final red-cabinet drawer assignments.
 - Confirm whether this sign should list specific shelves/cabinets after the lab layout stabilizes.
