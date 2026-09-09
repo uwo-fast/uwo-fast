@@ -2,7 +2,7 @@
 title: "Broken Glass and Sharps"
 slug: "broken-glass-and-sharps"
 version: "0.1"
-status: "draft"
+status: "review"
 review_owner: "PI / post-doc"
 include_universal_notice: true
 ---
@@ -20,24 +20,24 @@ include_universal_notice: true
 
 | Item | Action |
 | --- | --- |
-| Broken glass | Use the broken-glass/sharps bin under the sink. |
-| Razor blades, needles, sharp metal, or similar sharps | Use the broken-glass/sharps bin under the sink or the approved Western sharps container/process. |
-| Chemical-contaminated glass or sharps | Do not use regular glass/sharps disposal. Follow hazardous-waste guidance or ask. |
+| Clean broken glass | Labelled glass container under the sink. NEVER the regular garbage. |
+| Razor blades, needles, scalpel blades, or similar sharps | A sharps container. NEVER the glass container: Western requires sharps to be kept separate from broken glass. |
+| Chemical-contaminated glass or sharps | Western-approved sharps container with a completed "Hazardous Material for Disposal" label. Ask first. |
 | Unknown contamination | Stop and ask the PI or a post-doc. |
 
 ## When Full Or Ready For Removal
 
 - Do not overfill the container.
 - Close or secure the container before moving it.
-- Follow Western disposal procedure for sharps and broken glass.
+- Keep each waste stream in its own container. Chemical, biohazardous and radioactive sharps are handled separately and must not be combined.
 - Ask the PI or a post-doc before moving full containers out of the lab.
 
 ## Sources / Procedure Links
 
 - Western knife and sharp object safety: <https://www.uwo.ca/hr/safety/topics/knife_safety.html>
 - Western hazardous waste: <https://www.uwo.ca/hr/safety/topics/hazardous_waste.html>
+- Western Hazardous Materials and Waste Management Handbook: <https://www.uwo.ca/hr/form_doc/health_safety/doc/manuals/hazardous_handbook.pdf>
 
 ## Reference Checks Needed
 
-- Confirm exact Western disposal route for the under-sink broken-glass/sharps bin.
-- Confirm whether separate containers are needed for clean broken glass, sharps, and contaminated sharps.
+- Confirm who collects the clean-glass container once it is full.

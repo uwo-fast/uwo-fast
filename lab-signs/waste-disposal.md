@@ -2,7 +2,7 @@
 title: "Waste Disposal"
 slug: "waste-disposal"
 version: "0.1"
-status: "draft"
+status: "review"
 review_owner: "PI / post-doc"
 include_universal_notice: true
 ---
@@ -47,19 +47,21 @@ flowchart TD
 | Item | Action |
 | --- | --- |
 | Unknown chemical or unlabeled liquid/solid | Do not discard. Identify or characterize through the approved Western hazardous-waste process. |
-| Batteries or damaged battery packs | Use the battery bin on the south wall counter of TEB7, then follow Western battery recycling/disposal. |
-| Electronics, circuit boards, cables, or e-waste | Use the e-waste bin on the south wall counter of TEB7, then follow Western e-waste disposal. |
-| Broken glass or sharps | Use the broken-glass/sharps bin under the sink, then follow Western sharps/broken-glass disposal. |
-| Aerosols, spray paints, lubricants, oils, greases, or solvents | Use the approved hazardous-waste or special-waste process. Store only in compatible, labeled containers. |
+| Batteries or damaged battery packs | Use the battery bin on the south wall counter of TEB7. All common chemistries are accepted; tape the terminals. |
+| Electronics, circuit boards, cables, or e-waste | Use the e-waste bin on the south wall counter of TEB7. Classed as hazardous waste; never landfill garbage. |
+| Broken glass or sharps | Glass and sharps go in separate containers. See Broken Glass and Sharps. |
+| Aerosols, spray paints, lubricants, oils, greases, or solvents | Use the approved hazardous-waste or special-waste process. Store only in compatible, labeled containers. Keep halogenated and non-halogenated solvents separate and list full chemical names. |
 | Empty chemical/resin bottles or contaminated containers | Do not recycle until the approved procedure says they are empty/clean enough. |
 
 ## Do Not Guess
 
 - Do not neutralize, dilute, evaporate, rinse, or pour out chemical waste unless an approved procedure explicitly says to do so.
+- Discharging hazardous waste to the sewer is prohibited by the Canadian Environmental Protection Act and the City of London Waste Discharge Bylaw.
 - Do not mix waste streams to make discarding easier.
 - Do not put contaminated material in paper, container, or polymer recycling.
 - Western hazardous waste guidance says unknowns must be identified or characterized before acceptance.
 - The person who generated the waste must segregate and label it correctly before asking the PI/post-doc to submit the Western hazardous-waste pickup request.
+- Pickup is weekly on Thursdays through RPR Environmental and needs an inventory form. Waste is handed over in person and never left unattended.
 - Hazardous waste awaiting pickup must be in a proper, labeled, compatible container below the sink, in the flammables cabinet, or in a fume hood cabinet as appropriate for the waste.
 - When in doubt, ask the PI, a post-doc, or the responsible equipment owner.
 
@@ -75,9 +77,8 @@ flowchart TD
 - Western sorting guidance: <https://sustainability.uwo.ca/Campus/waste_reduction/sorting_at_western.html>
 - Western recycling and waste services: <https://uwo.ca/fm/what/maintenance/recycling.html>
 - Western knife/sharps safety: <https://www.uwo.ca/hr/safety/topics/knife_safety.html>
+- Western Hazardous Materials and Waste Management Handbook: <https://www.uwo.ca/hr/form_doc/health_safety/doc/manuals/hazardous_handbook.pdf>
 
 ## Reference Checks Needed
 
-- Western/UWO drain-disposal rules.
 - FAST local process for oils, greases, lubricants, resins, solvents, acids, and bases.
-- Confirm whether any battery or e-waste types are excluded from the TEB7 collection bins.
