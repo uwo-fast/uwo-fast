@@ -9,6 +9,7 @@ wall reminders people read at the point of work, see [lab-signs](../lab-signs/RE
 ## Current Records
 
 - [Fume Hood](fumehood.md)
+- [FGF Printer](printers-fgf.md)
 
 ## What Belongs Here
 
