@@ -2,7 +2,7 @@
 title: "Power Tools"
 slug: "power-tools"
 version: "0.1"
-status: "draft"
+status: "review"
 review_owner: "PI / post-doc"
 include_universal_notice: true
 ---
@@ -33,8 +33,11 @@ include_universal_notice: true
 
 ## Gloves
 
-- Wear close-fitting, task-appropriate gloves when using an angle grinder to protect against sparks, abrasion, and hot or sharp material.
-- Do not wear gloves where they could become caught in a rotating or reciprocating tool.
+Gloves are decided by whether one can be pulled in, not by which tool it is.
+
+- NEVER wear gloves where a spinning bit, blade, disc, or chuck could catch them. That includes every stationary machine in TEB6.
+- NEVER hold the workpiece in a gloved hand near a moving tool. Clamp it instead.
+- Gloves are appropriate for the angle grinder when you hold the tool with both hands, to protect against sparks, abrasion, and hot or sharp material.
 - For handheld circular saws, follow the manufacturer instructions and site-specific procedure rather than assuming gloves are required.
 - Gloves may be used to handle blades, burrs, or sharp stock after the tool is stopped, unplugged or battery-isolated, and unable to restart.
 
@@ -81,8 +84,8 @@ include_universal_notice: true
 - CCOHS electric power-tool guidance: <https://www.ccohs.ca/oshanswers/safety_haz/power_tools/saf_elec.html>
 - CCOHS circular saw guidance: <https://www.ccohs.ca/oshanswers/safety_haz/power_tools/saw_circ.html>
 - OSHA angle grinder safety talk: <https://www.osha.gov/sites/default/files/2018-12/fy15_sh-27664-sh5_Toolbox_Angle_Grinder.pdf>
+- Western Engineering student shop safe operation procedures: <https://www.eng.uwo.ca/departments-units/student-shop/health-safety.html>
 
 ## Reference Checks Needed
 
-- Tool manuals for specific grinders, saws, sanders, drills, and drivers.
-- Western/UWO job hazard analysis or shop-safety guidance for hand-held power tools.
+- Tool manuals for the specific grinders, saws, sanders, drills, and drivers held by FAST.
