@@ -2,7 +2,7 @@
 title: "Chemical and Materials Storage"
 slug: "chemical-and-materials-storage"
 version: "0.1"
-status: "draft"
+status: "review"
 review_owner: "PI / post-doc"
 include_universal_notice: true
 ---
@@ -17,17 +17,22 @@ include_universal_notice: true
 - NEVER store bases in the acid cabinet.
 - Do not store oxidizers, peroxide formers, water-reactives, toxics, or compressed gases by guessing from this table.
 - If you are unsure where something belongs, do not put it away: ask the PI or a post-doc.
+- Inorganic salts and ordinary organic liquids and solids may be stored together. The groups below are the exceptions.
 
 ## Common Local Storage Locations After Compatibility Check
 
 | Item / category | Location | Notes |
 | --- | --- | --- |
 | Acids | Right lower cabinet of the fume hood | Never store bases here. Confirm compatibility before storage. |
-| Bases | Left lower fume hood cabinet | This cabinet is also labeled flammable. Keep bases separated from acids and use secondary containment/segregation as required. |
-| Lab-grade flammable solvents | Left lower fume hood cabinet / main flammable cabinet below the hood | Keep closed, labeled, and in approved containers. |
-| Spray paints, lubricants, and hardware-store flammables | Yellow flammable cabinet on the floor to the left when facing the hood | Keep separate from lab-grade solvent storage. |
-| Oxidizer, peroxide former, water-reactive, toxic, compressed gas, or special-hazard material | Do not guess from this sign | Check SDS and ask. |
-| Unknown, unlabeled, leaking, damaged, expired, or off-inventory chemical | Do not store | Stop and ask. |
+| Bases | Left lower fume hood cabinet | Also labeled flammable. Keep bases away from acids; use secondary containment as required. |
+| Lab-grade flammable solvents | Left lower fume hood cabinet / main flammable cabinet below hood | Keep closed, labeled, and in approved containers. |
+| Spray paints, lubricants, hardware-store flammables | Yellow floor cabinet, left when facing the hood | Keep separate from lab-grade solvents. |
+| Peroxide former | Flammable cabinet | Date when opened. Dispose at the SDS limit: 3 months for some ethers, 12 for most others. |
+| Water-reactive | Per SDS, away from water and steam | Examples: sodium and potassium metal, phosphorus pentoxide, aluminum chloride. |
+| Air-reactive (pyrophoric) | Under an appropriate gas, per SDS | Examples: alkyl lithiums, Grignard reagents, white phosphorus. |
+| Oxidizer, toxic, compressed gas, or other special-hazard material | Do not guess from this sign | Check SDS and ask. |
+| Possibly shock sensitive or explosive | Do not move it | Contact Occupational Health and Safety, extension 84847. |
+| Unknown, unlabeled, leaking, damaged, or expired | Do not store | Stop and ask. |
 
 ```mermaid
 flowchart TD
@@ -49,7 +54,6 @@ flowchart TD
 - FAST uses a chemical inventory spreadsheet to track chemicals and storage locations.
 - Anyone trained and approved by the PI or a post-doc may add a chemical to storage.
 - Whoever adds a chemical must ensure it is labeled, compatible with its location, and recorded in the inventory.
-- Future workflow note: add a QR code to the chemical inventory spreadsheet when QR support is built.
 
 ## Related
 
@@ -58,10 +62,9 @@ flowchart TD
 
 ## Sources / Procedure Links
 
-- Western Laboratory Health and Safety Manual: <https://www.uwo.ca/hr/form_doc/health_safety/doc/manuals/lab_safety_manual.pdf>
-- Western hazardous waste: <https://www.uwo.ca/hr/safety/topics/hazardous_waste.html>
+- Lab Safety Manual: <https://www.uwo.ca/hr/form_doc/health_safety/doc/manuals/lab_safety_manual.pdf>
+- Hazardous waste: <https://www.uwo.ca/hr/safety/topics/hazardous_waste.html>
 
 ## Reference Checks Needed
 
-- SDS and compatibility guidance for chemical categories stored in the lab.
-- Confirm where oxidizers, peroxide formers, water-reactives, toxics, and compressed gases should be stored.
+- Collect the SDS for each chemical category actually held in the lab.
