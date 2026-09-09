@@ -40,7 +40,3 @@ include_universal_notice: true
 - Ask before using ABS, nylon, composites, carbon fiber, glow, soluble supports, high-temperature, or other unusual materials.
 - If you are unsure whether a printer is safe to use, leave it stopped and ask the PI or a post-doc.
 - If you find a printer issue, fix it immediately if you can do so safely and confidently. Otherwise, stop the printer if needed, message the group so people know not to use it, and contact the PI or a post-doc.
-
-## Reference Checks Needed
-
-- Confirm which printers are approved for flexible materials (TPU/TPE).

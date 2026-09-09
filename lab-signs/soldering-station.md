@@ -44,8 +44,3 @@ include_universal_notice: true
 
 - Practice build guide: <https://cameronbrooks11.github.io/transistor-tester-m12864/guide.html>
 - Practice build repository: <https://github.com/CameronBrooks11/transistor-tester-m12864>
-
-## Reference Checks Needed
-
-- FAST soldering station setup and shutdown expectations.
-- Add the YIHUA 862BD+ paper manual to an equipment record. No manufacturer-hosted copy is available online.

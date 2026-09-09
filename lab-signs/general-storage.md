@@ -37,7 +37,3 @@ include_universal_notice: true
 
 - See [Chemical and Materials Storage](chemical-and-materials-storage.md) for chemicals.
 - See [Waste Disposal](waste-disposal.md) before discarding materials.
-
-## Reference Checks Needed
-
-- Confirm whether this sign should list specific shelves/cabinets after the lab layout stabilizes.

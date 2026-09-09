@@ -112,7 +112,7 @@ Review expectations:
 Do not mark a sign `approved` (`status: approved` in the front matter) while any of these are unresolved:
 
 - It still has `status: draft`, `review`, or `notes`.
-- It has unresolved `Reference Checks Needed`. The build refuses to render an `approved` sign that still contains this section.
+- It has open items in [TODO.md](TODO.md). The build also refuses to render an `approved` sign that still contains a `Reference Checks Needed` section, which should no longer appear in a sign body at all.
 - It gives disposal, storage, emergency, PPE, electrical, or equipment-specific instructions without a source or local procedure.
 - It names an "approved procedure" that is not actually identified.
 - The review owner has not checked the final sign text.
@@ -124,19 +124,22 @@ For safety-critical signs, unresolved questions should stay visible in the draft
 
 ## Reference Section Format
 
-Keep references in two sections near the end of the sign:
+A sign carries its sources and nothing else about its own provenance:
 
 ```markdown
 ## Sources / Procedure Links
 
 - Source title: <https://example.com/source>
-
-## Reference Checks Needed
-
-- Specific question or local confirmation still needed.
 ```
 
-`Reference Checks Needed` is for questions that still need answering. The build prints a warning for any sign that still contains it, and hard-fails if such a sign is marked `status: approved`. Before approval, resolve each item, move it to a working note, or keep it only while the sign is intentionally still a draft.
+**Open questions do not go on a printed sign.** They belong in [TODO.md](TODO.md),
+tracked per sign. A wall reminder is read by someone deciding what to do at the bench;
+telling them the lab has not yet confirmed who empties a bin is noise at best, and at
+worst it undermines the instructions around it.
+
+`Reference Checks Needed` sections were previously kept in the sign body while a sign was
+in draft. They are not any more. The build still warns if one reappears, and still
+hard-fails on an `approved` sign that contains one, as a guard against regression.
 
 ## Writing Style
 

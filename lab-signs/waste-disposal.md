@@ -78,7 +78,3 @@ flowchart TD
 - Western recycling and waste services: <https://uwo.ca/fm/what/maintenance/recycling.html>
 - Western knife/sharps safety: <https://www.uwo.ca/hr/safety/topics/knife_safety.html>
 - Western Hazardous Materials and Waste Management Handbook: <https://www.uwo.ca/hr/form_doc/health_safety/doc/manuals/hazardous_handbook.pdf>
-
-## Reference Checks Needed
-
-- FAST local process for oils, greases, lubricants, resins, solvents, acids, and bases.

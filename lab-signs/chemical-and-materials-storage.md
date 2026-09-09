@@ -64,7 +64,3 @@ flowchart TD
 
 - Lab Safety Manual: <https://www.uwo.ca/hr/form_doc/health_safety/doc/manuals/lab_safety_manual.pdf>
 - Hazardous waste: <https://www.uwo.ca/hr/safety/topics/hazardous_waste.html>
-
-## Reference Checks Needed
-
-- Collect the SDS for each chemical category actually held in the lab.

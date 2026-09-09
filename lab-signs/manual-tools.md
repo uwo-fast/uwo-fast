@@ -45,7 +45,3 @@ include_universal_notice: true
 ## Sources / Procedure Links
 
 - Western knife and sharp object safety: <https://www.uwo.ca/hr/safety/topics/knife_safety.html>
-
-## Reference Checks Needed
-
-- Confirm whether specific cutter ratings should be posted for common FAST cutters.

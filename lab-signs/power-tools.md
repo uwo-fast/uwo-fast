@@ -85,7 +85,3 @@ Gloves are decided by whether one can be pulled in, not by which tool it is.
 - CCOHS circular saw guidance: <https://www.ccohs.ca/oshanswers/safety_haz/power_tools/saw_circ.html>
 - OSHA angle grinder safety talk: <https://www.osha.gov/sites/default/files/2018-12/fy15_sh-27664-sh5_Toolbox_Angle_Grinder.pdf>
 - Western Engineering student shop safe operation procedures: <https://www.eng.uwo.ca/departments-units/student-shop/health-safety.html>
-
-## Reference Checks Needed
-
-- Tool manuals for the specific grinders, saws, sanders, drills, and drivers held by FAST.

@@ -291,7 +291,11 @@ def check_reference_policy(metadata: dict[str, Any], body: str, path: Path) -> N
     status = str(metadata.get("status", "")).lower()
     if status == "approved":
         raise BuildError(f"{path}: approved signs cannot contain Reference Checks Needed")
-    print(f"warning: {relative(path)} contains unresolved Reference Checks Needed", file=sys.stderr)
+    print(
+        f"warning: {relative(path)} has a Reference Checks Needed section. Open questions\n"
+        "         belong in lab-signs/TODO.md, not on a printed sign.",
+        file=sys.stderr,
+    )
 
 
 def build(paths: list[Path]) -> dict[str, Any]:

@@ -37,7 +37,3 @@ include_universal_notice: true
 - Western knife and sharp object safety: <https://www.uwo.ca/hr/safety/topics/knife_safety.html>
 - Western hazardous waste: <https://www.uwo.ca/hr/safety/topics/hazardous_waste.html>
 - Western Hazardous Materials and Waste Management Handbook: <https://www.uwo.ca/hr/form_doc/health_safety/doc/manuals/hazardous_handbook.pdf>
-
-## Reference Checks Needed
-
-- Confirm who collects the clean-glass container once it is full.

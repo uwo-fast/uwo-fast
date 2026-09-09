@@ -68,8 +68,3 @@ flowchart TD
 - Western electrical safety guidance: <https://www.uwo.ca/hr/safety/topics/electrical.html>
 - Western electrical installations advisory: <https://www.uwo.ca/hr/form_doc/health_safety/doc/hazard_alerts/electrical_safety_advisory.pdf>
 - Western Lab Safety Manual (electrical): <https://www.uwo.ca/hr/form_doc/health_safety/doc/manuals/lab_safety_manual.pdf>
-
-## Reference Checks Needed
-
-- Ask Cameron B. or Dr. Pearce for examples of approved wiring/enclosures.
-- Applicable equipment manuals, component datasheets, certification requirements, and local code/ESA requirements.

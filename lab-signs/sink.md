@@ -46,7 +46,3 @@ include_universal_notice: true
 - Hazardous waste: <https://www.uwo.ca/hr/safety/topics/hazardous_waste.html>
 - Lab Safety Manual: <https://www.uwo.ca/hr/form_doc/health_safety/doc/manuals/lab_safety_manual.pdf>
 - Hazardous Waste Handbook: <https://www.uwo.ca/hr/form_doc/health_safety/doc/manuals/hazardous_handbook.pdf>
-
-## Reference Checks Needed
-
-- Confirm the FAST process for collecting contaminated rinsate, which the handbook does not cover.

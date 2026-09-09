@@ -7,8 +7,12 @@ Last reviewed: 2026-09-09. See [AUTHORING.md](AUTHORING.md) for the review proce
 reference rules, and approval blockers this list is built from.
 
 All 16 signs are `status: review` at v0.1. AUTHORING defines `review` as awaiting PI,
-post-doc, equipment owner, or subject-matter review, which is where they are. That state
-builds; only `approved` hard-fails while a `Reference Checks Needed` section remains.
+post-doc, equipment owner, or subject-matter review, which is where they are.
+
+Open questions are tracked here, not on the signs. A printed wall reminder is read by
+someone deciding what to do at the bench; a list of what the lab has not confirmed yet
+is noise there, and it undercuts the instructions around it. The `Open` column below is
+the count of items in this file for that sign.
 
 ## The current plan: post at `review`, iterate
 
@@ -146,8 +150,9 @@ Real work, deliberately not being done now. Recorded so it is not rediscovered.
 
 The bar each sign must clear before `status: approved` / `version: "1.0"`:
 
-1. All `## Reference Checks Needed` items resolved and the section removed. **The build
-   hard-fails on an `approved` sign that still contains this section.**
+1. Every item listed for that sign in this file is resolved. **The build also hard-fails
+   on an `approved` sign carrying a `Reference Checks Needed` section, which should no
+   longer appear in a sign body at all.**
 2. Every disposal / storage / emergency / PPE / electrical / equipment instruction has a
    cited source **or** a named local FAST procedure.
 3. No reference to an "approved procedure" that is not actually identified.

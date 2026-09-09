@@ -49,7 +49,3 @@ Contacts are also posted on the lab doors. Follow Western emergency procedures.
 
 - Lab Safety Manual: <https://www.uwo.ca/hr/form_doc/health_safety/doc/manuals/lab_safety_manual.pdf>
 - Emergency Response Plan: <https://www.uwo.ca/campussafety/pdf/resources/EmergencyResponsePlan.pdf>
-
-## Reference Checks Needed
-
-- Confirm exact incident reporting route for FAST.
