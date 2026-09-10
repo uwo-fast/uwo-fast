@@ -267,61 +267,151 @@ def universal_notice_markdown() -> str:
     )
 
 
-def cut_section(body: str, heading: str) -> tuple[str, str]:
-    """Remove a section and return the remaining body plus that section's text."""
+def section_bounds(body: str, heading: str) -> tuple[int, int, str] | None:
+    """Locate a section, returning its start, end and text."""
     start = body.find(heading)
     if start == -1:
-        return body, ""
-    rest = body[start + len(heading):]
-    end = rest.find("\n## ")
-    section = rest if end == -1 else rest[:end]
-    tail = "" if end == -1 else rest[end + 1:]
-    return body[:start] + tail, section
+        return None
+    rest_at = start + len(heading)
+    offset = body.find("\n## ", rest_at)
+    end = len(body) if offset == -1 else offset
+    return start, end, body[rest_at:end]
+
+
+def extract_links(section: str) -> tuple[list[tuple[str, str]], str]:
+    """Pull every link out of a section, with whatever text is left over.
+
+    Two forms appear on a sign: `- Label: <url>` for an external source, and
+    `[Label](slug.md)` for another sign. Both are unusable printed, so both
+    become codes. Whatever does not match either is handed back so a note among
+    the links is not silently dropped.
+    """
+    links: list[tuple[str, str]] = []
+    kept: list[str] = []
+    for line in SOURCE_RE.sub("", section).splitlines():
+        match = RELATED_RE.search(line)
+        if match:
+            links.append((match.group("label").strip(), sign_url(match.group("slug"))))
+        elif line.strip():
+            kept.append(line)
+    links += [(m.group("label").strip(), m.group("url")) for m in SOURCE_RE.finditer(section)]
+    return links, "\n".join(kept).strip()
+
+
+def check_no_links_lost(before: str, after: str, slug: str, path: Path) -> None:
+    """Fail if a link disappeared instead of becoming a code.
+
+    The first version of this transform cut the Related section wholesale and
+    only looked for sign links in it, so a section of external sources vanished
+    from the printed sign with nothing generated in its place. Nothing caught
+    it, because the build still succeeded and the page count still looked fine.
+    """
+    urls = set(re.findall(r"<(https?://[^>]+)>", before))
+    signs = {m.group("slug") for m in RELATED_RE.finditer(before)}
+    encoded = set()
+    for qr in QR_DIR.glob(f"{slug}-*.png"):
+        encoded.add(qr)
+    expected = len(urls) + len(signs)
+    if expected and len(encoded) < expected:
+        raise BuildError(
+            f"{relative(path)}: {expected} links in the source but only "
+            f"{len(encoded)} codes rendered. A link was dropped rather than "
+            "turned into a code."
+        )
+    for url in urls:
+        if url in after:
+            raise BuildError(
+                f"{relative(path)}: {url} is still printed as text rather than "
+                "rendered as a code."
+            )
 
 
 def replace_links_with_qr(slug: str, body: str) -> str:
     """Swap every printed link on the sign for a scannable code.
 
-    Sources and related signs end up in one strip. A printed URL cannot be used
-    and a Markdown link to another sign does nothing on paper, so both become
-    codes; putting them in a single strip means the related signs cost no height
-    of their own.
+    Related signs and sources share one strip. A second block would cost height
+    on every sign; sharing means related signs cost none. A sign named
+    mid-sentence cannot carry a code inside the sentence, so its text becomes
+    plain and the sign it names joins the strip, where it is reachable.
     """
-    body, related_section = cut_section(body, "## Related")
     sources_heading = "## Sources / Procedure Links"
-    start = body.find(sources_heading)
+    related = section_bounds(body, "## Related")
+    sources = section_bounds(body, sources_heading)
 
-    related = [
-        (m.group("label").strip(), sign_url(m.group("slug")))
-        for m in RELATED_RE.finditer(related_section)
-    ]
+    links: list[tuple[str, str]] = []
+    related_kept = sources_kept = ""
+    source_derived = 0
+    if related:
+        found, related_kept = extract_links(related[2])
+        links += found
+    if sources:
+        found, sources_kept = extract_links(sources[2])
+        links += found
+        source_derived = len(found)
 
-    if start == -1:
-        if not related:
-            return body
-        return body.rstrip() + "\n\n" + sources_heading + "\n\n" + source_qr_block(slug, related) + "\n"
+    spans = sorted([s for s in (related, sources) if s], key=lambda s: s[0])
+    segments: list[str] = []
+    cursor = 0
+    for span in spans:
+        segments.append(body[cursor : span[0]])
+        cursor = span[1]
+    segments.append(body[cursor:])
 
-    rest = body[start + len(sources_heading):]
-    end = rest.find("\n## ")
-    section = rest if end == -1 else rest[:end]
-    sources = [(m.group("label").strip(), m.group("url")) for m in SOURCE_RE.finditer(section)]
-    links = related + sources
+    # Links written inline, outside either section, still do nothing on paper.
+    for segment in segments:
+        for match in RELATED_RE.finditer(segment):
+            links.append((match.group("label").strip(), sign_url(match.group("slug"))))
+
+    seen: set[str] = set()
+    deduped: list[tuple[str, str]] = []
+    for label, url in links:
+        if url not in seen:
+            seen.add(url)
+            deduped.append((label, url))
+    links = deduped
+
     if not links:
         return body
 
-    # Anything that is not a "Label: <url>" bullet is kept, so a note among the
-    # sources is not silently dropped. Matched spans are cut out rather than
-    # filtered line by line, because a bullet may wrap onto a second line.
-    remainder = SOURCE_RE.sub("", section)
-    kept = [line for line in remainder.strip().splitlines() if line.strip()]
-    replacement = "\n\n" + ("\n".join(kept) + "\n\n" if kept else "") + source_qr_block(slug, links) + "\n"
-    tail = "" if end == -1 else rest[end:]
-    return body[:start] + sources_heading + replacement + tail
+    plain = lambda text: RELATED_RE.sub(lambda m: m.group("label"), text)
+    segments = [plain(s) for s in segments]
+    related_kept, sources_kept = plain(related_kept), plain(sources_kept)
+
+    # Keep the heading the links actually came from. A sign whose only links are
+    # related signs or practice material should not have them filed as sources:
+    # calling a practice guide a procedure link overstates it.
+    strip_heading = sources_heading if source_derived else "## Related"
+    new_sources = (
+        strip_heading
+        + "\n\n"
+        + (sources_kept + "\n\n" if sources_kept else "")
+        + source_qr_block(slug, links)
+        + "\n"
+    )
+    # A Related section that held only links is replaced by the strip; one with
+    # prose in it keeps its heading and that prose.
+    new_related = "## Related\n\n" + related_kept + "\n\n" if related_kept else ""
+
+    replacements = []
+    for span in spans:
+        replacements.append(new_related if span is related else new_sources)
+    if not sources:
+        replacements.append(new_sources)
+        segments.append("")
+
+    out = []
+    for index, segment in enumerate(segments):
+        out.append(segment)
+        if index < len(replacements):
+            out.append(replacements[index])
+    return "".join(out)
 
 
 def prepare_markdown(path: Path) -> tuple[dict[str, Any], str]:
     metadata, body = parse_frontmatter(path)
+    original = body
     body = replace_links_with_qr(metadata["slug"], body)
+    check_no_links_lost(original, body, metadata["slug"], path)
     if metadata.get("include_universal_notice", True):
         notice = universal_notice_markdown()
         # Keep the sign title first; place the standing notice just beneath it.
