@@ -11,13 +11,15 @@ include_universal_notice: true
 
 ## Training Required
 
-- Stationary tools in TEB6 require documented training and sign-off before use.
+- Stationary tools in TEB6 require training and sign-off by the PI or a post-doc before use.
 - This includes the drill press, miter saw, scroll saw, and any other fixed or bench-mounted powered tool.
 - If you have not been signed off, do not use the tool. Ask the PI or a post-doc who can train you.
+- Sign-off is by the PI or a post-doc directly. There is no form to look up.
 
 ## Before Use
 
 - Wear required PPE.
+- Wear long pants and closed-toe shoes.
 - NEVER wear gloves, rings, watches, or bracelets on drill presses, miter/scroll/table saws, or any machine where they could be caught in a rotating or reciprocating tool.
 - Tie back long hair, roll sleeves above the elbow, and keep loose clothing and lanyards clear of moving parts.
 - Gloves may be used to handle blades, burrs, splintery stock, or sharp material after the machine is stopped, isolated, and unable to restart.

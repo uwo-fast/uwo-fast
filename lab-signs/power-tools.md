@@ -14,6 +14,7 @@ include_universal_notice: true
 - Choose the right tool, bit, blade, disc, abrasive, speed, and setup for the material.
 - Inspect the tool, guard, cord, battery, switch, chuck, bit, blade, or disc before use.
 - Wear required eye, hearing, dust, face, and hand protection for the task.
+- Wear long pants and closed-toe shoes.
 - Tie back long hair and keep loose clothing, jewelry, and lanyards away from rotating or reciprocating tools.
 - Clamp or secure the workpiece before cutting, drilling, grinding, or sanding.
 - Check what is behind or under the work before cutting or drilling.
@@ -67,7 +68,7 @@ Gloves are decided by whether one can be pulled in, not by which tool it is.
 ## Stop And Ask
 
 - Hand-held tools are on an honour system: if you are not familiar and experienced with the tool, get training first.
-- Stationary tools in TEB6 require documented training/sign-off before use.
+- Stationary tools in TEB6 require training and sign-off by the PI or a post-doc.
 - Ask before cutting, grinding, sanding, or drilling unknown material.
 - Do not cut, grind, sand, or drill materials that may produce hazardous dust or fumes, such as lead, asbestos, composites, or PVC, unless there is a formal containment/ventilation/PPE plan.
 - Ask before making sparks, dust, fumes, or noise that could affect nearby people or work.

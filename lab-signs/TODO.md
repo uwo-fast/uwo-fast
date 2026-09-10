@@ -22,10 +22,8 @@ blocks printing only if a person following the sign could be hurt or misdirected
 
 ## Blocking the first printing
 
-- [ ] **Get a separate sharps container.** Western requires sharps kept out of the
-      broken-glass container ([Lab Safety Manual](https://www.uwo.ca/hr/form_doc/health_safety/doc/manuals/lab_safety_manual.pdf)
-      8.7). The lab has one combined under-sink bin. The sign is correct; the lab is not.
-      The only item where posting as-is leaves a real hazard.
+Nothing. The sharps container is in place, beside the glass container under the
+sink, and the sign names both.
 
 ## For Dr. Pearce, with the packet
 
@@ -38,8 +36,6 @@ Name these rather than leaving him to find them:
 - [ ] **The glove rule** on power tools, now resolved from CCOHS, worth him confirming.
 - [ ] **The FAST phone number label.** 519-661-2111 ext. 86725 reads "FAST lab" on the
       safety sign. His office, or a general line?
-- [ ] **Dress code.** Western Engineering's shop rules require long pants and closed-toe
-      shoes. No FAST sign mentions clothing or footwear.
 
 ## Status at a glance
 
@@ -69,20 +65,11 @@ on anyone outside the group.
 
 Ten of the twenty need only a decision, a number, or a document already in hand.
 
-- [ ] **broken-glass** — who collects the clean-glass container when full.
-- [ ] **batteries** — who walks the FAST bins to a campus pail, and how often. TEB is not
-      on Western's list of ten drop-off points; the nearest listed is Spencer Engineering,
-      Loading Dock, Ground Floor.
-- [ ] **safety-equipment** — the exact FAST incident-reporting route.
-- [ ] **stationary-tools** — does a documented sign-off process exist, and where.
 - [ ] **soldering-station** — write down FAST setup and shutdown expectations.
 - [ ] **soldering-station** — photograph or scan the YIHUA 862BD+ paper manual into
       `equipment/soldering-station.md`. No manufacturer-hosted copy exists online.
-- [ ] **printers-fff** — which printers are approved for TPU/TPE.
 - [ ] **power-tools** — list the grinder, saw, sander and driver models held, so their
       manuals can be gathered.
-- [ ] **manual-tools** — decide whether to post cutter ratings.
-- [ ] **general-storage** — decide whether to list specific shelves/cabinets yet.
 
 ## Needs someone else, or longer
 

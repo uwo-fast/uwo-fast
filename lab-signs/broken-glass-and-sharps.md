@@ -20,8 +20,8 @@ include_universal_notice: true
 
 | Item | Action |
 | --- | --- |
-| Clean broken glass | Labelled glass container under the sink. NEVER the regular garbage. |
-| Razor blades, needles, scalpel blades, or similar sharps | A sharps container. NEVER the glass container: Western requires sharps to be kept separate from broken glass. |
+| Clean broken glass | The glass container under the sink. NEVER the regular garbage, and never the sharps container beside it. |
+| Razor blades, needles, scalpel blades, or similar sharps | The sharps container under the sink, beside the glass container. NEVER the glass container: Western requires the two to be kept separate. |
 | Chemical-contaminated glass or sharps | Western-approved sharps container with a completed Hazardous Material for Disposal label. Ask first. |
 | Unknown contamination | Stop and ask the PI or a post-doc. |
 
@@ -30,7 +30,7 @@ include_universal_notice: true
 - Do not overfill the container.
 - Close or secure the container before moving it.
 - Keep each waste stream in its own container. Chemical, biohazardous and radioactive sharps are handled separately and must not be combined.
-- Ask the PI or a post-doc before moving full containers out of the lab.
+- Tell the PI or a post-doc when a container is full. They arrange the move; do not take it out of the lab yourself.
 
 ## Sources / Procedure Links
 

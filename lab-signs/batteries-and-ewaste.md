@@ -30,6 +30,7 @@ include_universal_notice: true
 - Tape over battery terminals before they go in the bin. A shorted 9 V battery can start a fire.
 - Batteries transfer to a labelled campus battery pail; the nearest listed location is the Spencer Engineering Building loading dock.
 - E-waste is collected through Western's recycling program. Facilities Management Client Services, extension 83304, arranges collection.
+- Tell the PI or a post-doc when a bin is full. They arrange the transfer; do not move bins yourself.
 - Ask the PI or a post-doc if you are unsure where a battery or electronic item belongs.
 
 ## Sources / Procedure Links

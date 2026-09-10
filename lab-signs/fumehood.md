@@ -15,6 +15,7 @@ include_universal_notice: true
 - Ask before using the hood for reactions, heating, pressure/vacuum setups, or unfamiliar hazards.
 - Check the digital display on the right side of the hood before starting: normal airflow, no warnings, no alarms, sash moves freely, and airflow is not blocked.
 - Do not use the hood if it is alarming, damaged, blocked, expired/out of service, or behaving unexpectedly.
+- Wear long pants and closed-toe shoes.
 - Keep only the materials needed for the current work in the hood.
 - Fume hoods run at all times. Do not switch one off.
 

@@ -35,7 +35,7 @@ Contacts are also posted on the lab doors. Follow Western emergency procedures.
 
 - Separate yourself from the hazard first.
 - Warn nearby people and get help.
-- For skin or eye exposure, use emergency equipment immediately and report the incident.
+- For skin or eye exposure, use emergency equipment immediately and report to the PI or a post-doc.
 - For spills, reactions, fire, injury, or uncontrolled equipment, stop work and follow emergency procedures.
 - Do not clean up or restart unless trained, it is safe, and the procedure allows it.
 - If a reaction runs away in the fume hood, close the sash fully, evacuate, and get help. Remove contaminated clothing or PPE only if safe, and leave it near the hood.

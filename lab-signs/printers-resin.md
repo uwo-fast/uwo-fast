@@ -15,6 +15,7 @@ include_universal_notice: true
 
 - Use resin printers only after training on the printer, wash/cure workflow, PPE, and waste process.
 - Wear eye protection in TEB6. Use nitrile gloves, protective clothing, ventilation, and any other PPE required by the resin, solvent, or posted procedure before handling resin, resin-contaminated parts, build plates, vats, tools, wipes, or wash liquid.
+- Wear long pants and closed-toe shoes.
 - Keep resin work inside the resin printer area.
 - Check that waste containers, wipes, tools, and cleanup supplies are available before starting.
 - Keep resin and wash solvents away from ignition sources unless the approved setup says otherwise.

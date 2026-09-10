@@ -35,7 +35,7 @@ include_universal_notice: true
 ## Ask First
 
 - Ask before changing hardware, firmware, nozzle size, bed surface, slicer defaults, or material settings for shared printers.
-- PLA, PETG, ASA, and TPU/TPE are approved on shared printers when the printer is suitable for the material.
+- PLA, PETG, and TPU/TPE are approved on any of the five shared printers.
 - Run ABS/ASA only in one of the three enclosed Prusa MK3 printers, with the door closed and the HEPA filter fan on. Two of the five are not enclosed and must not be used for ABS/ASA.
 - Ask before using ABS, nylon, composites, carbon fiber, glow, soluble supports, high-temperature, or other unusual materials.
 - If you are unsure whether a printer is safe to use, leave it stopped and ask the PI or a post-doc.
