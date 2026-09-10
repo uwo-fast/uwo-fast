@@ -213,9 +213,18 @@ Write sources the normal way and the build does the rest:
 ```
 
 The `## Related` bullets are folded into the same strip, pointing at
-`https://uwo-fast.github.io/signs/<slug>/` for the sign they name. Keeping them in one
-strip is deliberate: a second block would cost height on every sign, and this way related
-signs cost nothing.
+`https://uwo-fast.github.io/signs/<slug>/` for the sign they name, so nobody has to go
+looking for another sign on the wall. A sign named mid-sentence is handled the same way:
+its text becomes plain and it joins the strip.
+
+The strip also leads with the sign's **own** code, captioned "this sign online". Keeping
+every code in one strip is deliberate: a separate block beside the title reads better but
+costs roughly 40pt on the first page, which pushed the two tightest signs onto a second
+page. The strip is a fixed height whatever it holds, so this costs nothing.
+
+The strip wraps at seven codes per row. That is arithmetic against the text width, not
+something LaTeX is left to work out: eight cells overran the margin without failing the
+build.
 
 The label before the colon becomes the caption under the code, so keep it short. It is
 what someone reads to decide which code to scan.

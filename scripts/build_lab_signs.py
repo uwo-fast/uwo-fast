@@ -28,6 +28,8 @@ TEMPLATE = ROOT / "templates" / "lab-sign.tex"
 LOGO = ROOT / "branding" / "logos" / "FASTlogobw.png"
 MERMAID_CONFIG = ROOT / "scripts" / "mermaid-puppeteer-config.json"
 QR_DIR = ARTIFACTS_DIR / "qr"
+# A 22mm cell plus a 2mm gap, against a 188mm text width.
+CELLS_PER_ROW = 7
 
 # The published home of each sign. This is a contract: the QR codes printed onto
 # posted signs cannot be recalled, so the path must not change. See AUTHORING.md.
@@ -223,7 +225,12 @@ def source_qr_block(slug: str, sources: list[tuple[str, str]]) -> str:
     with the caption underneath rather than one code per line, because that way
     the block is a fixed height whatever the number of sources.
     """
-    cells = []
+    cells = [
+        "\\begin{minipage}[t]{22mm}\\centering"
+        f"\\includegraphics[width=20mm,height=20mm]{{{relative(render_qr(f'{slug}-sign', sign_url(slug)))}}}\\\\[1pt]"
+        "{\\tiny \\textbf{this sign online}\\par}"
+        "\\end{minipage}\\hspace{7mm}"
+    ]
     for index, (label, url) in enumerate(sources, start=1):
         path = relative(render_qr(f"{slug}-{index}", url))
         cells.append(
@@ -232,8 +239,15 @@ def source_qr_block(slug: str, sources: list[tuple[str, str]]) -> str:
             f"{{\\tiny {escape_latex(label)}\\par}}"
             "\\end{minipage}"
         )
-    strip = "\\hspace{2mm}".join(cells)
-    return "```{=latex}\n" f"\\noindent {strip}\n" "```\n"
+    # Wrap here rather than leaving it to LaTeX. Eight cells overran the text
+    # width and spilled into the margin without failing the build; the row count
+    # is arithmetic, so do the arithmetic.
+    rows = [
+        "\\hspace{2mm}".join(cells[i : i + CELLS_PER_ROW])
+        for i in range(0, len(cells), CELLS_PER_ROW)
+    ]
+    body = "\\\\[3mm]\n".join(f"\\noindent {row}" for row in rows)
+    return "```{=latex}\n" f"{body}\\par\\vspace{{1mm}}\n" "```\n"
 
 
 def escape_latex(text: str) -> str:

@@ -132,8 +132,11 @@ front matter. It encodes neither the repo name nor a directory path, so this rep
 restructured without killing codes already on a wall, and the site build refuses to
 publish a sign whose filename has drifted from its slug.
 
-Verified: all 57 codes decode to exactly the link written in their sign, and no sign
-gained a page.
+Each sign's strip also leads with its own code, captioned "this sign online", so the
+digital version is reachable from the wall.
+
+Verified: all 76 codes decode to exactly the link written in their sign, no sign gained a
+page, and no sign has an overfull box.
 
 ## Deferred, not blocking
 
