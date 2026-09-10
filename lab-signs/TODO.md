@@ -1,18 +1,21 @@
 # Lab Signs — Outstanding Work
 
 What is left before each sign reaches **v1 / `approved`**. Completed work is not tracked
-here; see the git history for what has already been closed.
+here; the git history has it.
 
-Last reviewed: 2026-09-09. See [AUTHORING.md](AUTHORING.md) for the review process,
+Last reviewed: 2026-09-10. See [AUTHORING.md](AUTHORING.md) for the review process,
 reference rules, and approval blockers this list is built from.
 
-All 16 signs are `status: review` at v0.1. AUTHORING defines `review` as awaiting PI,
-post-doc, equipment owner, or subject-matter review, which is where they are.
+All 16 signs are `status: review` at v0.1 — awaiting PI, post-doc, equipment owner or
+subject-matter review, which is what AUTHORING defines that state as.
 
-Open questions are tracked here, not on the signs. A printed wall reminder is read by
-someone deciding what to do at the bench; a list of what the lab has not confirmed yet
-is noise there, and it undercuts the instructions around it. The `Open` column below is
-the count of items in this file for that sign.
+Open questions live here, not on the signs. A printed wall reminder is read by someone
+deciding what to do at the bench; a list of what the lab has not confirmed yet is noise
+there and undercuts the instructions around it.
+
+For page counts run `just pages`, and for the link codes `just build` regenerates them.
+Neither number is repeated here, because a count written beside the thing it counts is a
+claim that rots.
 
 ## The current plan: post at `review`, iterate
 
@@ -22,121 +25,109 @@ blocks printing only if a person following the sign could be hurt or misdirected
 
 ## Blocking the first printing
 
-Nothing. The sharps container is in place, beside the glass container under the
-sink, and the sign names both.
+**Nothing.** The sharps container is in place beside the glass container under the sink,
+and both signs name the two bins and warn against mixing them.
 
 ## For Dr. Pearce, with the packet
 
-Name these rather than leaving him to find them:
+Name these rather than leaving him to find them.
 
 - [ ] **Bases share the flammables cabinet.** Western states bases are "incompatible with
       acids, flammables and oxidizers and should be stored on their own". The current
       arrangement is a knowing trade-off against putting bases in a non-rated cabinet. No
       sign text was changed; this needs his call.
-- [ ] **The glove rule** on power tools, now resolved from CCOHS, worth him confirming.
+- [ ] **The glove rule** on power tools, resolved from CCOHS, worth him confirming.
 - [ ] **The FAST phone number label.** 519-661-2111 ext. 86725 reads "FAST lab" on the
       safety sign. His office, or a general line?
 
-## Status at a glance
+## Yours, in an afternoon
 
-Open checks: **20**. `Today?` marks what could be closed in an afternoon without waiting
-on anyone outside the group.
-
-| Sign | Tier | Reviewer beyond PI/post-doc | Open | Pages | Today? |
-| --- | --- | --- | --- | --- | --- |
-| waste-disposal | High / **keystone** | Hazwaste authority | 1 | 3 | no (C1) |
-| chemical-and-materials-storage | High | Chemical storage SOP | 1 | 2 | partly |
-| fumehood | High | — | **0** | 2 | clear |
-| sink | High | Drain authority | 1 | 1 | no (C1) |
-| broken-glass-and-sharps | High | Sharps route | 1 | 1 | **yes** |
-| batteries-and-ewaste | High | Campus battery route | 1 | 1 | **yes** |
-| printers-resin | High | **Alessia R.** | 4 | 2 | no |
-| wiring | High | **Cameron B. / Dr. Pearce** | 2 | 2 | partly |
-| safety-equipment-and-incidents | High | Incident-route confirm | 1 | 1 | **yes** |
-| power-tools | Equipment | Tool-access owner | 1 | 2 | **yes** |
-| stationary-tools | Equipment | Training/sign-off owner | 2 | 2 | **yes** |
-| printers-fff | Equipment | Printer owner | 1 | 1 | **yes** |
-| printers-fgf | Equipment | Alessia R. / printer owner | **0** | 2 | clear |
-| soldering-station | Equipment | Station owner | 2 | 1 | **yes** |
-| manual-tools | Equipment | — (light) | 1 | 1 | **yes** |
-| general-storage | Housekeeping | — (light) | 1 | 1 | **yes** |
-
-## Closeable today
-
-Ten of the twenty need only a decision, a number, or a document already in hand.
-
-- [ ] **soldering-station** — write down FAST setup and shutdown expectations.
+- [ ] **soldering-station** — write down the FAST setup and shutdown expectations.
 - [ ] **soldering-station** — photograph or scan the YIHUA 862BD+ paper manual into
-      `equipment/soldering-station.md`. No manufacturer-hosted copy exists online.
-- [ ] **power-tools** — list the grinder, saw, sander and driver models held, so their
-      manuals can be gathered.
+      `equipment/soldering-station.md`. No manufacturer-hosted copy exists online, so the
+      paper copy is the only source.
+- [ ] **power-tools** — list the grinder, saw, sander and driver models actually held, so
+      their manuals can be gathered.
 
-## Needs someone else, or longer
+## Waiting on someone else
 
-- [ ] **printers-resin** ×4 — Alessia R.'s review (AUTHORING says this happens *after*
-      initial posting), the FAST approved solvent list, resin and solvent SDS, and the
-      hazardous-waste route for resin, wash liquid, wipes and failed prints.
-- [ ] **chemical** — collect the SDS for each category actually held.
-- [ ] **sink** — the FAST process for collecting contaminated rinsate. Western's handbook
-      covers rinsing empty containers (2.5) but not where the rinsate goes.
-- [ ] **waste-disposal** — the FAST local process for oils, greases, lubricants, resins,
-      solvents, acids and bases. This is C1 and the last big one.
-- [ ] **wiring** ×2 — examples of approved wiring/enclosures, and the applicable equipment
-      manuals, datasheets, certification and local code/ESA requirements.
+- [ ] **printers-resin** — Alessia R.'s review of the whole sign. AUTHORING says this
+      happens *after* initial posting, so it does not hold up the print run.
+- [ ] **printers-resin** — resin and solvent SDS on file.
+- [ ] **printers-resin** — the hazardous-waste route for resin, wash liquid, wipes and
+      failed prints, beyond what Western's handbook already covers.
+- [ ] **chemical-and-materials-storage** — collect the SDS for each category actually held in the lab.
+- [ ] **sink** — where contaminated rinsate goes. Western's handbook covers rinsing empty
+      containers (2.5) but not the rinsate itself.
+- [ ] **wiring** — examples of approved wiring and enclosures from Cameron B. or
+      Dr. Pearce.
+- [ ] **wiring** — the applicable equipment manuals, component datasheets, certification
+      requirements and local code / ESA requirements.
 - [ ] **stationary-tools** — local PPE and dust-control requirements per tool.
-- [ ] **printers-fgf** — the drying figures on the sign (PLA 45 C for 4-6 h, PETG 60 C
-      for 6 h) are labelled general practice and carry no citation. Polymaker blocks
-      automated access so its PolyLite PETG figure could not be verified. Either cite a
-      readable source or make it a named FAST procedure once Alessia R. has weighed in.
+- [ ] **printers-fgf** — a readable source for the drying figures. Polymaker blocks
+      automated access, so the PolyLite PLA and PETG technical data sheets have to be
+      pulled by hand; the sign labels the numbers general practice until then. Alessia R.
+      to review these and the reprocessing limits.
 
 ## Cross-Cutting Blockers
 
 ### C1. Name the remaining FAST procedures
 
-The Western-published half is done; signs now cite real documents. What is left is local:
+The Western-published half is done and the signs cite real documents. Two local
+procedures are still unwritten, and each is the reason a sign above is blocked:
 
 - [ ] **FAST waste-disposal procedure** — oils, greases, lubricants, resins, solvents,
-      acids, bases, and where rinsate goes.
-- [ ] **FAST resin handling procedure** — approved solvent list, wash/cure workflow, waste
-      routing.
-- [ ] **FAST spill & incident response** — the exact reporting route.
-- [ ] **Stationary-tool training / sign-off process** — documented.
+      acids, bases, and where rinsate goes. Blocks `waste-disposal` and `sink`.
+- [ ] **FAST resin handling procedure** — approved solvent list, wash/cure workflow,
+      waste routing. Blocks `printers-resin`.
+
+Two others closed on 2026-09-10: incident reporting is to the PI or a post-doc, who file,
+and stationary-tool sign-off is informal — the PI or a post-doc trains and signs off
+directly, with no document to point at, and the signs now say so rather than implying one
+exists.
 
 ### C2. Safety-binder process
 
 - [ ] Confirm the FAST lab safety binder index exists and define the step for adding or
       updating a sign there. Every sign's approval depends on it.
 
-### C3. QR links — done
-
-Every link on a sign prints as a QR code rather than as text. A URL on paper cannot be
-used and a Markdown link to another sign is just blue ink, so the build strips both and
-renders one code per link, captioned with its label. Related signs are folded into the
-same strip, which is why they now cost no height of their own.
-
-The sign URL contract is `https://uwo-fast.github.io/signs/<slug>/`, from the `slug` in
-front matter. It encodes neither the repo name nor a directory path, so this repo can be
-restructured without killing codes already on a wall, and the site build refuses to
-publish a sign whose filename has drifted from its slug.
-
-Each sign's strip also leads with its own code, captioned "this sign online", so the
-digital version is reachable from the wall.
-
-Verified: all 76 codes decode to exactly the link written in their sign, no sign gained a
-page, and no sign has an overfull box.
-
 ## Deferred, not blocking
 
-Real work, deliberately not being done now. Recorded so it is not rediscovered.
+Real work, deliberately not being done now, with what was measured so it is not
+re-litigated from scratch.
 
 - [ ] **Diagram legibility.** The flowcharts on `waste-disposal`, `chemical` and `wiring`
-      render with text far smaller than body copy. Flipping to `flowchart LR` buys a page
-      but shrinks the text further, so it was rejected. Wants a redesign, not a flag flip.
+      print with text far smaller than body copy. Two dead ends are already ruled out.
+      `flowchart LR` fits but shrinks the text further. Raising the mermaid font size is
+      self-defeating, because the image is height-capped at `0.62\textheight` and grows
+      faster than the text does:
+
+          wiring  784x1090 @ ~16px font  ->  text 1.97 mm on the page
+          wiring 1862x3618 @  28px font  ->  text 1.04 mm on the page
+
+      The only levers left are a shallower diagram — fewer decision levels — or more page
+      height for it. Both change the sign, not a config value.
+- [ ] **Orphan headings.** A section heading can be stranded at the foot of a page with
+      its content overleaf, as "Common Waste Streams" is on `waste-disposal` page 1.
+      `\usepackage[nobottomtitles*]{titlesec}` fixes it in one line, but it was measured
+      at **two signs gaining a page**, so it is off. Turn it on if that becomes an
+      acceptable trade.
+- [ ] **`chemical-and-materials-storage` diagram and table disagree.** The table gained peroxide formers,
+      water-reactives, pyrophorics and shock-sensitives; the flowchart still ends at
+      "Check SDS and ask before storing". Defensible, since that branch covers them
+      implicitly, but the two no longer say the same thing.
+- [ ] **`safety-equipment` strip sits tight against the footer rule.** Not overlapping,
+      but the least margin in the set, on the sign you least want looking cramped.
 - [ ] **Unicode font in the template.** `templates/lab-sign.tex` has no Unicode font, so
       lualatex silently dropped characters like `°` and `±`. The build now fails loudly
-      instead, but a sign still cannot print a degree sign.
+      instead, but a sign still cannot print a degree sign. `fontspec` did not load Latin
+      Modern on this machine.
 - [ ] **Normalise source labels.** Some signs say "Lab Safety Manual", others "Western
       Laboratory Health and Safety Manual".
+- [ ] **Immediate site rebuilds.** <https://uwo-fast.github.io> rebuilds daily and accepts
+      a `repository_dispatch` of type `signs-updated`, but nothing sends one. A token with
+      access to the site repo would let this repo push a rebuild the moment it publishes,
+      rather than the codes on the wall trailing by up to a day.
 - **`waste-disposal` stays at 3 pages.** Not fixable by trimming — reclaiming 200pt still
   leaves three, because the flowchart is atomic and dictates the page breaks. Page 3
   carries real references, not a stub. Closes only via the diagram work above.
