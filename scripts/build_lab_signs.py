@@ -410,6 +410,10 @@ def replace_links_with_qr(slug: str, body: str) -> str:
     for span in spans:
         replacements.append(new_related if span is related else new_sources)
     if not sources:
+        # No Sources section to replace, so the strip is appended. The preceding
+        # segment ends mid-paragraph, and without a blank line the heading is
+        # swallowed into the last bullet and prints as literal "## Related".
+        segments[-1] = segments[-1].rstrip() + "\n\n"
         replacements.append(new_sources)
         segments.append("")
 

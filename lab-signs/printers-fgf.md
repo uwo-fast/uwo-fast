@@ -98,7 +98,7 @@ from those prints, printed again, is cycle 2.
 ## Waste And Cleanup
 
 - Purge, failed prints, and clean single-polymer offcuts go back to FAST polymer recycling
-  if the polymer is known. See the Waste Disposal sign.
+  if the polymer is known. See the [Waste Disposal](waste-disposal.md) sign.
 - Contaminated, mixed, or unknown material does not go into polymer recycling.
 - Leave the printer, hopper area, and bench clean and clear for the next user.
 - Report printer problems rather than leaving them for the next user.
