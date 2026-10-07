@@ -37,8 +37,12 @@ sign +SIGNS:
 preview:
     {{ python }} scripts/build_lab_signs.py --all --png
 
-# CI equivalent: a clean full build must succeed. Run before committing.
-check: clean build
+# Run the build script's unit tests.
+test:
+    {{ python }} -m unittest discover -s scripts
+
+# CI equivalent: tests plus a clean full build. Run before committing.
+check: test clean build
 
 # Show the page count of each built sign.
 pages:

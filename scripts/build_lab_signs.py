@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import itertools
 import json
 import os
 import re
@@ -161,9 +162,10 @@ def render_mermaid(markdown: str, sign_artifacts: Path) -> str:
     if cmd is None:
         raise BuildError("Mermaid diagrams found, but mmdc/npx is not available. Run npm install first.")
     sign_artifacts.mkdir(parents=True, exist_ok=True)
+    counter = itertools.count(1)
 
     def replace(match: re.Match[str]) -> str:
-        idx = len(list(sign_artifacts.glob("diagram-*.mmd"))) + 1
+        idx = next(counter)
         source = sign_artifacts / f"diagram-{idx}.mmd"
         output = sign_artifacts / f"diagram-{idx}.png"
         source.write_text(match.group(1).strip() + "\n")
@@ -239,9 +241,8 @@ def source_qr_block(slug: str, sources: list[tuple[str, str]]) -> str:
             f"{{\\tiny {escape_latex(label)}\\par}}"
             "\\end{minipage}"
         )
-    # Wrap here rather than leaving it to LaTeX. Eight cells overran the text
-    # width and spilled into the margin without failing the build; the row count
-    # is arithmetic, so do the arithmetic.
+    # Wrap here rather than leaving it to LaTeX, which lets an overfull row run
+    # into the margin without failing the build.
     rows = [
         "\\hspace{2mm}".join(cells[i : i + CELLS_PER_ROW])
         for i in range(0, len(cells), CELLS_PER_ROW)
@@ -312,25 +313,21 @@ def extract_links(section: str) -> tuple[list[tuple[str, str]], str]:
     return links, "\n".join(kept).strip()
 
 
-def check_no_links_lost(before: str, after: str, slug: str, path: Path) -> None:
+def check_no_links_lost(
+    before: str, after: str, links: list[tuple[str, str]], path: Path
+) -> None:
     """Fail if a link disappeared instead of becoming a code.
 
-    The first version of this transform cut the Related section wholesale and
-    only looked for sign links in it, so a section of external sources vanished
-    from the printed sign with nothing generated in its place. Nothing caught
-    it, because the build still succeeded and the page count still looked fine.
+    A dropped link still builds and the page still looks fine, so nothing else
+    would catch it.
     """
     urls = set(re.findall(r"<(https?://[^>]+)>", before))
-    signs = {m.group("slug") for m in RELATED_RE.finditer(before)}
-    encoded = set()
-    for qr in QR_DIR.glob(f"{slug}-*.png"):
-        encoded.add(qr)
-    expected = len(urls) + len(signs)
-    if expected and len(encoded) < expected:
+    expected = urls | {sign_url(m.group("slug")) for m in RELATED_RE.finditer(before)}
+    missing = sorted(expected - {url for _, url in links})
+    if missing:
         raise BuildError(
-            f"{relative(path)}: {expected} links in the source but only "
-            f"{len(encoded)} codes rendered. A link was dropped rather than "
-            "turned into a code."
+            f"{relative(path)}: dropped rather than turned into a code: "
+            + ", ".join(missing)
         )
     for url in urls:
         if url in after:
@@ -340,7 +337,7 @@ def check_no_links_lost(before: str, after: str, slug: str, path: Path) -> None:
             )
 
 
-def replace_links_with_qr(slug: str, body: str) -> str:
+def replace_links_with_qr(slug: str, body: str) -> tuple[str, list[tuple[str, str]]]:
     """Swap every printed link on the sign for a scannable code.
 
     Related signs and sources share one strip. A second block would cost height
@@ -385,7 +382,7 @@ def replace_links_with_qr(slug: str, body: str) -> str:
     links = deduped
 
     if not links:
-        return body
+        return body, links
 
     plain = lambda text: RELATED_RE.sub(lambda m: m.group("label"), text)
     segments = [plain(s) for s in segments]
@@ -422,14 +419,14 @@ def replace_links_with_qr(slug: str, body: str) -> str:
         out.append(segment)
         if index < len(replacements):
             out.append(replacements[index])
-    return "".join(out)
+    return "".join(out), links
 
 
 def prepare_markdown(path: Path) -> tuple[dict[str, Any], str]:
     metadata, body = parse_frontmatter(path)
     original = body
-    body = replace_links_with_qr(metadata["slug"], body)
-    check_no_links_lost(original, body, metadata["slug"], path)
+    body, links = replace_links_with_qr(metadata["slug"], body)
+    check_no_links_lost(original, body, links, path)
     if metadata.get("include_universal_notice", True):
         notice = universal_notice_markdown()
         # Keep the sign title first; place the standing notice just beneath it.
@@ -444,8 +441,6 @@ def prepare_markdown(path: Path) -> tuple[dict[str, Any], str]:
 def pandoc_metadata_args(metadata: dict[str, Any], source_path: Path) -> list[str]:
     # Provenance (commit links, generated timestamp) lives in manifest.json; the
     # sign face only carries the human-useful identifiers, rendered in the footer.
-    # The QR and its URL are placed in the body, beside the standing notice, so
-    # they are not passed to the template.
     args = [
         "--metadata", f"title={metadata['title']}",
         "--metadata", f"version={metadata['version']}",
@@ -455,9 +450,6 @@ def pandoc_metadata_args(metadata: dict[str, Any], source_path: Path) -> list[st
         "--metadata", f"source_path={relative(source_path)}",
         "--metadata", f"logo_path={relative(LOGO)}",
     ]
-    slug = metadata.get("slug")
-    if slug:
-        args += ["--metadata", f"sign_url={sign_url(slug).removeprefix('https://')}"]
     return args
 
 
