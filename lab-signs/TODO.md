@@ -78,7 +78,6 @@ procedures are still unwritten, and each is the reason a sign above is blocked:
 - [ ] **FAST resin handling procedure** — approved solvent list, wash/cure workflow,
       waste routing. Blocks `printers-resin`.
 
-
 ### C2. Safety-binder process
 
 - [ ] Confirm the FAST lab safety binder index exists and define the step for adding or
