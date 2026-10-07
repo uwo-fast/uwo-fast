@@ -37,7 +37,7 @@ ENV/
 
 # Python cache and compiled files
 
-**pycache**/
+__pycache__/
 *.py[cod]
 *$py.class
 .pytest_cache/
