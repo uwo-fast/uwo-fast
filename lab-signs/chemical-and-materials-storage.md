@@ -15,7 +15,7 @@ include_universal_notice: true
 - Read the label and SDS before storing a chemical. This sign is not a compatibility chart.
 - Keep chemicals in compatible, labeled, closed containers.
 - NEVER store bases in the acid cabinet.
-- Do not store oxidizers, peroxide formers, water-reactives, toxics, or compressed gases by guessing from this table.
+- Do not store oxidizers, toxics, compressed gases, or anything this table does not list by guessing.
 - If you are unsure where something belongs, do not put it away: ask the PI or a post-doc.
 - Inorganic salts and ordinary organic liquids and solids may be stored together. The groups below are the exceptions.
 

@@ -55,7 +55,6 @@ include_universal_notice: true
 ## Related
 
 - See [Waste Disposal](waste-disposal.md) before discarding resin or contaminated material.
-- Alessia R. follow-up review requested after initial posting.
 
 ## Sources / Procedure Links
 

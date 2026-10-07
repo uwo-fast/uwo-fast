@@ -36,7 +36,7 @@ flowchart TD
 | --- | --- | --- |
 | Clean plates, blanks, blocks, containers, or simple offcuts | Reuse | Keep only if someone can realistically use it again. |
 | Clean known PLA, PETG, or ABS print waste | FAST polymer recycling | Use the black material-labeled cans near the TEB6 shredders/extruders. Mixed color is OK within one polymer; mixed polymer is not accepted. |
-| Small skirts, purge lines, tiny scraps, dirty prints, composite prints, TPU/TPE, nylon, or mixed-polymer waste | Garbage or ask | Do not put these in polymer recycling. |
+| Small skirts, FFF purge lines, tiny scraps, dirty prints, composite prints, TPU/TPE, nylon, or mixed-polymer waste | Garbage or ask | Do not put these in polymer recycling. |
 | Paper or cardboard | Paper/cardboard recycling | Small bins are by the TEB6/TEB7 doors; large blue bins are in hallways or the loading dock area. |
 | Clean accepted containers | Container recycling | Confirm the campus stream before using it. |
 | Food-contaminated or dirty non-hazardous waste | Garbage | Do not contaminate recycling streams. |
@@ -47,7 +47,8 @@ flowchart TD
 | Item | Action |
 | --- | --- |
 | Unknown chemical or unlabeled liquid/solid | Do not discard. Identify or characterize through the approved Western hazardous-waste process. |
-| Batteries or damaged battery packs | Use the battery bin on the south wall counter of TEB7. All common chemistries are accepted; tape the terminals. |
+| Batteries | Use the battery bin on the south wall counter of TEB7. All common chemistries are accepted; tape the terminals. |
+| Damaged, swollen, leaking, hot, or unknown batteries | Do not put in the battery bin. Stop and ask the PI or a post-doc. |
 | Electronics, circuit boards, cables, or e-waste | Use the e-waste bin on the south wall counter of TEB7. Classed as hazardous waste; never landfill garbage. |
 | Broken glass or sharps | Glass and sharps go in separate containers. See Broken Glass and Sharps. |
 | Aerosols, spray paints, lubricants, oils, greases, or solvents | Use the approved hazardous-waste or special-waste process. Store only in compatible, labeled containers. Keep halogenated and non-halogenated solvents separate and list full chemical names. |

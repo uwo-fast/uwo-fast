@@ -39,6 +39,10 @@ Name these rather than leaving him to find them.
 - [ ] **The glove rule** on power tools, resolved from CCOHS, worth him confirming.
 - [ ] **The FAST phone number label.** 519-661-2111 ext. 86725 reads "FAST lab" on the
       safety sign. His office, or a general line?
+- [ ] **chemical-and-materials-storage, special-hazard rows.** The peroxide-former,
+      water-reactive and pyrophoric rows read as Western's general list. Keep only the
+      categories the lab actually holds. Also confirm "inorganic salts and ordinary organic
+      liquids and solids may be stored together", which as written also covers flammables.
 
 ## Yours, in an afternoon
 
@@ -46,6 +50,10 @@ Name these rather than leaving him to find them.
 - [ ] **soldering-station** — photograph or scan the YIHUA 862BD+ paper manual into
       `equipment/soldering-station.md`. No manufacturer-hosted copy exists online, so the
       paper copy is the only source.
+- [ ] **general-storage** — confirm glassware, strainers and funnels still live in the red
+      standing cabinet bottom drawer.
+- [ ] **waste-disposal / printers-fgf** — confirm the purge split: FFF purge lines go to
+      garbage, FGF purge of a known polymer goes to polymer recycling.
 - [ ] **power-tools** — list the grinder, saw, sander and driver models actually held, so
       their manuals can be gathered.
 
