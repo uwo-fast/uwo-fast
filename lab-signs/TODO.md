@@ -109,11 +109,6 @@ Measurements are recorded so they are not repeated.
       implicitly, but the two no longer say the same thing.
 - [ ] **`safety-equipment` strip sits tight against the footer rule.** Not overlapping,
       but the least margin in the set.
-- [ ] **Unicode font in the template.** `templates/lab-sign.tex` has no Unicode font, so
-      lualatex silently dropped characters like `°` and `±`. The build now fails loudly
-      instead, but a sign still cannot print a degree sign. `fontspec` did not load Latin
-      Modern locally. CI's PDFs embed Latin Modern OpenType fonts, so the problem may be
-      local only: build a sign containing `°` in CI with the check off before relaxing it.
 - [ ] **Normalise source labels.** Some signs say "Lab Safety Manual", others "Western
       Laboratory Health and Safety Manual".
 - [ ] **Immediate site rebuilds.** <https://uwo-fast.github.io> rebuilds daily and accepts

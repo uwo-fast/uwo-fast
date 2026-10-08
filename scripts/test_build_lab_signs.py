@@ -38,5 +38,19 @@ class LinkGuardTest(unittest.TestCase):
             b.check_no_links_lost(BODY, body, links[:-1], b.ROOT / "demo.md")
 
 
+class MissingGlyphTest(unittest.TestCase):
+    STDERR = (
+        "[WARNING] Missing character: There is no ⚠ (U+26A0) (U+26A0) "
+        "in font [lmroman10-regular]:+tlig;!\n"
+    )
+
+    def test_missing_glyph_fails(self):
+        with self.assertRaises(b.BuildError):
+            b.check_missing_glyphs(self.STDERR, b.ROOT / "demo.md")
+
+    def test_other_warnings_pass(self):
+        b.check_missing_glyphs("[WARNING] Could not fetch resource\n", b.ROOT / "demo.md")
+
+
 if __name__ == "__main__":
     unittest.main()

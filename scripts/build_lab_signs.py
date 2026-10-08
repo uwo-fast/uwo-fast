@@ -458,17 +458,18 @@ def render_pdf(markdown_path: Path, output_path: Path, metadata: dict[str, Any],
     cmd = [
         "pandoc",
         str(markdown_path),
-        # -smart is deliberate: with smart quotes on, pandoc emits Unicode curly
-        # quotes, which the template's font cannot render and which then vanish
-        # entirely. Keep it off until the template gains a Unicode font.
-        "--from", "markdown+tex_math_dollars-smart",
+        "--from", "markdown+tex_math_dollars",
         "--pdf-engine=lualatex",
         "--template", str(TEMPLATE),
         "--resource-path", str(ROOT),
         *pandoc_metadata_args(metadata, source_path),
         "-o", str(output_path),
     ]
-    run(cmd)
+    result = subprocess.run(cmd, cwd=ROOT, check=False, text=True, stderr=subprocess.PIPE)
+    sys.stderr.write(result.stderr)
+    if result.returncode != 0:
+        raise BuildError(f"Command failed: {' '.join(cmd)}")
+    check_missing_glyphs(result.stderr, source_path)
 
 
 def png_command() -> list[str] | None:
@@ -493,18 +494,12 @@ def render_pngs(pdf_paths: list[Path]) -> bool:
     return True
 
 
-def check_renderable(body: str, path: Path) -> None:
-    # The LaTeX template has no Unicode font set up, so lualatex drops any
-    # non-ASCII character with only a warning: "260 \u00b0C" renders as "260 C"
-    # and "\u00b15 V" as "5 V". Fail loudly instead of shipping a corrupted sign.
-    bad = sorted({ch for ch in body if ord(ch) > 127})
-    if not bad:
-        return
-    detail = ", ".join(f"{ch!r} (U+{ord(ch):04X})" for ch in bad)
-    raise BuildError(
-        f"{relative(path)}: non-ASCII characters will not render and would be "
-        f"silently dropped from the PDF: {detail}"
-    )
+def check_missing_glyphs(stderr: str, path: Path) -> None:
+    # lualatex cannot draw a character the font lacks, yet still exits 0, and
+    # pandoc only warns. Fail rather than print a sign with a symbol missing.
+    missing = [line for line in stderr.splitlines() if "Missing character" in line]
+    if missing:
+        raise BuildError(f"{relative(path)}: font cannot render:\n" + "\n".join(missing))
 
 
 def check_reference_policy(metadata: dict[str, Any], body: str, path: Path) -> None:
@@ -542,7 +537,6 @@ def build(paths: list[Path]) -> dict[str, Any]:
 
     for path in paths:
         metadata, markdown = prepare_markdown(path)
-        check_renderable(markdown, path)
         check_reference_policy(metadata, markdown, path)
         sign_artifacts = ARTIFACTS_DIR / str(metadata["slug"])
         markdown = render_mermaid(markdown, sign_artifacts)

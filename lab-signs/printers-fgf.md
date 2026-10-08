@@ -29,7 +29,7 @@ include_universal_notice: true
 
 - Keep feedstock containers closed and labelled with polymer and cycle count.
 - Wet feedstock prints badly and can spit. Dry it if it has been open to room air.
-- General practice: PLA at 45 C for 4 to 6 hours, PETG at 60 C for 6 hours. Do not dry PLA hotter. It softens near 60 C and loose shred will fuse into a solid lump.
+- General practice: PLA at 45 °C for 4 to 6 hours, PETG at 60 °C for 6 hours. Do not dry PLA hotter. It softens near 60 °C and loose shred will fuse into a solid lump.
 
 ## Reprocessing Limit
 

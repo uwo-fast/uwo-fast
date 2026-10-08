@@ -71,8 +71,8 @@ product page omits the gearbox ratio and any e-steps figure.
 
 ## Deviations on this unit
 
-- **Printed parts are ABS.** The vendor's ~300 C ceiling applies to units with PLA-printed
-  parts fitted. This unit uses ABS, so the stock 330 C rating applies.
+- **Printed parts are ABS.** The vendor's ~300 °C ceiling applies to units with PLA-printed
+  parts fitted. This unit uses ABS, so the stock 330 °C rating applies.
 - **Fans replaced.** The kit ships two 24 V 2-pin blowers that the Einsy board cannot
   power. Both were swapped for 5 V units sourced separately.
 - **PINDA bracket replaced.** The vendor proximity-sensor adapters put the probe outside
