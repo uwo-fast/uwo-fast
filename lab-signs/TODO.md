@@ -3,19 +3,11 @@
 What is left before each sign reaches **v1 / `approved`**. Completed work is not tracked
 here; the git history has it.
 
-Last reviewed: 2026-09-10. See [AUTHORING.md](AUTHORING.md) for the review process,
+Last reviewed: 2026-10-07. See [AUTHORING.md](AUTHORING.md) for the review process,
 reference rules, and approval blockers this list is built from.
 
-All 16 signs are `status: review` at v0.1 — awaiting PI, post-doc, equipment owner or
-subject-matter review, which is what AUTHORING defines that state as.
-
-Open questions live here, not on the signs. A printed wall reminder is read by someone
-deciding what to do at the bench; a list of what the lab has not confirmed yet is noise
-there and undercuts the instructions around it.
-
-For page counts run `just pages`, and for the link codes `just build` regenerates them.
-Neither number is repeated here, because a count written beside the thing it counts is a
-claim that rots.
+Every sign is `status: review` at v0.1. Open questions are tracked here, not on the
+signs. `just pages` gives page counts.
 
 ## The current plan: post at `review`, iterate
 
@@ -25,27 +17,32 @@ blocks printing only if a person following the sign could be hurt or misdirected
 
 ## Blocking the first printing
 
-**Nothing.** The sharps container is in place beside the glass container under the sink,
-and both signs name the two bins and warn against mixing them.
+Nothing.
 
-## For Dr. Pearce, with the packet
-
-Name these rather than leaving him to find them.
+## For Dr. Pearce
 
 - [ ] **Bases share the flammables cabinet.** Western states bases are "incompatible with
       acids, flammables and oxidizers and should be stored on their own". The current
       arrangement is a knowing trade-off against putting bases in a non-rated cabinet. No
-      sign text was changed; this needs his call.
-- [ ] **The glove rule** on power tools, resolved from CCOHS, worth him confirming.
+      sign text was changed; this is the PI's call.
+- [ ] **The glove rule** on power tools, resolved from CCOHS, to confirm.
 - [ ] **The FAST phone number label.** 519-661-2111 ext. 86725 reads "FAST lab" on the
-      safety sign. His office, or a general line?
+      safety sign. The PI's office, or a general line?
+- [ ] **chemical-and-materials-storage, special-hazard rows.** The peroxide-former,
+      water-reactive and pyrophoric rows read as Western's general list. Keep only the
+      categories the lab actually holds. Also confirm "inorganic salts and ordinary organic
+      liquids and solids may be stored together", which as written also covers flammables.
 
-## Yours, in an afternoon
+## Local write-ups
 
 - [ ] **soldering-station** — write down the FAST setup and shutdown expectations.
 - [ ] **soldering-station** — photograph or scan the YIHUA 862BD+ paper manual into
       `equipment/soldering-station.md`. No manufacturer-hosted copy exists online, so the
       paper copy is the only source.
+- [ ] **general-storage** — confirm glassware, strainers and funnels still live in the red
+      standing cabinet bottom drawer.
+- [ ] **waste-disposal / printers-fgf** — confirm the purge split: FFF purge lines go to
+      garbage, FGF purge of a known polymer goes to polymer recycling.
 - [ ] **power-tools** — list the grinder, saw, sander and driver models actually held, so
       their manuals can be gathered.
 
@@ -81,11 +78,6 @@ procedures are still unwritten, and each is the reason a sign above is blocked:
 - [ ] **FAST resin handling procedure** — approved solvent list, wash/cure workflow,
       waste routing. Blocks `printers-resin`.
 
-Two others closed on 2026-09-10: incident reporting is to the PI or a post-doc, who file,
-and stationary-tool sign-off is informal — the PI or a post-doc trains and signs off
-directly, with no document to point at, and the signs now say so rather than implying one
-exists.
-
 ### C2. Safety-binder process
 
 - [ ] Confirm the FAST lab safety binder index exists and define the step for adding or
@@ -93,8 +85,7 @@ exists.
 
 ## Deferred, not blocking
 
-Real work, deliberately not being done now, with what was measured so it is not
-re-litigated from scratch.
+Measurements are recorded so they are not repeated.
 
 - [ ] **Diagram legibility.** The flowcharts on `waste-disposal`, `chemical` and `wiring`
       print with text far smaller than body copy. Two dead ends are already ruled out.
@@ -112,16 +103,17 @@ re-litigated from scratch.
       `\usepackage[nobottomtitles*]{titlesec}` fixes it in one line, but it was measured
       at **two signs gaining a page**, so it is off. Turn it on if that becomes an
       acceptable trade.
-- [ ] **`chemical-and-materials-storage` diagram and table disagree.** The table gained peroxide formers,
-      water-reactives, pyrophorics and shock-sensitives; the flowchart still ends at
+- [ ] **`chemical-and-materials-storage` diagram and table disagree.** The table gained
+      peroxide formers, water-reactives, pyrophorics and shock-sensitives; the flowchart still ends at
       "Check SDS and ask before storing". Defensible, since that branch covers them
       implicitly, but the two no longer say the same thing.
 - [ ] **`safety-equipment` strip sits tight against the footer rule.** Not overlapping,
-      but the least margin in the set, on the sign you least want looking cramped.
+      but the least margin in the set.
 - [ ] **Unicode font in the template.** `templates/lab-sign.tex` has no Unicode font, so
       lualatex silently dropped characters like `°` and `±`. The build now fails loudly
       instead, but a sign still cannot print a degree sign. `fontspec` did not load Latin
-      Modern on this machine.
+      Modern locally. CI's PDFs embed Latin Modern OpenType fonts, so the problem may be
+      local only: build a sign containing `°` in CI with the check off before relaxing it.
 - [ ] **Normalise source labels.** Some signs say "Lab Safety Manual", others "Western
       Laboratory Health and Safety Manual".
 - [ ] **Immediate site rebuilds.** <https://uwo-fast.github.io> rebuilds daily and accepts
@@ -136,9 +128,7 @@ re-litigated from scratch.
 
 The bar each sign must clear before `status: approved` / `version: "1.0"`:
 
-1. Every item listed for that sign in this file is resolved. **The build also hard-fails
-   on an `approved` sign carrying a `Reference Checks Needed` section, which should no
-   longer appear in a sign body at all.**
+1. Every item listed for that sign in this file is resolved.
 2. Every disposal / storage / emergency / PPE / electrical / equipment instruction has a
    cited source **or** a named local FAST procedure.
 3. No reference to an "approved procedure" that is not actually identified.

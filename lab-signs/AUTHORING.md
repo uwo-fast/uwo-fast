@@ -120,8 +120,6 @@ Do not mark a sign `approved` (`status: approved` in the front matter) while any
 - The sign could reasonably be read as authorizing untrained users to perform hazardous work.
 - The sign has not been added to the FAST lab safety binder process.
 
-For safety-critical signs, unresolved questions should stay visible in the draft until they are answered.
-
 ## Reference Section Format
 
 A sign carries its sources and nothing else about its own provenance:
@@ -137,9 +135,8 @@ tracked per sign. A wall reminder is read by someone deciding what to do at the 
 telling them the lab has not yet confirmed who empties a bin is noise at best, and at
 worst it undermines the instructions around it.
 
-`Reference Checks Needed` sections were previously kept in the sign body while a sign was
-in draft. They are not any more. The build still warns if one reappears, and still
-hard-fails on an `approved` sign that contains one, as a guard against regression.
+The build warns if a sign contains a `Reference Checks Needed` section, and fails if an
+`approved` sign does.
 
 ## Writing Style
 
@@ -217,14 +214,9 @@ The `## Related` bullets are folded into the same strip, pointing at
 looking for another sign on the wall. A sign named mid-sentence is handled the same way:
 its text becomes plain and it joins the strip.
 
-The strip also leads with the sign's **own** code, captioned "this sign online". Keeping
-every code in one strip is deliberate: a separate block beside the title reads better but
-costs roughly 40pt on the first page, which pushed the two tightest signs onto a second
-page. The strip is a fixed height whatever it holds, so this costs nothing.
-
-The strip wraps at seven codes per row. That is arithmetic against the text width, not
-something LaTeX is left to work out: eight cells overran the margin without failing the
-build.
+The strip leads with the sign's **own** code, captioned "this sign online". Every code
+sits in the one strip, which is a fixed height per row of seven, so it costs the least
+page space.
 
 The label before the colon becomes the caption under the code, so keep it short. It is
 what someone reads to decide which code to scan.
@@ -246,14 +238,19 @@ If every line is a warning, nothing stands out. Keep the strongest language for 
 
 ## Draft Sign Template
 
-Use this as a starting structure until the PDF workflow defines required front matter.
+Use this as a starting structure. The front matter is described in
+[Front Matter and Build](#front-matter-and-build).
 
 ```markdown
-# Sign Title
+---
+title: "Sign Title"
+slug: "sign-title"
+version: "0.1"
+status: "draft"
+review_owner: "PI / post-doc"
+---
 
-Status: draft
-Review owner: PI / post-doc
-Last updated: YYYY-MM-DD
+# Sign Title
 
 Scope: One short sentence describing where or when this sign applies.
 
@@ -304,8 +301,8 @@ include_universal_notice: true  # optional, defaults to true
 What the build adds automatically, so you do not write it into each sign:
 
 - **Universal notice** — the boxed "Before You Work" callout from `_UNIVERSAL_NOTICE.md` is inserted just below the sign title, unless `include_universal_notice: false`. Edit it in one place; it updates on every sign.
-- **Sign Metadata** — a small table (version, status, review owner, last updated) plus a source/provenance line is appended to the end of each sign.
-- **Header/footer** — FAST logo, title, `version | status`, source path, and page numbers.
+- **Header/footer** — FAST logo, title and `version | status` in the header; source path, review owner, last-updated date and page numbers in the footer.
+- **Link strip** — every link becomes a QR code, as described above.
 
 Content features you can use in a sign body:
 
@@ -313,4 +310,4 @@ Content features you can use in a sign body:
 - **Math** — `$P = IV$` inline, or `$$ ... $$` for display equations.
 - **Tables and bullets** — standard Markdown; use tables for classification and bullets for short actions.
 
-Do not hand-add a `DRAFT` banner or a metadata table; the header status and the appended metadata cover both.
+Do not hand-add a `DRAFT` banner or a metadata table; the header and footer cover both.
