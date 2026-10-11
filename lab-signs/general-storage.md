@@ -21,7 +21,7 @@ include_universal_notice: true
 
 - FAST is moving away from chemical storage in TEB7.
 - Use red standing cabinets and general shelves for non-chemical materials, shared items, and clean storage only.
-- Glassware, strainers, funnels, and similar shared items may be stored in the red standing cabinet bottom drawer if that location remains current.
+- Glassware, strainers, funnels, and similar shared items may be stored in the red standing cabinet bottom drawer.
 - Do not put chemicals in these cabinets unless the PI or a post-doc explicitly approves the location.
 
 ## Reuse Or Discard

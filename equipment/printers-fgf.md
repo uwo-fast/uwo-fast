@@ -11,7 +11,7 @@ equipment: "GreenBoy3D Pellet Extruder V1 on an Original Prusa i3 MK3S, with FAS
 
 Reference record for the FAST pellet printer, built in-house by converting a Prusa MK3S
 to granulate feedstock. This is a binder and reference document, not a posted sign. The
-wall sign is [FGF Printers](../lab-signs/printers-fgf.md).
+wall sign is [FGF Printer](../lab-signs/printers-fgf.md).
 
 Provenance is separated on purpose. Vendor specifications describe what the extruder was
 sold as; the deviations and measurements below describe what this machine actually is.
@@ -40,7 +40,7 @@ and overnight runs are not permitted.
 
 The engineering behind this machine lives in two repositories, both public:
 
-- **[`uwo-fast/gb3dpe-pellet-system`](https://github.com/uwo-fast/gb3dpe-pellet-system)** —
+- **[`uwo-fast/feedstock-hopper`](https://github.com/uwo-fast/feedstock-hopper)** —
   bulk pellet feed system, mounts, and operating docs. Parametric OpenSCAD, geometry
   regression-tested against a committed baseline.
 - **[`uwo-fast/Prusa-Firmware-GB3DPE`](https://github.com/uwo-fast/Prusa-Firmware-GB3DPE)** —
@@ -135,17 +135,13 @@ Collected here because they are what the wall sign is built from.
 - GreenBoy3D shop, Pellet Extruder V1:
   <https://shop.greenboy3d.de/products/greenboy3d-pellet-extruder-v1>
 - GreenBoy3D wiki: <https://wiki.greenboy3d.de/>
-- FAST pellet system repository: <https://github.com/uwo-fast/gb3dpe-pellet-system>
+- FAST feedstock hopper repository: <https://github.com/uwo-fast/feedstock-hopper>
 - FAST firmware fork: <https://github.com/uwo-fast/Prusa-Firmware-GB3DPE>
 - EPA, particle and VOC emissions from a 3D printer filament extruder:
   <https://cfpub.epa.gov/si/si_public_record_Report.cfm?Lab=CPHEA&dirEntryId=348894>
 
 ## Reference Checks Needed
 
-- The `gb3dpe-pellet-system` README states the bulk hopper is "designed, not yet printed".
-  It has since been printed and is in service. Filed upstream as
-  <https://github.com/uwo-fast/gb3dpe-pellet-system/issues/2>; do not cite that README as
-  current until it is closed.
 - Drying temperatures on the sign (PLA 45 °C for 4-6 h, PETG 60 °C for 6 h) are general
   practice and are **not** attributable to Polymaker. Its PolyDryer blog post says
   "a lower temp (around 65-70 °C) is fine for common filaments like PLA and PETG",

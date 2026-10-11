@@ -1,9 +1,8 @@
 # Task runner for the UWO-FAST general repository.
 # Run `just` on its own to list recipes.
 #
-# The lab signs are the only build pipeline here; the other top-level
-# directories (agri-tunnel-sign, teb-6-7-layout, printing-profiles) are asset
-# stores with nothing to build.
+# The lab signs are the only build pipeline here; see README.md for the other
+# top-level directories.
 #
 # The build shells out to pandoc, lualatex, pdftoppm and mmdc. A missing one of
 # those is the usual cause of a confusing failure -- `just tools` reports which.
@@ -37,8 +36,12 @@ sign +SIGNS:
 preview:
     {{ python }} scripts/build_lab_signs.py --all --png
 
-# CI equivalent: a clean full build must succeed. Run before committing.
-check: clean build
+# Run the build script's unit tests.
+test:
+    {{ python }} -m unittest discover -s scripts
+
+# CI equivalent: tests plus a clean full build. Run before committing.
+check: test clean build
 
 # Show the page count of each built sign.
 pages:

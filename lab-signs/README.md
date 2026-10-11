@@ -4,7 +4,7 @@ This directory contains the documents printed out and posted in the FAST lab.
 
 Use [AUTHORING.md](AUTHORING.md) when creating or revising signs. It defines the sign-writing process, reference rules, review expectations, and current draft template.
 
-Current signs are drafts unless explicitly marked approved. Do not print or post a sign until its review owner has checked the content, required references are resolved, and local FAST procedures are confirmed.
+Signs are posted at `review` status and corrected as reviews come in; [TODO.md](TODO.md) has what each still needs before it is `approved`.
 
 When a sign is posted, update the FAST lab safety binder stored in the west-wall safety cabinet in TEB7.
 
@@ -16,6 +16,7 @@ Public sign drafts:
 - [Broken Glass and Sharps](broken-glass-and-sharps.md)
 - [Chemical and Materials Storage](chemical-and-materials-storage.md)
 - [FFF Printers](printers-fff.md)
+- [FGF Printer](printers-fgf.md)
 - [Fume Hood](fumehood.md)
 - [General Storage](general-storage.md)
 - [Manual Tools](manual-tools.md)
@@ -35,30 +36,13 @@ Support documents:
 
 ## Build PDFs
 
-Local one-time setup:
+From the repository root:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
-fnm use
-npm install
-```
-
-Build all signs:
-
-```bash
-source .venv/bin/activate
-fnm use
-python scripts/build_lab_signs.py --all
-```
-
-Build selected signs:
-
-```bash
-source .venv/bin/activate
-fnm use
-python scripts/build_lab_signs.py lab-signs/sink.md lab-signs/wiring.md
+just setup                    # once: .venv plus node_modules
+just build                    # every sign
+just sign lab-signs/sink.md   # only the named signs
+just tools                    # what is missing from the PDF toolchain
 ```
 
 Generated PDFs are written to `output/lab-signs/`. Intermediate files and logs are written to `artifacts/lab-signs/`. Both directories are ignored by Git.
