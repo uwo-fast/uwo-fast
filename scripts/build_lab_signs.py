@@ -192,6 +192,11 @@ def sign_url(slug: str) -> str:
     return f"{SITE_SIGNS_BASE}/{slug}/"
 
 
+def page_url(metadata: dict[str, Any]) -> str:
+    slug = metadata.get("slug")
+    return sign_url(slug) if slug else f"{SITE_SIGNS_BASE}/"
+
+
 # A source bullet may wrap, with the URL on its own continuation line.
 SOURCE_RE = re.compile(
     r"^- (?P<label>[^:\n]+?):\s*\n?\s*<(?P<url>https?://[^>]+)>\s*$", re.MULTILINE
@@ -447,7 +452,7 @@ def pandoc_metadata_args(metadata: dict[str, Any], source_path: Path) -> list[st
         "--metadata", f"status={metadata['status']}",
         "--metadata", f"review_owner={metadata.get('review_owner', '')}",
         "--metadata", f"last_updated={last_updated_for(source_path)}",
-        "--metadata", f"source_path={relative(source_path)}",
+        "--metadata", f"page_url={page_url(metadata).removeprefix('https://')}",
         "--metadata", f"logo_path={relative(LOGO)}",
     ]
     return args
