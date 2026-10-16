@@ -43,6 +43,11 @@ Nothing.
       standing cabinet bottom drawer.
 - [ ] **waste-disposal / printers-fgf** — confirm the purge split: FFF purge lines go to
       garbage, FGF purge of a known polymer goes to polymer recycling.
+- [ ] **chemical-and-materials-storage** — the inventory sentence no longer names who
+      records the chemical, and dropped "FAST" before the spreadsheet. Restore both if
+      they still fit on page 1.
+- [ ] **wiring** — "large batteries" in Stop Before Wiring, "batteries" in the approval
+      bullet. Pick one.
 - [ ] **power-tools** — list the grinder, saw, sander and driver models actually held, so
       their manuals can be gathered.
 
@@ -107,8 +112,8 @@ Measurements are recorded so they are not repeated.
       does not keep a table with its heading. Fixed case by case instead: the fume hood's
       utility table follows Ask First, and waste-disposal's Do Not Guess comes before
       Special Streams. A `\needspace{10\baselineskip}` placed before Special Streams,
-      directly after the Common Waste Streams table, pushed that table's repeated header
-      onto page 2 alone. A raw LaTeX block in a sign also shows on the website, which
+      directly after the Common Waste Streams table, left a lone two-column table header
+      at the top of page 2 and took the sign to 3 pages. A raw LaTeX block in a sign also shows on the website, which
       copies the Markdown, so avoid one there.
 - [ ] **`chemical-and-materials-storage` and `wiring` page 2 holds only the code strip.**
       The strip cannot split. Merging duplicate bullets was not enough to fit it on page 1,
