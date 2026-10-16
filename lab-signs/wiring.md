@@ -15,7 +15,8 @@ include_universal_notice: true
 - Do not modify building wiring, outlets, breakers, power bars, extension cords, or certified equipment.
 - Use certified or appropriately rated components for the voltage, current, temperature, environment, and enclosure.
 - If a design depends on current rating, fuse sizing, wire gauge, grounding, insulation, or code, get review first.
-- Treat mains, large batteries, heaters, motors, high-current supplies, wet locations, unattended operation, or building-service connections as review-required. Wiring that touches building mains needs approval from a qualified electrical reviewer before power-up.
+- Treat mains, large batteries, heaters, motors, high-current supplies, wet locations, unattended operation, or building-service connections as review-required.
+- Custom wiring that touches building mains must be reviewed and approved by a qualified electrical reviewer before power-up.
 - If you are unsure, stop and ask before energizing anything.
 
 ## Plan The Enclosure
@@ -29,7 +30,7 @@ include_universal_notice: true
 
 ## Build Cleanly
 
-- Use an approved cord, switched outlet or disconnect, in-line fuse or circuit breaker, proper grounding, appropriate wire gauge, and a rated enclosure, with proper connectors, ferrules and crimps, strain relief, cable management, and labels for purpose and voltage.
+- Use an approved cord, switched outlet or disconnect, in-line fuse or circuit breaker, proper grounding, appropriate wire gauge, and a rated enclosure, with proper connectors, terminals, ferrules, crimps, insulation, strain relief, cable management, and clear labels for purpose and voltage.
 - Do not leave exposed conductors.
 - Do not rely on tape, hot glue, loose knots, or friction as permanent insulation or strain relief.
 - Do not daisy-chain power bars or extension cords, or use extension cords as permanent wiring.
@@ -46,7 +47,7 @@ Check voltage, current, power, connector rating, wire rating, fuse/protection, s
 
 - Inspect for exposed conductors, wrong polarity, loose terminals, damaged insulation, and missing strain relief.
 - Check that fuses, breakers, connectors, wires, and supplies are rated for the expected load.
-- Ask Cameron B. or Dr. Pearce for the appropriate electrical reviewer before first power-up of review-required wiring.
+- Wiring for mains, high power, a heater, a motor, or a battery needs qualified review and first-power-up approval before it is energized. Ask Cameron B. or Dr. Pearce for the appropriate electrical reviewer.
 - Stay with the equipment during first power-up and be ready to disconnect power.
 
 ## Sources / Procedure Links
