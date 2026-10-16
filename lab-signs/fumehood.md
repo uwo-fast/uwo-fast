@@ -41,16 +41,6 @@ include_universal_notice: true
 - Return waste to the correct approved container or process.
 - Lower the sash when you are finished.
 
-## Utility Lines
-
-Confirm the line before connecting anything.
-
-| Color | Utility |
-| --- | --- |
-| Yellow | Vacuum |
-| Orange | Air |
-| Green | Cold water |
-
 ## Alarm Or Warning
 
 - If the hood alarms, lower the sash first; the alarm is often caused by the sash being too high for the hood to maintain rated airflow.
@@ -64,6 +54,16 @@ Confirm the line before connecting anything.
 - Ask before weighing or handling a high-hazard powder. That needs a vented balance enclosure, not this hood.
 - Ask before heating, evaporating, reacting, or storing anything in the hood.
 - If you are unsure whether the hood is required or suitable, stop and ask the PI, a post-doc, or the responsible equipment owner.
+
+## Utility Lines
+
+Confirm the line before connecting anything.
+
+| Color | Utility |
+| --- | --- |
+| Yellow | Vacuum |
+| Orange | Air |
+| Green | Cold water |
 
 ## Related
 

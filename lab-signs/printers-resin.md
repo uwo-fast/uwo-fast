@@ -3,7 +3,7 @@ title: "Resin Printers"
 slug: "printers-resin"
 version: "0.1"
 status: "review"
-review_owner: "PI / post-doc; Alessia R. follow-up review"
+review_owner: "PI / post-doc; Alessia R."
 include_universal_notice: true
 ---
 

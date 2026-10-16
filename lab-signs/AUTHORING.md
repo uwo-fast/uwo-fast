@@ -181,12 +181,9 @@ Use tables for classification:
 - Printer material versus disposal route.
 - Fume hood line color versus utility.
 
-Use flowcharts for decisions:
+Use flowcharts for decisions, but only shallow ones: a flowchart is height-capped on the page, so each extra decision level shrinks its text. Check the printed size, and prefer a table when one says the same thing. Decisions a flowchart could carry:
 
 - Can this go in the sink?
-- Is this hazardous waste?
-- Which chemical cabinet should this go in?
-- Should this polymer scrap be reused, recycled, or discarded?
 - Should I proceed or ask first?
 
 Use QR links for detail:
@@ -301,7 +298,7 @@ include_universal_notice: true  # optional, defaults to true
 What the build adds automatically, so you do not write it into each sign:
 
 - **Universal notice** — the boxed "Before You Work" callout from `_UNIVERSAL_NOTICE.md` is inserted just below the sign title, unless `include_universal_notice: false`. Edit it in one place; it updates on every sign.
-- **Header/footer** — FAST logo, title and `version | status` in the header; source path, review owner, last-updated date and page numbers in the footer.
+- **Header/footer** — FAST logo, title and `version | status` in the header; the sign's web address, review owner, last-updated date and page numbers in the footer.
 - **Link strip** — every link becomes a QR code, as described above.
 
 Content features you can use in a sign body:

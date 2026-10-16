@@ -11,8 +11,7 @@ include_universal_notice: true
 
 ## Do Not Guess
 
-- Store chemicals only if you are trained and authorized to handle them.
-- Read the label and SDS before storing a chemical. This sign is not a compatibility chart.
+- Store chemicals only if you are trained and authorized to handle them, and read the label and SDS first. This sign is not a compatibility chart.
 - Keep chemicals in compatible, labeled, closed containers.
 - NEVER store bases in the acid cabinet.
 - Do not store oxidizers, toxics, compressed gases, or anything this table does not list by guessing.
@@ -34,26 +33,9 @@ include_universal_notice: true
 | Possibly shock sensitive or explosive | Do not move it | Contact Occupational Health and Safety, extension 84847. |
 | Unknown, unlabeled, leaking, damaged, or expired | Do not store | Stop and ask. |
 
-```mermaid
-flowchart TD
-    A[Chemical or material to store] --> B{Known, labeled, and authorized?}
-    B -->|No| C[Do not store. Ask first.]
-    B -->|Yes| D{Acid?}
-    D -->|Yes| E[Right lower fume hood cabinet. Never with bases.]
-    D -->|No| F{Base?}
-    F -->|Yes| G[Left lower fume hood cabinet. Never with acids.]
-    F -->|No| H{Lab-grade flammable solvent?}
-    H -->|Yes| I[Left lower fume hood cabinet / main flammable cabinet below hood.]
-    H -->|No| J{Spray paint, lubricant, or hardware-store flammable?}
-    J -->|Yes| K[Yellow flammable cabinet on floor to left when facing hood.]
-    J -->|No| L[Check SDS and ask before storing.]
-```
-
 ## Chemical Inventory
 
-- FAST uses a chemical inventory spreadsheet to track chemicals and storage locations.
-- Anyone trained and approved by the PI or a post-doc may add a chemical to storage.
-- Whoever adds a chemical must ensure it is labeled, compatible with its location, and recorded in the inventory.
+- Anyone trained and approved by the PI or a post-doc may add a chemical to storage; it must be labeled, compatible with its location, and recorded with its storage location in the chemical inventory spreadsheet.
 
 ## Related
 

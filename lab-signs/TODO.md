@@ -43,6 +43,11 @@ Nothing.
       standing cabinet bottom drawer.
 - [ ] **waste-disposal / printers-fgf** — confirm the purge split: FFF purge lines go to
       garbage, FGF purge of a known polymer goes to polymer recycling.
+- [ ] **chemical-and-materials-storage** — the inventory sentence no longer names who
+      records the chemical, and dropped "FAST" before the spreadsheet. Restore both if
+      they still fit on page 1.
+- [ ] **wiring** — "large batteries" in Stop Before Wiring, "batteries" in the approval
+      bullet. Pick one.
 - [ ] **power-tools** — list the grinder, saw, sander and driver models actually held, so
       their manuals can be gathered.
 
@@ -87,8 +92,9 @@ procedures are still unwritten, and each is the reason a sign above is blocked:
 
 Measurements are recorded so they are not repeated.
 
-- [ ] **Diagram legibility.** The flowcharts on `waste-disposal`, `chemical` and `wiring`
-      print with text far smaller than body copy. Two dead ends are already ruled out.
+- [ ] **Flowcharts.** Removed from `waste-disposal`, `chemical-and-materials-storage` and
+      `wiring` for the first printing: their text printed far smaller than body copy, and
+      each repeated a table or bullet list on the same sign. Two dead ends are ruled out.
       `flowchart LR` fits but shrinks the text further. Raising the mermaid font size is
       self-defeating, because the image is height-capped at `0.62\textheight` and grows
       faster than the text does:
@@ -96,17 +102,22 @@ Measurements are recorded so they are not repeated.
           wiring  784x1090 @ ~16px font  ->  text 1.97 mm on the page
           wiring 1862x3618 @  28px font  ->  text 1.04 mm on the page
 
-      The only levers left are a shallower diagram — fewer decision levels — or more page
-      height for it. Both change the sign, not a config value.
-- [ ] **Orphan headings.** A section heading can be stranded at the foot of a page with
-      its content overleaf, as "Common Waste Streams" is on `waste-disposal` page 1.
-      `\usepackage[nobottomtitles*]{titlesec}` fixes it in one line, but it was measured
-      at **two signs gaining a page**, so it is off. Turn it on if that becomes an
-      acceptable trade.
-- [ ] **`chemical-and-materials-storage` diagram and table disagree.** The table gained
-      peroxide formers, water-reactives, pyrophorics and shock-sensitives; the flowchart still ends at
-      "Check SDS and ask before storing". Defensible, since that branch covers them
-      implicitly, but the two no longer say the same thing.
+      Bring one back only as a shallower diagram, with fewer decision levels.
+- [ ] **Orphan headings.** A heading or a short table can be stranded at a page break.
+      Measured on 2026-10-15 against the signs as they are now:
+      `\usepackage[nobottomtitles*]{titlesec}` costs four signs a page (printers-fff,
+      safety-equipment-and-incidents, stationary-tools, waste-disposal);
+      `\needspace{5\baselineskip}` before every `##` heading costs
+      safety-equipment-and-incidents a page, its code strip alone moving to page 2, and
+      does not keep a table with its heading. Fixed case by case instead: the fume hood's
+      utility table follows Ask First, and waste-disposal's Do Not Guess comes before
+      Special Streams. A `\needspace{10\baselineskip}` placed before Special Streams,
+      directly after the Common Waste Streams table, left a lone two-column table header
+      at the top of page 2 and took the sign to 3 pages. A raw LaTeX block in a sign also shows on the website, which
+      copies the Markdown, so avoid one there.
+- [ ] **`chemical-and-materials-storage` and `wiring` page 2 holds only the code strip.**
+      The strip cannot split. Merging duplicate bullets was not enough to fit it on page 1,
+      and neither was 16 mm codes in place of 20 mm.
 - [ ] **`safety-equipment` strip sits tight against the footer rule.** Not overlapping,
       but the least margin in the set.
 - [ ] **Normalise source labels.** Some signs say "Lab Safety Manual", others "Western
@@ -115,9 +126,6 @@ Measurements are recorded so they are not repeated.
       a `repository_dispatch` of type `signs-updated`, but nothing sends one. A token with
       access to the site repo would let this repo push a rebuild the moment it publishes,
       rather than the codes on the wall trailing by up to a day.
-- **`waste-disposal` stays at 3 pages.** Not fixable by trimming — reclaiming 200pt still
-  leaves three, because the flowchart is atomic and dictates the page breaks. Page 3
-  carries real references, not a stub. Closes only via the diagram work above.
 
 ## Definition of v1
 

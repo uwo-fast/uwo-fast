@@ -11,7 +11,7 @@ include_universal_notice: true
 
 ## Stop Before Wiring
 
-- Do not wire mains, high-power, heaters, motors, batteries, or permanent equipment unless you are trained and authorized.
+- Do not wire mains, high-power, heaters, motors, batteries, or permanent equipment unless trained and authorized.
 - Do not modify building wiring, outlets, breakers, power bars, extension cords, or certified equipment.
 - Use certified or appropriately rated components for the voltage, current, temperature, environment, and enclosure.
 - If a design depends on current rating, fuse sizing, wire gauge, grounding, insulation, or code, get review first.
@@ -30,14 +30,12 @@ include_universal_notice: true
 
 ## Build Cleanly
 
-- Use proper connectors, terminals, ferrules, crimps, insulation, strain relief, and cable management.
-- Use an approved cord, switched outlet or disconnect, in-line fuse or circuit breaker, proper grounding, appropriate wire gauge, rated enclosure, strain relief, and clear labels for purpose and voltage.
+- Use an approved cord, switched outlet or disconnect, in-line fuse or circuit breaker, proper grounding, appropriate wire gauge, and a rated enclosure, with proper connectors, terminals, ferrules, crimps, insulation, strain relief, cable management, and clear labels for purpose and voltage.
 - Do not leave exposed conductors.
 - Do not rely on tape, hot glue, loose knots, or friction as permanent insulation or strain relief.
-- Do not daisy-chain power bars or extension cords.
-- Do not use extension cords as permanent wiring.
+- Do not daisy-chain power bars or extension cords, or use extension cords as permanent wiring.
 - Keep access to outlets, disconnects, panels, breakers, and emergency shutoffs clear.
-- Use GFCI or other required protection where the procedure requires it, especially near wet or conductive areas.
+- Use GFCI or other protection where the procedure requires it, especially near wet or conductive areas.
 
 ## Quick Checks
 
@@ -47,20 +45,9 @@ Check voltage, current, power, connector rating, wire rating, fuse/protection, s
 
 ## Before Power-Up
 
-```mermaid
-flowchart TD
-    A[Ready to energize?] --> B{Mains, high power, heater, motor, or battery?}
-    B -->|Yes| C[Get qualified review and first-power-up approval.]
-    B -->|No| D{All conductors insulated, secured, labeled, and strain-relieved?}
-    D -->|No| E[Fix wiring before power-up.]
-    D -->|Yes| F{Fuse/protection, ratings, and polarity checked?}
-    F -->|No| G[Check ratings and protection before power-up.]
-    F -->|Yes| H[Power up cautiously and stay ready to disconnect.]
-```
-
 - Inspect for exposed conductors, wrong polarity, loose terminals, damaged insulation, and missing strain relief.
 - Check that fuses, breakers, connectors, wires, and supplies are rated for the expected load.
-- Ask Cameron B. or Dr. Pearce for the appropriate electrical reviewer before first power-up of review-required wiring.
+- Review-required wiring, including mains, high power, heaters, motors and batteries, needs qualified review and first-power-up approval: ask Cameron B. or Dr. Pearce for the reviewer.
 - Stay with the equipment during first power-up and be ready to disconnect power.
 
 ## Sources / Procedure Links

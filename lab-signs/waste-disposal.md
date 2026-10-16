@@ -17,19 +17,6 @@ include_universal_notice: true
 - Discard only when reuse and recycling are not appropriate.
 - If it is contaminated, hazardous, unlabeled, or unknown, stop and ask.
 
-```mermaid
-flowchart TD
-    A[Waste item] --> B{Contaminated, hazardous, unlabeled, or unknown?}
-    B -->|Yes| C[Do not use regular trash, recycling, sink, or polymer recycling. Ask and follow approved procedure.]
-    B -->|No| D{Reusable clean material?}
-    D -->|Yes| E[Keep for reuse in the appropriate lab storage area.]
-    D -->|No| F{Clean known polymer scrap?}
-    F -->|Yes| G[Use PLA/PETG/ABS material-labeled cans near TEB6 shredders/extruders.]
-    F -->|No| H{Accepted paper, cardboard, or container recycling?}
-    H -->|Yes| I[Use the correct campus recycling bin.]
-    H -->|No| J[Use garbage only if it is clean, non-hazardous, and not recyclable.]
-```
-
 ## Common Waste Streams
 
 | Item | Preferred action | Notes |
@@ -42,18 +29,6 @@ flowchart TD
 | Food-contaminated or dirty non-hazardous waste | Garbage | Do not contaminate recycling streams. |
 | Chemical, resin, oil, grease, solvent, acid, base, biological, or unknown waste | Ask / approved waste procedure | Do not pour down the sink or place in regular trash/recycling. |
 
-## Special Streams
-
-| Item | Action |
-| --- | --- |
-| Unknown chemical or unlabeled liquid/solid | Do not discard. Identify or characterize through the approved Western hazardous-waste process. |
-| Batteries | Use the battery bin on the south wall counter of TEB7. All common chemistries are accepted; tape the terminals. |
-| Damaged, swollen, leaking, hot, or unknown batteries | Do not put in the battery bin. Stop and ask the PI or a post-doc. |
-| Electronics, circuit boards, cables, or e-waste | Use the e-waste bin on the south wall counter of TEB7. Classed as hazardous waste; never landfill garbage. |
-| Broken glass or sharps | Glass and sharps go in separate containers. See Broken Glass and Sharps. |
-| Aerosols, spray paints, lubricants, oils, greases, or solvents | Use the approved hazardous-waste or special-waste process. Store only in compatible, labeled containers. Keep halogenated and non-halogenated solvents separate and list full chemical names. |
-| Empty chemical/resin bottles or contaminated containers | Do not recycle until the approved procedure says they are empty/clean enough. |
-
 ## Do Not Guess
 
 - Do not neutralize, dilute, evaporate, rinse, or pour out chemical waste unless an approved procedure explicitly says to do so.
@@ -65,6 +40,18 @@ flowchart TD
 - Pickup is weekly on Thursdays through RPR Environmental and needs an inventory form. Waste is handed over in person and never left unattended.
 - Hazardous waste awaiting pickup must be in a proper, labeled, compatible container below the sink, in the flammables cabinet, or in a fume hood cabinet as appropriate for the waste.
 - When in doubt, ask the PI, a post-doc, or the responsible equipment owner.
+
+## Special Streams
+
+| Item | Action |
+| --- | --- |
+| Unknown chemical or unlabeled liquid/solid | Do not discard. Identify or characterize through the approved Western hazardous-waste process. |
+| Batteries | Use the battery bin on the south wall counter of TEB7. All common chemistries are accepted; tape the terminals. |
+| Damaged, swollen, leaking, hot, or unknown batteries | Do not put in the battery bin. Stop and ask the PI or a post-doc. |
+| Electronics, circuit boards, cables, or e-waste | Use the e-waste bin on the south wall counter of TEB7. Classed as hazardous waste; never landfill garbage. |
+| Broken glass or sharps | Glass and sharps go in separate containers. See Broken Glass and Sharps. |
+| Aerosols, spray paints, lubricants, oils, greases, or solvents | Use the approved hazardous-waste or special-waste process. Store only in compatible, labeled containers. Keep halogenated and non-halogenated solvents separate and list full chemical names. |
+| Empty chemical/resin bottles or contaminated containers | Do not recycle until the approved procedure says they are empty/clean enough. |
 
 ## Related
 
