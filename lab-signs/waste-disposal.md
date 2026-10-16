@@ -17,19 +17,6 @@ include_universal_notice: true
 - Discard only when reuse and recycling are not appropriate.
 - If it is contaminated, hazardous, unlabeled, or unknown, stop and ask.
 
-```mermaid
-flowchart TD
-    A[Waste item] --> B{Contaminated, hazardous, unlabeled, or unknown?}
-    B -->|Yes| C[Do not use regular trash, recycling, sink, or polymer recycling. Ask and follow approved procedure.]
-    B -->|No| D{Reusable clean material?}
-    D -->|Yes| E[Keep for reuse in the appropriate lab storage area.]
-    D -->|No| F{Clean known polymer scrap?}
-    F -->|Yes| G[Use PLA/PETG/ABS material-labeled cans near TEB6 shredders/extruders.]
-    F -->|No| H{Accepted paper, cardboard, or container recycling?}
-    H -->|Yes| I[Use the correct campus recycling bin.]
-    H -->|No| J[Use garbage only if it is clean, non-hazardous, and not recyclable.]
-```
-
 ## Common Waste Streams
 
 | Item | Preferred action | Notes |
