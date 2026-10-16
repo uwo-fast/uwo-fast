@@ -105,12 +105,14 @@ Measurements are recorded so they are not repeated.
       `\needspace{5\baselineskip}` before every `##` heading costs
       safety-equipment-and-incidents a page, its code strip alone moving to page 2, and
       does not keep a table with its heading. Fixed case by case instead: the fume hood's
-      utility table follows Ask First, waste-disposal's Do Not Guess comes before Special
-      Streams, and chemical storage reserves space before Chemical Inventory. A reserve
-      placed after a table pushed that table's repeated header onto the next page alone.
-- [ ] **`chemical-and-materials-storage` and `wiring` page 2 holds little more than the
-      code strip and a section.** The strip cannot split. Merging duplicate bullets was not enough, and
-      neither was 16 mm codes in place of 20 mm.
+      utility table follows Ask First, and waste-disposal's Do Not Guess comes before
+      Special Streams. A `\needspace{10\baselineskip}` placed before Special Streams,
+      directly after the Common Waste Streams table, pushed that table's repeated header
+      onto page 2 alone. A raw LaTeX block in a sign also shows on the website, which
+      copies the Markdown, so avoid one there.
+- [ ] **`chemical-and-materials-storage` and `wiring` page 2 holds only the code strip.**
+      The strip cannot split. Merging duplicate bullets was not enough to fit it on page 1,
+      and neither was 16 mm codes in place of 20 mm.
 - [ ] **`safety-equipment` strip sits tight against the footer rule.** Not overlapping,
       but the least margin in the set.
 - [ ] **Normalise source labels.** Some signs say "Lab Safety Manual", others "Western

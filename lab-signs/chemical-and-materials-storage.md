@@ -33,14 +33,9 @@ include_universal_notice: true
 | Possibly shock sensitive or explosive | Do not move it | Contact Occupational Health and Safety, extension 84847. |
 | Unknown, unlabeled, leaking, damaged, or expired | Do not store | Stop and ask. |
 
-```{=latex}
-\needspace{6\baselineskip}
-```
-
 ## Chemical Inventory
 
-- Anyone trained and approved by the PI or a post-doc may add a chemical to storage.
-- Whoever adds a chemical must ensure it is labeled, compatible with its location, and recorded, with its storage location, in the FAST chemical inventory spreadsheet.
+- Anyone trained and approved by the PI or a post-doc may add a chemical to storage; it must be labeled, compatible with its location, and recorded with its storage location in the chemical inventory spreadsheet.
 
 ## Related
 
