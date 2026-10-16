@@ -181,12 +181,9 @@ Use tables for classification:
 - Printer material versus disposal route.
 - Fume hood line color versus utility.
 
-Use flowcharts for decisions:
+Use flowcharts for decisions, but only shallow ones: a flowchart is height-capped on the page, so each extra decision level shrinks its text. Check the printed size, and prefer a table when one says the same thing. Decisions a flowchart could carry:
 
 - Can this go in the sink?
-- Is this hazardous waste?
-- Which chemical cabinet should this go in?
-- Should this polymer scrap be reused, recycled, or discarded?
 - Should I proceed or ask first?
 
 Use QR links for detail:

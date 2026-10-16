@@ -98,14 +98,18 @@ Measurements are recorded so they are not repeated.
           wiring 1862x3618 @  28px font  ->  text 1.04 mm on the page
 
       Bring one back only as a shallower diagram, with fewer decision levels.
-- [ ] **Orphan headings.** A section heading can be stranded at the foot of a page with
-      its content overleaf. `\usepackage[nobottomtitles*]{titlesec}` costs two signs a
-      page. `\needspace{5\baselineskip}` before every `##` heading costs
-      `safety-equipment-and-incidents` a page (its code strip alone moves to page 2) and
+- [ ] **Orphan headings.** A heading or a short table can be stranded at a page break.
+      Measured on 2026-10-15 against the signs as they are now:
+      `\usepackage[nobottomtitles*]{titlesec}` costs four signs a page (printers-fff,
+      safety-equipment-and-incidents, stationary-tools, waste-disposal);
+      `\needspace{5\baselineskip}` before every `##` heading costs
+      safety-equipment-and-incidents a page, its code strip alone moving to page 2, and
       does not keep a table with its heading. Fixed case by case instead: the fume hood's
-      utility table now follows Ask First.
+      utility table follows Ask First, waste-disposal's Do Not Guess comes before Special
+      Streams, and chemical storage reserves space before Chemical Inventory. A reserve
+      placed after a table pushed that table's repeated header onto the next page alone.
 - [ ] **`chemical-and-materials-storage` and `wiring` page 2 holds little more than the
-      code strip.** The strip cannot split. Merging duplicate bullets was not enough, and
+      code strip and a section.** The strip cannot split. Merging duplicate bullets was not enough, and
       neither was 16 mm codes in place of 20 mm.
 - [ ] **`safety-equipment` strip sits tight against the footer rule.** Not overlapping,
       but the least margin in the set.
