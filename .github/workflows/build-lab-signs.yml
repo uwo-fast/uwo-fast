@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - "lab-signs/**"
+      - "posters/**"
+      - "branding/fonts/**"
       - "scripts/**"
       - "templates/**"
       - "branding/logos/**"
@@ -16,6 +18,8 @@ on:
       - main
     paths:
       - "lab-signs/**"
+      - "posters/**"
+      - "branding/fonts/**"
       - "scripts/**"
       - "templates/**"
       - "branding/logos/**"
@@ -50,7 +54,7 @@ jobs:
       - name: Install system PDF dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends pandoc texlive-latex-recommended texlive-latex-extra texlive-luatex texlive-fonts-recommended
+          sudo apt-get install -y --no-install-recommends pandoc texlive-latex-recommended texlive-latex-extra texlive-luatex texlive-fonts-recommended poppler-utils
 
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
@@ -64,6 +68,9 @@ jobs:
       - name: Build lab sign PDFs
         run: python scripts/build_lab_signs.py --all
 
+      - name: Build poster PDFs
+        run: python scripts/build_posters.py
+
       - name: Upload lab sign PDFs
         uses: actions/upload-artifact@v7
         with:
@@ -71,3 +78,11 @@ jobs:
           path: |
             output/lab-signs
             artifacts/lab-signs
+
+      - name: Upload poster PDFs
+        uses: actions/upload-artifact@v7
+        with:
+          name: posters-pdf
+          path: |
+            output/posters
+            artifacts/posters

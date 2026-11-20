@@ -1,10 +1,10 @@
 # Task runner for the UWO-FAST general repository.
 # Run `just` on its own to list recipes.
 #
-# The lab signs are the only build pipeline here; see README.md for the other
-# top-level directories.
+# Two build pipelines share scripts/ and templates/: the lab signs and the
+# recruiting posters. See README.md for the other top-level directories.
 #
-# The build shells out to pandoc, lualatex, pdftoppm and mmdc. A missing one of
+# The builds shell out to pandoc, lualatex, pdfinfo, pdftoppm and mmdc. A missing one of
 # those is the usual cause of a confusing failure -- `just tools` reports which.
 #
 # `just sign` rebuilds the combined PDF and manifest.json from only the signs
@@ -40,8 +40,16 @@ preview:
 test:
     {{ python }} -m unittest discover -s scripts
 
+# Build every recruiting poster PDF into output/posters. Same command CI runs.
+posters:
+    {{ python }} scripts/build_posters.py
+
+# Build every poster plus PNG previews in artifacts/posters/png.
+posters-preview:
+    {{ python }} scripts/build_posters.py --png
+
 # CI equivalent: tests plus a clean full build. Run before committing.
-check: test clean build
+check: test clean build posters
 
 # Show the page count of each built sign.
 pages:
@@ -59,7 +67,7 @@ pages:
 tools:
     #!/usr/bin/env bash
     missing=0
-    for tool in pandoc lualatex pdftoppm; do
+    for tool in pandoc lualatex pdfinfo pdftoppm; do
         if command -v "$tool" > /dev/null; then
             printf '  ok       %s\n' "$tool"
         else

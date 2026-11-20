@@ -10,6 +10,8 @@ When you go to make a new repository and select from template. Currently FAST ha
 
 - [`lab-signs/`](lab-signs/) — the printed safety signs posted in the lab, built to
   PDF by `just build` and published at <https://uwo-fast.github.io/signs/>.
+- [`posters/`](posters/) — one-page recruiting posters for FAST projects, built to PDF
+  by `just posters`.
 - [`equipment/`](equipment/) — reference records for specific equipment: nameplate data,
   specifications, operating limits. Not printed.
 - `agri-tunnel-sign/`, `teb-6-7-layout/`, `printing-profiles/`, `lab-qr-codes/` — asset
