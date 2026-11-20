@@ -1,0 +1,166 @@
+% One-page US-letter recruiting poster. Filled by scripts/build_posters.py from
+% the YAML front matter of a posters/*.md file; see posters/README.md.
+%
+% Layout flows top to bottom rather than being placed absolutely, so content
+% that does not fit pushes onto a second page, and the build fails on that
+% instead of printing text that runs off the sheet.
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.55in]{geometry}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\setmainfont{IBMPlexSans}[
+  Path=$font_dir$/,
+  Extension=.otf,
+  UprightFont=*-Regular,
+  ItalicFont=*-Italic,
+  BoldFont=*-SemiBold,
+]
+\newfontfamily\heavy{IBMPlexSans}[Path=$font_dir$/, Extension=.otf, UprightFont=*-Bold]
+\newfontfamily\medium{IBMPlexSans}[Path=$font_dir$/, Extension=.otf, UprightFont=*-Medium]
+\newfontfamily\condensed{IBMPlexSansCondensed}[
+  Path=$font_dir$/, Extension=.otf, UprightFont=*-SemiBold, BoldFont=*-Bold,
+]
+
+% Western Purple. Check against the Western Brand Standards Guide before an
+% approved print; see posters/README.md.
+\definecolor{accent}{HTML}{4F2683}
+\definecolor{ink}{HTML}{1C1A21}
+\definecolor{muted}{HTML}{5C5866}
+\definecolor{tint}{HTML}{F2EEF7}
+\definecolor{rule}{HTML}{D6D0DF}
+
+\color{ink}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.12}
+\setlist[itemize]{leftmargin=1.1em,itemsep=2.5pt,topsep=3pt,parsep=0pt,label={\color{accent}\textbullet}}
+
+% #1 width, #2 height, #3 image path, #4 credit (may be empty). Scales to
+% fill the box and crops the overflow, so photos of any aspect ratio line up.
+% The credit sits on the photo's corner so it costs the layout no height.
+\newsavebox\imgbox
+\newcommand{\fillimage}[4]{%
+  \sbox\imgbox{\includegraphics[width=#1]{#3}}%
+  \ifdim\ht\imgbox<#2\relax\sbox\imgbox{\includegraphics[height=#2]{#3}}\fi
+  \begin{tikzpicture}
+    \clip (0,0) rectangle (#1,#2);
+    \node[inner sep=0pt] at (#1/2,#2/2) {\usebox\imgbox};
+    \if\relax\detokenize{#4}\relax\else
+      \node[anchor=south east,fill=black,fill opacity=0.55,text opacity=1,
+            text=white,font=\fontsize{6.5}{8}\selectfont,inner xsep=5pt,inner ysep=2.5pt]
+        at (#1,0) {#4};
+    \fi
+  \end{tikzpicture}}
+% A photo covering the box at (#1,#2) sized #3 x #4 (inches), for a panel
+% whose clip is already set.
+\newcommand{\panelimage}[5]{%
+  \sbox\imgbox{\includegraphics[width=#3in]{#5}}%
+  \ifdim\ht\imgbox<#4in\relax\sbox\imgbox{\includegraphics[height=#4in]{#5}}\fi
+  \node[inner sep=0pt] at (#1+#3/2,#2+#4/2) {\usebox\imgbox};}
+% Same box, marked as missing. Approved posters refuse to build with one.
+\newcommand{\placeholder}[3]{%
+  \begin{tikzpicture}
+    \fill[tint] (0,0) rectangle (#1,#2);
+    \draw[accent,dashed,line width=0.8pt] (0,0) rectangle (#1,#2);
+    \node[text width=#1-0.5in,align=center,font=\small\color{accent}] at (#1/2,#2/2)
+      {{\condensed\bfseries IMAGE NEEDED}\\[3pt]#3};
+  \end{tikzpicture}}
+\newcommand{\kicker}[1]{{\condensed\fontsize{9}{11}\selectfont\color{accent}\addfontfeature{LetterSpace=8}\MakeUppercase{#1}}}
+
+\begin{document}
+% Header: logo and lab name, a hairline rule.
+\begin{minipage}[c]{0.5\textwidth}
+  \includegraphics[height=0.5in]{$logo_path$}
+\end{minipage}%
+\begin{minipage}[c]{0.5\textwidth}
+  \raggedleft{\medium\fontsize{11}{13}\selectfont FAST Lab}\\
+  {\fontsize{9}{11}\selectfont\color{muted} Free Appropriate Sustainability Technology\\Western University}
+\end{minipage}
+
+\vspace{8pt}{\color{rule}\rule{\textwidth}{0.6pt}}\vspace{14pt}
+
+\kicker{$eyebrow$}\\[4pt]
+{\condensed\bfseries\fontsize{54}{54}\selectfont $title$}\\[8pt]
+{\fontsize{19}{23}\selectfont\color{muted} $subtitle$}
+
+\vspace{12pt}
+% Facts strip: who, with whom, funded by what.
+$for(facts)$\begin{minipage}[t]{$fact_width$}\raggedright
+  {\condensed\fontsize{8.5}{10}\selectfont\color{muted}\addfontfeature{LetterSpace=6}\MakeUppercase{$facts.label$}}\\[2pt]
+  {\fontsize{9.5}{12}\selectfont $facts.value$}
+\end{minipage}$sep$\hfill$endfor$
+
+\vspace{12pt}
+$if(hero_panels)$
+% Multi-photo hero: each panel is a quadrilateral computed by the build script,
+% filled with its photo (or a marked placeholder) and clipped to its shape.
+\begin{tikzpicture}[x=1in,y=1in]
+  \path (0,0) rectangle ($content_width$,$hero_height_in$);
+$for(hero_panels)$
+  \begin{scope}
+    \clip ($it.p1x$,$it.p1y$) -- ($it.p2x$,$it.p2y$) -- ($it.p3x$,$it.p3y$) -- ($it.p4x$,$it.p4y$) -- cycle;
+$if(it.image)$
+    \panelimage{$it.bx$}{$it.by$}{$it.bw$}{$it.bh$}{$it.image$}
+$else$
+    \fill[tint] ($it.bx$,$it.by$) rectangle ++($it.bw$,$it.bh$);
+    \draw[accent,dashed,line width=1.6pt] ($it.p1x$,$it.p1y$) -- ($it.p2x$,$it.p2y$) -- ($it.p3x$,$it.p3y$) -- ($it.p4x$,$it.p4y$) -- cycle;
+    \node[text width=$it.tw$in,align=center,font=\footnotesize\color{accent}] at ($it.cx$,$it.cy$)
+      {{\condensed\bfseries IMAGE NEEDED}\\[2pt]$it.placeholder$};
+$endif$
+  \end{scope}
+$if(it.credit)$
+  \node[anchor=$it.credit_anchor$,fill=black,fill opacity=0.55,text opacity=1,text=white,
+        font=\fontsize{6}{7.5}\selectfont,inner xsep=4pt,inner ysep=2pt] at ($it.credit_x$,$it.credit_y$) {$it.credit$};
+$endif$
+$endfor$
+\end{tikzpicture}
+$else$
+$if(hero.image)$\fillimage{\textwidth}{$hero_height$}{$hero.image$}{$hero.credit$}$else$\placeholder{\textwidth}{$hero_height$}{$hero.placeholder$}$endif$
+$endif$
+
+\vspace{14pt}
+\begin{minipage}[t]{0.5\textwidth}\raggedright
+  \kicker{The project}\\[5pt]
+  {\fontsize{10}{14}\selectfont $body$}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.45\textwidth}\raggedright
+  \kicker{What you would work on}
+  \begin{itemize}\fontsize{10}{13}\selectfont
+$for(work)$
+    \item $work$
+$endfor$
+  \end{itemize}
+\end{minipage}
+
+\vfill\vspace{10pt}
+% Apply panel: the one call to action, with the address printed as well as
+% encoded, for anyone whose phone will not scan.
+\begin{tikzpicture}
+  \node[fill=tint,inner xsep=0.3in,inner ysep=0.17in,anchor=south west] (apply) at (0,0) {%
+    \begin{minipage}[c]{\dimexpr\textwidth-2.05in\relax}\raggedright
+      {\condensed\bfseries\fontsize{24}{26}\selectfont\color{accent} $apply.heading$}%
+$if(apply.details)$
+      \hspace{10pt}{\medium\fontsize{10.5}{12}\selectfont\color{accent}$for(apply.details)$$apply.details$$sep$ · $endfor$}%
+$endif$
+      \\[6pt]
+      {\fontsize{10.5}{14}\selectfont $apply.text$}\\[6pt]
+      {\medium\fontsize{11}{13}\selectfont $apply_display$}\\[8pt]
+      {\fontsize{9}{11.5}\selectfont\color{muted}{\medium We are looking for:} $for(looking_for)$$looking_for$$sep$ · $endfor$}
+    \end{minipage}\hspace{0.25in}%
+    \begin{minipage}[c]{1.2in}\includegraphics[width=1.2in]{$qr_path$}\end{minipage}%
+  };
+  \fill[accent] (apply.south west) rectangle ([xshift=5pt]apply.north west);
+\end{tikzpicture}
+
+\vspace{8pt}
+{\fontsize{8.5}{10}\selectfont\color{muted}%
+$supervisor$\hfill
+$if(draft)${\condensed\color{accent}DRAFT} \quad $endif$v$version$ · $last_updated$}
+\end{document}
