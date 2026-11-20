@@ -7,6 +7,13 @@ review_owner: "PI"
 eyebrow: "Research position · Frugal biomedical"
 subtitle: "Printed earmolds that keep up with growing children"
 hero:
+  # Multi-photo hero. Delete `layout` and `panels` to go back to the single photo.
+  layout: diagonal
+  panels:
+  - placeholder: A printed earmold held up beside its 3D model on screen (ALLEars video still
+      at 54 s, pending Western's OK).
+  - placeholder: Gloved hands lifting printed earmolds off the resin build plate (ALLEars video
+      still at 107 s, pending Western's OK).
   placeholder: >-
     Close-up of a printed pediatric earmold in a gloved hand, or a tray of
     earmolds on the build plate of the lab's resin printer. One real lab

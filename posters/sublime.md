@@ -7,6 +7,12 @@ review_owner: "PI"
 eyebrow: "Research position · Frugal biomedical"
 subtitle: "An open-source freeze dryer for medicines and vaccines"
 hero:
+  # Multi-photo hero. Delete `layout` and `panels` to go back to the single photo.
+  layout: diagonal
+  panels:
+  - placeholder: The SUBLIME prototype on the bench, or its CAD render.
+  - image: images/sublime-hero.jpg
+    credit: Commercial freeze dryer (stand-in). Matylda Sęk, CC BY-SA 3.0
   image: "images/sublime-hero.jpg"
   credit: "Stand-in: a commercial benchtop freeze dryer. Photo: Matylda Sęk, CC BY-SA 3.0, via Wikimedia Commons."
   # Brief for the final photo; ignored while image is set.

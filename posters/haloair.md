@@ -7,6 +7,11 @@ review_owner: "PI"
 eyebrow: "Research position · Frugal biomedical"
 subtitle: "Open-source, closed-loop glycol vapour air treatment"
 hero:
+  # Multi-photo hero. Delete `layout` and `panels` to go back to the single photo.
+  layout: diagonal
+  panels:
+  - placeholder: The HaloAir prototype close up, sensor display lit.
+  - placeholder: HaloAir in use in a classroom or meeting room.
   placeholder: >-
     The HaloAir prototype in a classroom or meeting room, with its sensor
     display visible. A real prototype photo or a CAD render; no stock

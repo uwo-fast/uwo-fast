@@ -7,6 +7,15 @@ review_owner: "PI"
 eyebrow: "Graduate and undergraduate research"
 subtitle: "Open-source engineering for energy, food, health and science"
 hero:
+  # Multi-photo hero. Delete `layout` and `panels` to go back to the single photo.
+  layout: mosaic
+  panels:
+  - image: images/join-fast-hero.jpg
+    credit: Agrivoltaic agrotunnel. Max Qian, CC BY-SA 4.0
+  - image: images/join-fast-chips.jpg
+    credit: J.M. Pearce, CC BY-SA 4.0
+  - image: images/join-fast-pv.jpg
+    credit: J.M. Pearce, CC BY-SA 4.0
   image: "images/join-fast-hero.jpg"
   credit: "The FAST agrivoltaic agrotunnel. Photo: Max Qian, CC BY-SA 4.0, via Appropedia."
   # Brief for the final photo; ignored while image is set.

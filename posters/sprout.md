@@ -7,6 +7,14 @@ review_owner: "PI"
 eyebrow: "Research position · Scientific equipment"
 subtitle: "Open-source growth chambers for reproducible plant science"
 hero:
+  # Multi-photo hero. Delete `layout` and `panels` to go back to the single photo.
+  layout: diagonal3
+  panels:
+  - image: images/sprout-hero.jpg
+    credit: EmilyBP, CC BY-SA 4.0
+  - image: images/sprout-berries.jpg
+    credit: J.M. Pearce, CC BY-SA 4.0
+  - placeholder: The SPROUT chamber, or its CAD render, with plants under its lights.
   image: "images/sprout-hero.jpg"
   credit: "Stand-in: the FAST agrotunnel's vertical racks. Photo: EmilyBP, CC BY-SA 4.0, via Appropedia."
   # Brief for the final photo; ignored while image is set.

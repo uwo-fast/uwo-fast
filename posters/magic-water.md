@@ -7,6 +7,11 @@ review_owner: "PI"
 eyebrow: "Research position · Frugal biomedical"
 subtitle: "Open-source hypochlorous acid (HOCl) generators"
 hero:
+  # Multi-photo hero. Delete `layout` and `panels` to go back to the single photo.
+  layout: diagonal
+  panels:
+  - placeholder: The smart jar lid on a jar of salt water, mid-run.
+  - placeholder: The handheld bottle pen and its control board, on the bench.
   placeholder: >-
     The smart jar lid and the handheld bottle pen on the bench, with the
     control board beside them. A real prototype photo or a CAD render.

@@ -7,6 +7,14 @@ review_owner: "PI"
 eyebrow: "Research position · Resilient food"
 subtitle: "Automated, sterile duckweed cultivation"
 hero:
+  # Multi-photo hero. Delete `layout` and `panels` to go back to the single photo.
+  layout: diagonal3
+  panels:
+  - image: images/quack-hero.jpg
+    credit: Fernando Losada Rodríguez, CC BY-SA 4.0
+  - image: images/quack-photobioreactor.jpg
+    credit: FAST photobioreactor. Laura Danier, CC BY-SA 4.0
+  - placeholder: The QUACK rack with duckweed covering its trays.
   image: "images/quack-hero.jpg"
   credit: "Duckweed (Lemna minor). Photo: Fernando Losada Rodríguez, CC BY-SA 4.0, via Wikimedia Commons."
   # Brief for the final photo; ignored while image is set.

@@ -7,6 +7,14 @@ review_owner: "PI"
 eyebrow: "Research position · Resilient food"
 subtitle: "A modular mushroom grow chamber built from baking sheets"
 hero:
+  # Multi-photo hero. Delete `layout` and `panels` to go back to the single photo.
+  layout: diagonal3
+  panels:
+  - image: images/bloom-substrate.jpg
+    credit: Livehealthy, CC BY-SA 4.0
+  - image: images/bloom-hero.jpg
+    credit: Shreevaishnavi96, CC BY-SA 4.0
+  - placeholder: The BLOOM chamber with mushrooms fruiting on its baking-sheet trays.
   image: "images/bloom-hero.jpg"
   credit: "Oyster mushrooms. Photo: Shreevaishnavi96, CC BY-SA 4.0, via Wikimedia Commons."
   # Brief for the final photo; ignored while image is set.
