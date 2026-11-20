@@ -104,7 +104,9 @@ def git_context() -> dict[str, str]:
     }
 
 
-def parse_frontmatter(path: Path) -> tuple[dict[str, Any], str]:
+def parse_frontmatter(
+    path: Path, required: set[str] = REQUIRED_FRONTMATTER
+) -> tuple[dict[str, Any], str]:
     text = path.read_text()
     if not text.startswith("---\n"):
         raise BuildError(f"{path}: missing YAML front matter")
@@ -114,7 +116,7 @@ def parse_frontmatter(path: Path) -> tuple[dict[str, Any], str]:
     metadata = yaml.safe_load(parts[1]) or {}
     if not isinstance(metadata, dict):
         raise BuildError(f"{path}: front matter must be a mapping")
-    missing = sorted(REQUIRED_FRONTMATTER - set(metadata))
+    missing = sorted(required - set(metadata))
     if missing:
         raise BuildError(f"{path}: missing front matter fields: {', '.join(missing)}")
     return metadata, parts[2].strip() + "\n"
@@ -204,14 +206,14 @@ SOURCE_RE = re.compile(
 RELATED_RE = re.compile(r"\[(?P<label>[^\]]+)\]\((?P<slug>[a-z0-9-]+)\.md\)")
 
 
-def render_qr(name: str, data: str) -> Path:
+def render_qr(name: str, data: str, directory: Path = QR_DIR) -> Path:
     """Write one QR and return its path.
 
     Error correction M. These are posted on a lab wall and get scuffed, but the
     links they carry are long, and every level above M costs modules that make
     the printed code smaller per module rather than more robust.
     """
-    QR_DIR.mkdir(parents=True, exist_ok=True)
+    directory.mkdir(parents=True, exist_ok=True)
     code = qrcode.QRCode(
         error_correction=qrcode.constants.ERROR_CORRECT_M,
         box_size=16,
@@ -219,7 +221,7 @@ def render_qr(name: str, data: str) -> Path:
     )
     code.add_data(data)
     code.make(fit=True)
-    output = QR_DIR / f"{name}.png"
+    output = directory / f"{name}.png"
     code.make_image(fill_color="black", back_color="white").save(output)
     return output
 
@@ -486,16 +488,20 @@ def png_command() -> list[str] | None:
 
 
 def render_pngs(pdf_paths: list[Path]) -> bool:
+    return render_pngs_to(pdf_paths, PNG_DIR)
+
+
+def render_pngs_to(pdf_paths: list[Path], directory: Path) -> bool:
     cmd = png_command()
     if cmd is None:
         print("warning: --png requested but pdftoppm/pdftocairo not found", file=sys.stderr)
         return False
     # pdftoppm writes one file per page, so a sign that loses a page would keep
     # its stale trailing image here and misrepresent the current PDF.
-    shutil.rmtree(PNG_DIR, ignore_errors=True)
-    PNG_DIR.mkdir(parents=True, exist_ok=True)
+    shutil.rmtree(directory, ignore_errors=True)
+    directory.mkdir(parents=True, exist_ok=True)
     for pdf in pdf_paths:
-        run([*cmd, "-png", "-r", "150", str(pdf), str(PNG_DIR / pdf.stem)])
+        run([*cmd, "-png", "-r", "150", str(pdf), str(directory / pdf.stem)])
     return True
 
 
